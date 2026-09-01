@@ -1,0 +1,114 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Global default-deny safety gate
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // --- REUSABLE SECURITY UTILITY FUNCTIONS ---
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isEmailVerified() {
+      return request.auth.token.email_verified == true;
+    }
+
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // --- ENTITY SCHEMA VALIDATION BLUEPRINTS ---
+    
+    function isValidUserProfile(data) {
+      return data.keys().hasAll(['uid', 'name', 'email', 'xp', 'streakDays', 'role']) 
+        && data.keys().size() == 6
+        && data.uid == request.auth.uid
+        && data.email is string && data.email.size() <= 128
+        && data.name is string && data.name.size() <= 128
+        && data.xp is int && data.xp >= 0
+        && data.streakDays is int && data.streakDays >= 0
+        && (data.role == 'student' || data.role == 'admin');
+    }
+
+    function isValidTopicProgress(data) {
+      return data.keys().hasAll(['topicId', 'status', 'lastStudiedAt'])
+        && data.topicId is string && data.topicId.size() <= 128
+        && (data.status == 'not_started' || data.status == 'in_progress' || data.status == 'revision_needed' || data.status == 'completed' || data.status == 'mastered')
+        && data.lastStudiedAt is string && data.lastStudiedAt.size() <= 64;
+    }
+
+    function isValidMistakeEntry(data) {
+      return data.keys().hasAll(['id', 'questionText', 'correctAnswer', 'userAnswer', 'errorTag', 'isMastered', 'lastAttemptedAt'])
+        && data.id is string && data.id.size() <= 128
+        && data.questionText is string && data.questionText.size() <= 2000
+        && data.correctAnswer is string && data.correctAnswer.size() <= 1000
+        && data.userAnswer is string && data.userAnswer.size() <= 1000
+        && (data.errorTag == 'Silly Error' || data.errorTag == 'Conceptual Gap' || data.errorTag == 'Calculation Slip' || data.errorTag == 'Time Pressure' || data.errorTag == 'Misread Question')
+        && data.isMastered is bool
+        && data.lastAttemptedAt is string && data.lastAttemptedAt.size() <= 64;
+    }
+
+    function isValidFlashcardEntry(data) {
+      return data.keys().hasAll(['id', 'question', 'answer', 'masteryStatus', 'timesReviewed'])
+        && data.id is string && data.id.size() <= 128
+        && data.question is string && data.question.size() <= 1000
+        && data.answer is string && data.answer.size() <= 1000
+        && (data.masteryStatus == 'learning' || data.masteryStatus == 'review_needed' || data.masteryStatus == 'mastered')
+        && data.timesReviewed is int && data.timesReviewed >= 0;
+    }
+
+    // --- ENDPOINTS AND SECURE MATCH BLOCKS ---
+
+    // 1. User Profiles
+    match /users/{userId} {
+      allow get: if isOwner(userId);
+      allow create: if isOwner(userId) && isValidUserProfile(incoming());
+      allow update: if isOwner(userId) && isValidUserProfile(incoming()) 
+        && incoming().uid == existing().uid
+        && incoming().email == existing().email;
+      allow delete: if false;
+
+      // 2. User Syllabus Topic Progress Tracker
+      match /topicProgress/{topicId} {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidTopicProgress(incoming());
+        allow update: if isOwner(userId) && isValidTopicProgress(incoming())
+          && incoming().topicId == existing().topicId;
+        allow delete: if isOwner(userId);
+      }
+
+      // 3. User Mistakes Notebook Log
+      match /mistakes/{mistakeId} {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidMistakeEntry(incoming());
+        allow update: if isOwner(userId) && isValidMistakeEntry(incoming())
+          && incoming().id == existing().id;
+        allow delete: if isOwner(userId);
+      }
+
+      // 4. User Revision Formulas & Flashcard Spaced Repetition log
+      match /flashcards/{flashcardId} {
+        allow get, list: if isOwner(userId);
+        allow create: if isOwner(userId) && isValidFlashcardEntry(incoming());
+        allow update: if isOwner(userId) && isValidFlashcardEntry(incoming())
+          && incoming().id == existing().id;
+        allow delete: if isOwner(userId);
+      }
+    }
+  }
+}

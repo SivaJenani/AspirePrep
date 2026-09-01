@@ -1,0 +1,6 @@
+{
+  "name": "AptitudeMax - Competitive & University Exam Preparation Platform",
+  "description": "Comprehensive exam preparation platform featuring notes-based timetable generation, university semester exam deadline tracking, 5-unit syllabus blueprints, adaptive learning engine, mock test simulator, topic-wise practice, weak area analytics, and AI exam tutor.",
+  "requestFramePermissions": ["microphone"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

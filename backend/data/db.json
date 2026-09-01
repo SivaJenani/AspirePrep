@@ -1,0 +1,4149 @@
+{
+  "users": [
+    {
+      "id": "user_student_demo",
+      "name": "Janani",
+      "email": "student@aptitudemax.com",
+      "role": "student",
+      "avatar": "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&auto=format&fit=crop&q=80",
+      "targetExamId": "exam_tnpsc_group_4",
+      "targetExamName": "SSC CGL",
+      "targetExamDate": "2026-11-15",
+      "dailyStudyMinutes": 90,
+      "targetScorePercent": 100,
+      "preferredSubjectIds": [
+        "sub_ssc_quant",
+        "sub_ssc_reasoning",
+        "sub_ssc_english",
+        "sub_ssc_gs"
+      ],
+      "xp": 1450,
+      "level": 4,
+      "streakDays": 7,
+      "lastActiveDate": "2026-08-30T10:14:06.422Z",
+      "badges": [
+        {
+          "id": "b_first_test",
+          "name": "First Test Taker",
+          "description": "Completed your first full mock test",
+          "icon": "Award",
+          "isUnlocked": true,
+          "unlockedAt": "2026-08-20"
+        },
+        {
+          "id": "b_streak_7",
+          "name": "7-Day Streak",
+          "description": "Maintained active daily study for 7 days",
+          "icon": "Flame",
+          "isUnlocked": true,
+          "unlockedAt": "2026-08-28"
+        },
+        {
+          "id": "b_speed_demon",
+          "name": "Speed Solver",
+          "description": "Solved 10 questions in under 5 minutes",
+          "icon": "Zap",
+          "isUnlocked": true,
+          "unlockedAt": "2026-08-25"
+        },
+        {
+          "id": "b_100_q",
+          "name": "Centurion",
+          "description": "Solved 100+ practice questions",
+          "icon": "Target",
+          "isUnlocked": false
+        }
+      ],
+      "createdAt": "2026-08-01T00:00:00.000Z",
+      "passwordHash": "$2b$10$iSyunLwSo/I2bZrntcf6i.xe7a11Gay9nK6Ej15HZhENxPfODXFJi"
+    },
+    {
+      "id": "user_admin_demo",
+      "name": "Platform Administrator",
+      "email": "admin@aptitudemax.com",
+      "role": "admin",
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=150&auto=format&fit=crop&q=80",
+      "xp": 9999,
+      "level": 20,
+      "streakDays": 45,
+      "lastActiveDate": "2026-08-30T10:14:06.423Z",
+      "badges": [],
+      "createdAt": "2026-01-01T00:00:00.000Z",
+      "passwordHash": "$2b$10$g3u9tIcP/odUMmTfC2nzw.E3AxqPT0wO1lMmlOOahG3vWmSzx9YuG"
+    },
+    {
+      "id": "user_1788086037646",
+      "name": "New User",
+      "email": "new.user@example.com",
+      "passwordHash": "$2b$10$ecVy6.q3W.kABQH725lUAuESXEfJUXaAksvXyVXKqurS82Ff434Fu",
+      "role": "student",
+      "targetExamId": "exam_ssc_cgl",
+      "targetExamName": "SSC CGL",
+      "targetExamDate": "2026-11-15",
+      "dailyStudyMinutes": 120,
+      "targetScorePercent": 80,
+      "xp": 100,
+      "level": 1,
+      "streakDays": 1,
+      "lastActiveDate": "2026-08-30T10:33:57.726Z",
+      "badges": [
+        {
+          "id": "b_first_signup",
+          "name": "Aspirant Genesis",
+          "description": "Joined AptitudeMax platform",
+          "icon": "Sparkles",
+          "isUnlocked": true,
+          "unlockedAt": "2026-08-30T10:33:57.726Z"
+        }
+      ],
+      "createdAt": "2026-08-30T10:33:57.726Z"
+    },
+    {
+      "id": "user_1788086356826",
+      "name": "Janani",
+      "email": "jenanishine07@gmail.com",
+      "passwordHash": "$2b$10$aa8RpcFQlHWG6pA9turlXesSKcs8qpEuwlKkH0ZWEat7M1uBk3E56",
+      "role": "student",
+      "targetExamId": "exam_custom",
+      "targetExamName": "GATE",
+      "targetExamDate": "2026-11-15",
+      "dailyStudyMinutes": 210,
+      "targetScorePercent": 100,
+      "xp": 625,
+      "level": 1,
+      "streakDays": 1,
+      "lastActiveDate": "2026-08-30T10:39:16.934Z",
+      "badges": [
+        {
+          "id": "b_first_signup",
+          "name": "Aspirant Genesis",
+          "description": "Joined AptitudeMax platform",
+          "icon": "Sparkles",
+          "isUnlocked": true,
+          "unlockedAt": "2026-08-30T10:39:16.934Z"
+        }
+      ],
+      "createdAt": "2026-08-30T10:39:16.934Z",
+      "avatar": "",
+      "customExamName": "GATE"
+    },
+    {
+      "id": "user_1788086493655",
+      "name": "Test User",
+      "email": "onboard.test@example.com",
+      "passwordHash": "$2b$10$DMs8o3BW29Zb80/CbfoSZ.GVE2vmFhP5hNrkh2vqWwUO1P/O3mvQq",
+      "role": "student",
+      "targetExamId": "exam_ssc_cgl",
+      "targetExamName": "SSC CGL",
+      "targetExamDate": "2026-11-15",
+      "dailyStudyMinutes": 120,
+      "targetScorePercent": 80,
+      "xp": 100,
+      "level": 1,
+      "streakDays": 1,
+      "lastActiveDate": "2026-08-30T10:41:33.722Z",
+      "badges": [
+        {
+          "id": "b_first_signup",
+          "name": "Aspirant Genesis",
+          "description": "Joined AptitudeMax platform",
+          "icon": "Sparkles",
+          "isUnlocked": true,
+          "unlockedAt": "2026-08-30T10:41:33.723Z"
+        }
+      ],
+      "createdAt": "2026-08-30T10:41:33.723Z"
+    },
+    {
+      "id": "user_1788086493732",
+      "name": "Test User2",
+      "email": "onboard.test2@example.com",
+      "passwordHash": "$2b$10$3YIJUMO.VkjBzwiD3L.CW.YGWmdJmhe4gWojvJRgutI2Weak7HwnS",
+      "role": "student",
+      "targetExamId": "exam_ibps_po",
+      "targetExamName": "IBPS PO",
+      "targetExamDate": "2026-12-01",
+      "dailyStudyMinutes": 150,
+      "targetScorePercent": 90,
+      "xp": 100,
+      "level": 1,
+      "streakDays": 1,
+      "lastActiveDate": "2026-08-30T10:41:33.791Z",
+      "badges": [
+        {
+          "id": "b_first_signup",
+          "name": "Aspirant Genesis",
+          "description": "Joined AptitudeMax platform",
+          "icon": "Sparkles",
+          "isUnlocked": true,
+          "unlockedAt": "2026-08-30T10:41:33.791Z"
+        }
+      ],
+      "createdAt": "2026-08-30T10:41:33.791Z"
+    },
+    {
+      "id": "user_1788086493796",
+      "name": "Test User3",
+      "email": "onboard.test3@example.com",
+      "passwordHash": "$2b$10$zMmEm18ViGwQ9qgM5/AK8.QDgdkIiwpCN0/oorBlmotoGdLegiqL2",
+      "role": "student",
+      "targetExamId": "exam_ssc_cgl",
+      "targetExamName": "SSC CGL",
+      "targetExamDate": "2026-11-15",
+      "dailyStudyMinutes": 120,
+      "targetScorePercent": 80,
+      "xp": 100,
+      "level": 1,
+      "streakDays": 1,
+      "lastActiveDate": "2026-08-30T10:41:33.862Z",
+      "badges": [
+        {
+          "id": "b_first_signup",
+          "name": "Aspirant Genesis",
+          "description": "Joined AptitudeMax platform",
+          "icon": "Sparkles",
+          "isUnlocked": true,
+          "unlockedAt": "2026-08-30T10:41:33.862Z"
+        }
+      ],
+      "createdAt": "2026-08-30T10:41:33.862Z"
+    },
+    {
+      "id": "user_1788104150508",
+      "name": "Test User",
+      "email": "test1788104150475@example.com",
+      "passwordHash": "$2b$10$opDaU4r8nzANhoZdGeMoheJ27DoQ14DbnXSRG04iuPU/rwOErJnLu",
+      "role": "student",
+      "targetExamId": "exam_ssc_cgl",
+      "targetExamName": "UPSC",
+      "targetExamDate": "2026-11-15",
+      "dailyStudyMinutes": 120,
+      "targetScorePercent": 80,
+      "xp": 100,
+      "level": 1,
+      "streakDays": 1,
+      "lastActiveDate": "2026-08-30T15:35:50.577Z",
+      "badges": [
+        {
+          "id": "b_first_signup",
+          "name": "First account",
+          "description": "Created a real AspirePrep account",
+          "icon": "Sparkles",
+          "isUnlocked": true,
+          "unlockedAt": "2026-08-30T15:35:50.578Z"
+        }
+      ],
+      "createdAt": "2026-08-30T15:35:50.578Z"
+    },
+    {
+      "id": "user_1788186020968",
+      "name": "Jenani",
+      "email": "sivajenanis@gmail.com",
+      "passwordHash": "$2b$10$BKfakIkG8TYKkjbiayT5O.rU2roHvO.LcvFK2A2Gcv4DkuiVIVbKO",
+      "role": "student",
+      "targetExamId": "exam_ssc_cgl",
+      "targetExamName": "SSC CGL",
+      "targetExamDate": "2026-11-15",
+      "dailyStudyMinutes": 150,
+      "targetScorePercent": 80,
+      "xp": 250,
+      "level": 1,
+      "streakDays": 1,
+      "lastActiveDate": "2026-08-31T14:20:21.091Z",
+      "badges": [
+        {
+          "id": "b_first_signup",
+          "name": "First account",
+          "description": "Created a real AspirePrep account",
+          "icon": "Sparkles",
+          "isUnlocked": true,
+          "unlockedAt": "2026-08-31T14:20:21.092Z"
+        }
+      ],
+      "createdAt": "2026-08-31T14:20:21.092Z"
+    }
+  ],
+  "exams": [
+    {
+      "id": "exam_ssc_cgl",
+      "name": "SSC CGL",
+      "slug": "ssc-cgl",
+      "category": "Government Exams",
+      "description": "Staff Selection Commission Combined Graduate Level Examination for Group B and Group C posts in Indian Ministries and Departments.",
+      "icon": "Landmark",
+      "pattern": {
+        "totalMarks": 200,
+        "durationMinutes": 60,
+        "totalQuestions": 100,
+        "negativeMarkingRatio": 0.5,
+        "sections": [
+          {
+            "name": "Quantitative Aptitude",
+            "questionsCount": 25,
+            "marks": 50,
+            "durationMinutes": 15
+          },
+          {
+            "name": "General Intelligence & Reasoning",
+            "questionsCount": 25,
+            "marks": 50,
+            "durationMinutes": 15
+          },
+          {
+            "name": "English Comprehension",
+            "questionsCount": 25,
+            "marks": 50,
+            "durationMinutes": 15
+          },
+          {
+            "name": "General Awareness",
+            "questionsCount": 25,
+            "marks": 50,
+            "durationMinutes": 15
+          }
+        ]
+      },
+      "eligibility": "Bachelor’s Degree in any discipline from a recognized University. Age: 18–32 years.",
+      "syllabusSummary": "Tier 1 covers Quantitative Aptitude, General Intelligence & Reasoning, English Comprehension, and General Studies.",
+      "mockTestsCount": 18,
+      "totalQuestionsCount": 450,
+      "isPopular": true,
+      "isFeatured": true,
+      "upcomingDate": "2026-09-15",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "exam_upsc_cse",
+      "name": "UPSC Civil Services",
+      "slug": "upsc-cse",
+      "category": "Government Exams",
+      "description": "Union Public Service Commission Civil Services Examination (IAS/IPS/IFS) preliminary & mains examination.",
+      "icon": "Award",
+      "pattern": {
+        "totalMarks": 200,
+        "durationMinutes": 120,
+        "totalQuestions": 100,
+        "negativeMarkingRatio": 0.33,
+        "sections": [
+          {
+            "name": "Indian Polity & Governance",
+            "questionsCount": 25,
+            "marks": 50
+          },
+          {
+            "name": "History & Culture",
+            "questionsCount": 25,
+            "marks": 50
+          },
+          {
+            "name": "Economy & Environment",
+            "questionsCount": 25,
+            "marks": 50
+          },
+          {
+            "name": "General Science & Tech",
+            "questionsCount": 25,
+            "marks": 50
+          }
+        ]
+      },
+      "eligibility": "Graduation in any stream. Age: 21–32 years with category relaxations.",
+      "syllabusSummary": "General Studies Paper 1 covering Indian Polity, History, Geography, Economics, Environment, and Current Affairs.",
+      "mockTestsCount": 14,
+      "totalQuestionsCount": 320,
+      "isPopular": true,
+      "isFeatured": true,
+      "upcomingDate": "2026-10-04",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "exam_ibps_po",
+      "name": "IBPS PO",
+      "slug": "ibps-po",
+      "category": "Banking Exams",
+      "description": "Institute of Banking Personnel Selection Probationary Officer / Management Trainee preliminary & mains exam.",
+      "icon": "Building2",
+      "pattern": {
+        "totalMarks": 100,
+        "durationMinutes": 60,
+        "totalQuestions": 100,
+        "negativeMarkingRatio": 0.25,
+        "sections": [
+          {
+            "name": "Quantitative Aptitude",
+            "questionsCount": 35,
+            "marks": 35,
+            "durationMinutes": 20
+          },
+          {
+            "name": "Reasoning Ability",
+            "questionsCount": 35,
+            "marks": 35,
+            "durationMinutes": 20
+          },
+          {
+            "name": "English Language",
+            "questionsCount": 30,
+            "marks": 30,
+            "durationMinutes": 20
+          }
+        ]
+      },
+      "eligibility": "Degree in any discipline from a recognized University. Age: 20–30 years.",
+      "syllabusSummary": "Sectionally timed exam covering Data Interpretation, Arithmetic, Puzzles, Syllogisms, and Grammar.",
+      "mockTestsCount": 15,
+      "totalQuestionsCount": 380,
+      "isPopular": true,
+      "isFeatured": true,
+      "upcomingDate": "2026-10-18",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "exam_tnpsc_group4",
+      "name": "TNPSC Group 4",
+      "slug": "tnpsc-group-4",
+      "category": "State Government Exams",
+      "description": "Tamil Nadu Public Service Commission Combined Civil Services Examination - IV (VAO, Junior Assistant, Typist).",
+      "icon": "FileText",
+      "pattern": {
+        "totalMarks": 300,
+        "durationMinutes": 180,
+        "totalQuestions": 200,
+        "negativeMarkingRatio": 0,
+        "sections": [
+          {
+            "name": "General Tamil / English",
+            "questionsCount": 100,
+            "marks": 150
+          },
+          {
+            "name": "General Studies",
+            "questionsCount": 75,
+            "marks": 112.5
+          },
+          {
+            "name": "Aptitude & Mental Ability",
+            "questionsCount": 25,
+            "marks": 37.5
+          }
+        ]
+      },
+      "eligibility": "SSLC (10th Standard) pass. Age: 18–32+ years.",
+      "syllabusSummary": "Covers General Studies (Polity, History, TN History & Culture) and Aptitude and Mental Ability.",
+      "mockTestsCount": 12,
+      "totalQuestionsCount": 290,
+      "isPopular": true,
+      "isFeatured": false,
+      "upcomingDate": "2026-11-12",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "exam_rrb_ntpc",
+      "name": "RRB NTPC",
+      "slug": "rrb-ntpc",
+      "category": "Railway Exams",
+      "description": "Railway Recruitment Board Non-Technical Popular Categories examination for Station Master, Goods Guard, Clerk.",
+      "icon": "Train",
+      "pattern": {
+        "totalMarks": 100,
+        "durationMinutes": 90,
+        "totalQuestions": 100,
+        "negativeMarkingRatio": 0.33,
+        "sections": [
+          {
+            "name": "General Awareness",
+            "questionsCount": 40,
+            "marks": 40
+          },
+          {
+            "name": "Mathematics",
+            "questionsCount": 30,
+            "marks": 30
+          },
+          {
+            "name": "General Intelligence & Reasoning",
+            "questionsCount": 30,
+            "marks": 30
+          }
+        ]
+      },
+      "eligibility": "12th pass or Graduate based on specific post. Age: 18–33 years.",
+      "syllabusSummary": "CBT Stage 1 testing Mathematics, Reasoning, and General Awareness.",
+      "mockTestsCount": 10,
+      "totalQuestionsCount": 240,
+      "isPopular": false,
+      "isFeatured": false,
+      "upcomingDate": "2026-12-05",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "id": "exam_jee_main",
+      "name": "JEE Main",
+      "slug": "jee-main",
+      "category": "Engineering Entrance",
+      "description": "National Testing Agency Joint Entrance Examination for admission into NITs, IIITs, and eligibility for JEE Advanced.",
+      "icon": "Atom",
+      "pattern": {
+        "totalMarks": 300,
+        "durationMinutes": 180,
+        "totalQuestions": 75,
+        "negativeMarkingRatio": 0.25,
+        "sections": [
+          {
+            "name": "Physics",
+            "questionsCount": 25,
+            "marks": 100
+          },
+          {
+            "name": "Chemistry",
+            "questionsCount": 25,
+            "marks": 100
+          },
+          {
+            "name": "Mathematics",
+            "questionsCount": 25,
+            "marks": 100
+          }
+        ]
+      },
+      "eligibility": "10+2 with Physics, Chemistry, and Mathematics.",
+      "syllabusSummary": "Class 11 and 12 syllabus across Physics, Chemistry, and Mathematics.",
+      "mockTestsCount": 16,
+      "totalQuestionsCount": 310,
+      "isPopular": true,
+      "isFeatured": false,
+      "upcomingDate": "2027-01-24",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    }
+  ],
+  "subjects": [
+    {
+      "id": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Quantitative Aptitude",
+      "icon": "Calculator",
+      "description": "Arithmetic, Algebra, Geometry, Trigonometry, and Data Interpretation.",
+      "order": 1,
+      "chaptersCount": 6,
+      "completionRate": 68,
+      "accuracyRate": 74
+    },
+    {
+      "id": "sub_ssc_reasoning",
+      "examId": "exam_ssc_cgl",
+      "name": "General Intelligence & Reasoning",
+      "icon": "Brain",
+      "description": "Verbal, Non-Verbal, Analogies, Syllogisms, Coding-Decoding, and Puzzles.",
+      "order": 2,
+      "chaptersCount": 5,
+      "completionRate": 82,
+      "accuracyRate": 88
+    },
+    {
+      "id": "sub_ssc_english",
+      "examId": "exam_ssc_cgl",
+      "name": "English Comprehension",
+      "icon": "BookOpen",
+      "description": "Grammar, Vocabulary, Spotting Errors, Cloze Test, and Reading Comprehension.",
+      "order": 3,
+      "chaptersCount": 4,
+      "completionRate": 55,
+      "accuracyRate": 62
+    },
+    {
+      "id": "sub_ssc_gs",
+      "examId": "exam_ssc_cgl",
+      "name": "General Awareness",
+      "icon": "Globe",
+      "description": "History, Indian Polity, Geography, Economics, General Science, and Current Affairs.",
+      "order": 4,
+      "chaptersCount": 5,
+      "completionRate": 40,
+      "accuracyRate": 54
+    },
+    {
+      "id": "sub_upsc_polity",
+      "examId": "exam_upsc_cse",
+      "name": "Indian Polity & Constitution",
+      "icon": "Scale",
+      "description": "Preamble, Fundamental Rights, Parliament, Judiciary, Constitutional Bodies.",
+      "order": 1,
+      "chaptersCount": 6,
+      "completionRate": 70,
+      "accuracyRate": 78
+    },
+    {
+      "id": "sub_upsc_history",
+      "examId": "exam_upsc_cse",
+      "name": "Indian History & Art & Culture",
+      "icon": "Landmark",
+      "description": "Ancient, Medieval, Modern Freedom Struggle, and Art Forms.",
+      "order": 2,
+      "chaptersCount": 5,
+      "completionRate": 50,
+      "accuracyRate": 65
+    },
+    {
+      "id": "sub_bank_quant",
+      "examId": "exam_ibps_po",
+      "name": "Quantitative Aptitude",
+      "icon": "Percent",
+      "description": "Data Interpretation, Quadratic Equations, Number Series, Simplification.",
+      "order": 1,
+      "chaptersCount": 5,
+      "completionRate": 60,
+      "accuracyRate": 70
+    },
+    {
+      "id": "sub_bank_reasoning",
+      "examId": "exam_ibps_po",
+      "name": "Reasoning Ability",
+      "icon": "Workflow",
+      "description": "Seating Arrangement, Floor Puzzles, Syllogisms, Inequalities.",
+      "order": 2,
+      "chaptersCount": 5,
+      "completionRate": 75,
+      "accuracyRate": 85
+    }
+  ],
+  "chapters": [
+    {
+      "id": "chap_arithmetic",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Arithmetic Math",
+      "order": 1,
+      "description": "Core arithmetic foundations: Percentages, Profit & Loss, Ratio, Time & Work",
+      "topicsCount": 5
+    },
+    {
+      "id": "chap_algebra",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Advanced Algebra",
+      "order": 2,
+      "description": "Polynomial identities, factorisation, linear & quadratic equations",
+      "topicsCount": 3
+    },
+    {
+      "id": "chap_geometry",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Geometry & Mensuration",
+      "order": 3,
+      "description": "Triangles, circles, chords, prisms, 2D and 3D area/volume",
+      "topicsCount": 4
+    },
+    {
+      "id": "chap_trig",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Trigonometry & Heights & Distances",
+      "order": 4,
+      "description": "Trigonometric identities, complementary angles, height & distance models",
+      "topicsCount": 3
+    },
+    {
+      "id": "chap_number_systems",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Number Systems & Surds",
+      "order": 5,
+      "description": "Divisibility rules, unit digit, remainder theorems, surds and indices",
+      "topicsCount": 3
+    },
+    {
+      "id": "chap_di_stats",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Data Interpretation & Statistics",
+      "order": 6,
+      "description": "Histograms, pie charts, bar graphs, mean, median, mode, standard deviation",
+      "topicsCount": 3
+    },
+    {
+      "id": "chap_verbal_reasoning",
+      "subjectId": "sub_ssc_reasoning",
+      "examId": "exam_ssc_cgl",
+      "name": "Verbal Logic & Syllogisms",
+      "order": 1,
+      "description": "Statements, assumptions, Venn diagram conclusions, syllogisms",
+      "topicsCount": 3
+    },
+    {
+      "id": "chap_coding_puzzles",
+      "subjectId": "sub_ssc_reasoning",
+      "examId": "exam_ssc_cgl",
+      "name": "Coding-Decoding & Relations",
+      "order": 2,
+      "description": "Alphabet patterns, blood relations, direction sense, matrix",
+      "topicsCount": 4
+    },
+    {
+      "id": "chap_puzzles_seating",
+      "subjectId": "sub_ssc_reasoning",
+      "examId": "exam_ssc_cgl",
+      "name": "Puzzles & Seating Arrangements",
+      "order": 3,
+      "description": "Linear & circular seating, order & ranking, floor puzzles",
+      "topicsCount": 3
+    },
+    {
+      "id": "chap_non_verbal",
+      "subjectId": "sub_ssc_reasoning",
+      "examId": "exam_ssc_cgl",
+      "name": "Non-Verbal & Pattern Completion",
+      "order": 4,
+      "description": "Mirror & water images, paper folding, embedded figures, cubes & dice",
+      "topicsCount": 4
+    },
+    {
+      "id": "chap_grammar",
+      "subjectId": "sub_ssc_english",
+      "examId": "exam_ssc_cgl",
+      "name": "English Grammar & Usage",
+      "order": 1,
+      "description": "Subject-verb agreement, tenses, prepositions, modifiers",
+      "topicsCount": 4
+    },
+    {
+      "id": "chap_vocab",
+      "subjectId": "sub_ssc_english",
+      "examId": "exam_ssc_cgl",
+      "name": "Vocabulary, Idioms & Phrases",
+      "order": 2,
+      "description": "Synonyms, antonyms, one-word substitution, idioms & phrasal verbs",
+      "topicsCount": 4
+    },
+    {
+      "id": "chap_rc_cloze",
+      "subjectId": "sub_ssc_english",
+      "examId": "exam_ssc_cgl",
+      "name": "Comprehension & Cloze Test",
+      "order": 3,
+      "description": "Reading comprehension passages, cloze test, para jumbles",
+      "topicsCount": 3
+    },
+    {
+      "id": "chap_voice_narration",
+      "subjectId": "sub_ssc_english",
+      "examId": "exam_ssc_cgl",
+      "name": "Active-Passive & Direct-Indirect Speech",
+      "order": 4,
+      "description": "Voice transformations and reported speech rules for Tier 2",
+      "topicsCount": 2
+    },
+    {
+      "id": "chap_polity_cgl",
+      "subjectId": "sub_ssc_gs",
+      "examId": "exam_ssc_cgl",
+      "name": "Indian Polity & Constitution",
+      "order": 1,
+      "description": "Constitution, Fundamental Rights, Parliament, Judiciary, Constitutional Bodies",
+      "topicsCount": 4
+    },
+    {
+      "id": "chap_history_cgl",
+      "subjectId": "sub_ssc_gs",
+      "examId": "exam_ssc_cgl",
+      "name": "Indian History & Freedom Movement",
+      "order": 2,
+      "description": "Ancient Indus/Vedic, Medieval Dynasties, 1857 Revolt, Freedom Struggle",
+      "topicsCount": 4
+    },
+    {
+      "id": "chap_geo_cgl",
+      "subjectId": "sub_ssc_gs",
+      "examId": "exam_ssc_cgl",
+      "name": "Geography & Environment",
+      "order": 3,
+      "description": "River systems, climate & monsoon, national parks, solar system",
+      "topicsCount": 3
+    },
+    {
+      "id": "chap_eco_cgl",
+      "subjectId": "sub_ssc_gs",
+      "examId": "exam_ssc_cgl",
+      "name": "Economy & Static GK",
+      "order": 4,
+      "description": "National income, Union Budget, Five Year Plans, dances & festivals, sports",
+      "topicsCount": 4
+    }
+  ],
+  "topics": [
+    {
+      "id": "top_percentage",
+      "chapterId": "chap_arithmetic",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Percentage & Successive Change",
+      "weightage": "High",
+      "weightagePercent": 12,
+      "difficultyLevel": "easy",
+      "keyFormulas": [
+        "Percentage Increase = (Increase / Original Value) × 100",
+        "Successive Percentage Change = a + b + (ab / 100)%",
+        "If price increases by R%, consumption reduction = [R / (100 + R)] × 100%"
+      ],
+      "summary": "Master fractional conversion shortcuts (1/7 = 14.28%, 1/8 = 12.5%, 1/12 = 8.33%) and successive change formulas.",
+      "questionsCount": 45,
+      "isWeak": false,
+      "accuracyRate": 84,
+      "attemptsCount": 32
+    },
+    {
+      "id": "top_profit_loss",
+      "chapterId": "chap_arithmetic",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Profit, Loss & Discount",
+      "weightage": "High",
+      "weightagePercent": 14,
+      "difficultyLevel": "medium",
+      "keyFormulas": [
+        "Gain% = (Gain / CP) × 100",
+        "SP = CP × (100 + Gain%) / 100",
+        "Marked Price / CP = (100 + Profit%) / (100 - Discount%)",
+        "Dishonest Dealer Profit% = [Error / (True Weight - Error)] × 100%"
+      ],
+      "summary": "Concepts of Cost Price, Selling Price, Marked Price, and Dishonest Dealer problems.",
+      "questionsCount": 40,
+      "isWeak": true,
+      "accuracyRate": 52,
+      "attemptsCount": 25
+    },
+    {
+      "id": "top_ratio_proportion",
+      "chapterId": "chap_arithmetic",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Ratio, Proportion & Mixture",
+      "weightage": "High",
+      "weightagePercent": 10,
+      "difficultyLevel": "easy",
+      "keyFormulas": [
+        "Mean Proportional between a and b = √(ab)",
+        "Third Proportional to a and b = b² / a",
+        "Alligation Rule: (Cheaper Qty / Dearer Qty) = (Dearer Price - Mean Price) / (Mean Price - Cheaper Price)"
+      ],
+      "summary": "Includes compounding ratios, age problems, partnership shares, and alligation mixtures.",
+      "questionsCount": 35,
+      "isWeak": false,
+      "accuracyRate": 76,
+      "attemptsCount": 20
+    },
+    {
+      "id": "top_time_work",
+      "chapterId": "chap_arithmetic",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Time, Work & Pipes-Cisterns",
+      "weightage": "Medium",
+      "weightagePercent": 10,
+      "difficultyLevel": "medium",
+      "keyFormulas": [
+        "Work = Efficiency × Time",
+        "If A does work in x days and B in y days, together = (xy) / (x + y) days",
+        "M1 × D1 × H1 / W1 = M2 × D2 × H2 / W2"
+      ],
+      "summary": "Unitary and LCM efficiency methods for solving group work and alternating work hours.",
+      "questionsCount": 30,
+      "isWeak": true,
+      "accuracyRate": 48,
+      "attemptsCount": 19
+    },
+    {
+      "id": "top_si_ci",
+      "chapterId": "chap_arithmetic",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Simple & Compound Interest",
+      "weightage": "High",
+      "weightagePercent": 8,
+      "difficultyLevel": "hard",
+      "keyFormulas": [
+        "SI = (P × R × T) / 100",
+        "CI = P × [ (1 + R/100)^T - 1 ]",
+        "Difference between CI and SI for 2 years = P × (R / 100)²"
+      ],
+      "summary": "Tree method for CI calculations, installment problems, and 2-year/3-year CI-SI differences.",
+      "questionsCount": 32,
+      "isWeak": true,
+      "accuracyRate": 55,
+      "attemptsCount": 21
+    },
+    {
+      "id": "top_algebra_identities",
+      "chapterId": "chap_algebra",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Algebraic Identities & Values",
+      "weightage": "High",
+      "weightagePercent": 10,
+      "difficultyLevel": "medium",
+      "keyFormulas": [
+        "If x + 1/x = k, then x² + 1/x² = k² - 2",
+        "If x + 1/x = k, then x³ + 1/x³ = k³ - 3k",
+        "If a + b + c = 0, then a³ + b³ + c³ = 3abc"
+      ],
+      "summary": "Master symmetrical substitutions, factoring cubic equations, and standard reciprocal patterns.",
+      "questionsCount": 38,
+      "isWeak": false,
+      "accuracyRate": 78,
+      "attemptsCount": 26
+    },
+    {
+      "id": "top_geometry_triangles",
+      "chapterId": "chap_geometry",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Triangles & Similarity Theorems",
+      "weightage": "High",
+      "weightagePercent": 12,
+      "difficultyLevel": "hard",
+      "keyFormulas": [
+        "Incentre Angle = 90° + ∠A / 2",
+        "Circumcentre Angle = 2 × ∠A",
+        "Apollonius Theorem: AB² + AC² = 2(AD² + BD²)"
+      ],
+      "summary": "Centres of triangles, similarity criteria, and internal angle bisector theorem.",
+      "questionsCount": 36,
+      "isWeak": true,
+      "accuracyRate": 50,
+      "attemptsCount": 22
+    },
+    {
+      "id": "top_trigonometry",
+      "chapterId": "chap_trig",
+      "subjectId": "sub_ssc_quant",
+      "examId": "exam_ssc_cgl",
+      "name": "Trigonometric Ratios & Maximum-Minimum",
+      "weightage": "High",
+      "weightagePercent": 8,
+      "difficultyLevel": "medium",
+      "keyFormulas": [
+        "sin²θ + cos²θ = 1; 1 + tan²θ = sec²θ; 1 + cot²θ = cosec²θ",
+        "Max value of a sinθ + b cosθ = √(a² + b²), Min = -√(a² + b²)"
+      ],
+      "summary": "Standard angle values (0°, 30°, 45°, 60°, 90°) and angle-sum transformations.",
+      "questionsCount": 30,
+      "isWeak": false,
+      "accuracyRate": 82,
+      "attemptsCount": 20
+    },
+    {
+      "id": "top_syllogisms",
+      "chapterId": "chap_verbal_reasoning",
+      "subjectId": "sub_ssc_reasoning",
+      "examId": "exam_ssc_cgl",
+      "name": "Syllogisms & Venn Diagrams",
+      "weightage": "High",
+      "weightagePercent": 12,
+      "difficultyLevel": "medium",
+      "keyFormulas": [
+        "\"Only a few A are B\" means Some A are B and Some A are not B",
+        "\"All A can never be B\" is a definite conclusion, not a possibility"
+      ],
+      "summary": "Standard categorical propositions, 100-50 method vs minimum overlapping Venn circles.",
+      "questionsCount": 38,
+      "isWeak": false,
+      "accuracyRate": 92,
+      "attemptsCount": 28
+    },
+    {
+      "id": "top_coding_decoding",
+      "chapterId": "chap_coding_puzzles",
+      "subjectId": "sub_ssc_reasoning",
+      "examId": "exam_ssc_cgl",
+      "name": "Coding-Decoding & Letter Shifts",
+      "weightage": "High",
+      "weightagePercent": 10,
+      "difficultyLevel": "easy",
+      "keyFormulas": [
+        "Opposite Letter Pairs: A-Z, B-Y, C-X, D-W, E-V, F-U, G-T, H-S, I-R, J-Q, K-P, L-O, M-N (Sum = 27)",
+        "EJOTY rule for positional values (5, 10, 15, 20, 25)"
+      ],
+      "summary": "Letter positioning, cross shifting, reverse alphabet coding, and matrix codes.",
+      "questionsCount": 35,
+      "isWeak": false,
+      "accuracyRate": 88,
+      "attemptsCount": 22
+    },
+    {
+      "id": "top_blood_relations",
+      "chapterId": "chap_coding_puzzles",
+      "subjectId": "sub_ssc_reasoning",
+      "examId": "exam_ssc_cgl",
+      "name": "Blood Relations & Direction Sense",
+      "weightage": "Medium",
+      "weightagePercent": 8,
+      "difficultyLevel": "easy",
+      "keyFormulas": [
+        "Family Tree: Males (+), Females (-), Siblings (=), Couples (↔)",
+        "Pythagoras Theorem for distance: Distance = √(Δx² + Δy²)"
+      ],
+      "summary": "Coded relations (A+B means A is father of B), pointing to photographs, and cardinal direction turns.",
+      "questionsCount": 28,
+      "isWeak": false,
+      "accuracyRate": 85,
+      "attemptsCount": 18
+    },
+    {
+      "id": "top_seating_arrangement",
+      "chapterId": "chap_puzzles_seating",
+      "subjectId": "sub_ssc_reasoning",
+      "examId": "exam_ssc_cgl",
+      "name": "Linear & Circular Seating Puzzles",
+      "weightage": "High",
+      "weightagePercent": 10,
+      "difficultyLevel": "hard",
+      "keyFormulas": [
+        "Facing Center: Left is clockwise, Right is anti-clockwise",
+        "Facing Outside: Left is anti-clockwise, Right is clockwise"
+      ],
+      "summary": "8-person circular tables, linear north/south facing rows, and ranking order.",
+      "questionsCount": 32,
+      "isWeak": true,
+      "accuracyRate": 64,
+      "attemptsCount": 24
+    },
+    {
+      "id": "top_spotting_errors",
+      "chapterId": "chap_grammar",
+      "subjectId": "sub_ssc_english",
+      "examId": "exam_ssc_cgl",
+      "name": "Spotting Errors & Subject-Verb Agreement",
+      "weightage": "High",
+      "weightagePercent": 14,
+      "difficultyLevel": "medium",
+      "keyFormulas": [
+        "Either/Or, Neither/Nor: Verb agrees with the nearest subject",
+        "As well as, Along with, Together with: Verb agrees with the FIRST subject",
+        "One of the + Plural Noun + Singular Verb (unless preceded by \"who/which\")"
+      ],
+      "summary": "Common grammatical traps tested in SSC Tier 1 and IBPS English section.",
+      "questionsCount": 42,
+      "isWeak": true,
+      "accuracyRate": 56,
+      "attemptsCount": 30
+    },
+    {
+      "id": "top_idioms_phrases",
+      "chapterId": "chap_vocab",
+      "subjectId": "sub_ssc_english",
+      "examId": "exam_ssc_cgl",
+      "name": "Idioms, Phrases & One Word Substitutes",
+      "weightage": "High",
+      "weightagePercent": 12,
+      "difficultyLevel": "medium",
+      "keyFormulas": [
+        "Root Word Method: Phil (Love), Mis (Hate), Pathy (Feeling), Poly (Many)",
+        "High-frequency official SSC repeating list of 500 idioms"
+      ],
+      "summary": "High-yield idioms tested in Tier 1 and Tier 2 with figurative context.",
+      "questionsCount": 48,
+      "isWeak": false,
+      "accuracyRate": 74,
+      "attemptsCount": 35
+    },
+    {
+      "id": "top_cloze_test",
+      "chapterId": "chap_rc_cloze",
+      "subjectId": "sub_ssc_english",
+      "examId": "exam_ssc_cgl",
+      "name": "Cloze Test & Para Jumbles",
+      "weightage": "High",
+      "weightagePercent": 10,
+      "difficultyLevel": "hard",
+      "keyFormulas": [
+        "Identify the overall tone of passage (positive/negative/neutral)",
+        "Look for pronoun antecedent references (He/They/It) to link sentences in Para Jumbles"
+      ],
+      "summary": "Contextual vocabulary insertion and logical sentence sequencing.",
+      "questionsCount": 35,
+      "isWeak": true,
+      "accuracyRate": 60,
+      "attemptsCount": 22
+    },
+    {
+      "id": "top_indian_constitution",
+      "chapterId": "chap_polity_cgl",
+      "subjectId": "sub_ssc_gs",
+      "examId": "exam_ssc_cgl",
+      "name": "Constitution & Fundamental Rights",
+      "weightage": "High",
+      "weightagePercent": 14,
+      "difficultyLevel": "medium",
+      "keyFormulas": [
+        "Part III (Articles 12 to 35): Fundamental Rights",
+        "Article 32: Constitutional Remedies (Heart & Soul of Constitution)",
+        "Writs: Habeas Corpus, Mandamus, Prohibition, Certiorari, Quo-Warranto"
+      ],
+      "summary": "Fundamental Rights, DPSP (Part IV), Fundamental Duties (Article 51A), and Key Constitutional Amendments.",
+      "questionsCount": 40,
+      "isWeak": true,
+      "accuracyRate": 50,
+      "attemptsCount": 24
+    },
+    {
+      "id": "top_modern_history",
+      "chapterId": "chap_history_cgl",
+      "subjectId": "sub_ssc_gs",
+      "examId": "exam_ssc_cgl",
+      "name": "Freedom Struggle & National Movement",
+      "weightage": "High",
+      "weightagePercent": 10,
+      "difficultyLevel": "easy",
+      "keyFormulas": [
+        "1857: First War of Independence; 1885: INC Formation; 1905: Bengal Partition",
+        "1920: Non-Cooperation; 1930: Civil Disobedience & Dandi March; 1942: Quit India"
+      ],
+      "summary": "Important Governor-Generals, Congress sessions, Gandhian movements, and revolutionary leaders.",
+      "questionsCount": 38,
+      "isWeak": false,
+      "accuracyRate": 70,
+      "attemptsCount": 25
+    },
+    {
+      "id": "top_indian_geography",
+      "chapterId": "chap_geo_cgl",
+      "subjectId": "sub_ssc_gs",
+      "examId": "exam_ssc_cgl",
+      "name": "River Systems, Dams & National Parks",
+      "weightage": "Medium",
+      "weightagePercent": 8,
+      "difficultyLevel": "medium",
+      "keyFormulas": [
+        "East Flowing Rivers: Ganga, Brahmaputra, Mahanadi, Godavari, Krishna, Cauvery (Drain in Bay of Bengal)",
+        "West Flowing Rivers: Narmada, Tapti, Sabarmati, Mahi (Drain in Arabian Sea, form Estuaries)"
+      ],
+      "summary": "Himalayan and Peninsular river drainage, major multipurpose dams, and biosphere reserves.",
+      "questionsCount": 32,
+      "isWeak": false,
+      "accuracyRate": 68,
+      "attemptsCount": 20
+    },
+    {
+      "id": "top_static_gk",
+      "chapterId": "chap_eco_cgl",
+      "subjectId": "sub_ssc_gs",
+      "examId": "exam_ssc_cgl",
+      "name": "Classical Dances, Festivals & Awards",
+      "weightage": "High",
+      "weightagePercent": 12,
+      "difficultyLevel": "medium",
+      "keyFormulas": [
+        "8 Classical Dances: Bharatanatyam (TN), Kathak (UP), Kathakali (Kerala), Mohiniyattam (Kerala), Kuchipudi (AP), Odissi (Odisha), Manipuri (Manipur), Sattriya (Assam)"
+      ],
+      "summary": "State festivals, musical instruments & famous exponents, Nobel and Bharat Ratna recipients.",
+      "questionsCount": 45,
+      "isWeak": false,
+      "accuracyRate": 72,
+      "attemptsCount": 30
+    }
+  ],
+  "concepts": [
+    {
+      "id": "conc_percentage_basics",
+      "topicId": "top_percentage",
+      "title": "Percentage Fraction Equivalence & Multipliers",
+      "theory": "The percentage concept is the foundational cornerstone of all arithmetic math. Translating percentages into simplest fractional fractions reduces calculations to single-step multiplications.\n    \nKey Fraction Chart:\n- 1/2 = 50%\n- 1/3 = 33.33%\n- 1/4 = 25%\n- 1/5 = 20%\n- 1/6 = 16.66% (16 2/3%)\n- 1/7 = 14.28% (14 2/7%)\n- 1/8 = 12.5%\n- 1/9 = 11.11%\n- 1/11 = 9.09%\n- 1/12 = 8.33%",
+      "formulas": [
+        "Fraction to Percentage: Multiply by 100",
+        "Percentage to Fraction: Divide by 100",
+        "Net Multiplier for x% increase = (1 + x/100)"
+      ],
+      "examples": [
+        {
+          "question": "If the price of sugar rises by 25%, by how much percentage must a household reduce its consumption so as not to increase the expenditure?",
+          "solution": "Let initial price = 100, new price = 125. Reduction needed = 25 on 125. (25/125) × 100 = 20% reduction.",
+          "shortcutTip": "Formula shortcut: [R / (100 + R)] × 100 = [25 / 125] × 100 = 20%."
+        }
+      ],
+      "keyTakeaways": [
+        "Expenditure = Price × Consumption. If Expenditure is constant, Price is inversely proportional to Consumption.",
+        "A percentage increase of 1/x corresponds to a required decrease of 1/(x + 1) to restore original value."
+      ]
+    },
+    {
+      "id": "conc_fundamental_rights",
+      "topicId": "top_indian_constitution",
+      "title": "Fundamental Rights (Articles 12-35)",
+      "theory": "Fundamental Rights are enshrined in Part III of the Indian Constitution (Articles 12 to 35). They are justiciable in nature, meaning they are enforceable by the Courts. Dr. B.R. Ambedkar termed Article 32 as the \"Heart and Soul of the Constitution\".\n\nClassification of Fundamental Rights:\n1. Right to Equality (Articles 14–18)\n2. Right to Freedom (Articles 19–22)\n3. Right against Exploitation (Articles 23–24)\n4. Right to Freedom of Religion (Articles 25–28)\n5. Cultural and Educational Rights (Articles 29–30)\n6. Right to Constitutional Remedies (Article 32)",
+      "formulas": [
+        "Article 14: Equality before law and equal protection of laws",
+        "Article 17: Abolition of Untouchability",
+        "Article 21: Protection of life and personal liberty",
+        "Article 21A: Right to free and compulsory education (86th Amendment, 2002)"
+      ],
+      "examples": [
+        {
+          "question": "Under which Article can an Indian citizen directly approach the Supreme Court for enforcement of Fundamental Rights?",
+          "solution": "Article 32 empowers an individual to approach the Supreme Court directly via constitutional writs.",
+          "shortcutTip": "Remember: Supreme Court writ jurisdiction is Article 32; High Court writ jurisdiction is Article 226."
+        }
+      ],
+      "keyTakeaways": [
+        "Fundamental rights are not absolute but qualified (subject to reasonable restrictions).",
+        "Articles 20 and 21 cannot be suspended even during a National Emergency under Article 352."
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "q_quant_01",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "chapterId": "chap_arithmetic",
+      "topicId": "top_percentage",
+      "questionText": "A number is first increased by 20% and then decreased by 15%. What is the net percentage change in the number?",
+      "options": [
+        {
+          "id": "opt_1",
+          "text": "2% increase",
+          "isCorrect": true
+        },
+        {
+          "id": "opt_2",
+          "text": "5% increase",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_3",
+          "text": "2% decrease",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_4",
+          "text": "No change",
+          "isCorrect": false
+        }
+      ],
+      "correctOptionId": "opt_1",
+      "explanation": "Using the successive percentage change formula:\nNet Change = a + b + (ab / 100)%\nHere, a = +20% and b = -15%\nNet Change = 20 - 15 + (20 × -15)/100 = 5 - 3 = +2%.\nSince the result is positive, it is a 2% increase.",
+      "shortcutTip": "Formula: a + b + (ab/100). Quick mental math: 20 - 15 - 3 = +2%.",
+      "difficulty": "easy",
+      "marks": 2,
+      "negativeMarks": 0.5,
+      "questionType": "single_mcq",
+      "year": 2024,
+      "source": "SSC CGL 2024 Tier-1 (Shift 2)",
+      "tags": [
+        "Percentage",
+        "Successive Change",
+        "Arithmetic"
+      ],
+      "isPYQ": true,
+      "isPublished": true
+    },
+    {
+      "id": "q_quant_02",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "chapterId": "chap_arithmetic",
+      "topicId": "top_profit_loss",
+      "questionText": "A shopkeeper marks his goods 40% above the cost price and allows a discount of 25% on the marked price. Find his profit or loss percentage.",
+      "options": [
+        {
+          "id": "opt_1",
+          "text": "5% Profit",
+          "isCorrect": true
+        },
+        {
+          "id": "opt_2",
+          "text": "10% Profit",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_3",
+          "text": "5% Loss",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_4",
+          "text": "15% Profit",
+          "isCorrect": false
+        }
+      ],
+      "correctOptionId": "opt_1",
+      "explanation": "Let Cost Price (CP) = 100.\nMarked Price (MP) = 100 + 40% of 100 = 140.\nDiscount allowed = 25% on MP = 0.25 × 140 = 35.\nSelling Price (SP) = MP - Discount = 140 - 35 = 105.\nProfit = SP - CP = 105 - 100 = 5.\nProfit% = (5 / 100) × 100 = 5% Profit.",
+      "shortcutTip": "Net = MarkUp - Discount - (MarkUp × Discount / 100) = 40 - 25 - (40 × 25 / 100) = 15 - 10 = +5%.",
+      "difficulty": "medium",
+      "marks": 2,
+      "negativeMarks": 0.5,
+      "questionType": "single_mcq",
+      "year": 2024,
+      "source": "SSC CGL 2024 Tier-1",
+      "tags": [
+        "Profit Loss",
+        "Discount",
+        "Marked Price"
+      ],
+      "isPYQ": true,
+      "isPublished": true
+    },
+    {
+      "id": "q_quant_03",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "chapterId": "chap_arithmetic",
+      "topicId": "top_ratio_proportion",
+      "questionText": "The ratio of income of A and B is 5 : 4 and the ratio of their expenditure is 3 : 2. If each saves ₹1600 at the end of the month, what is the income of A?",
+      "options": [
+        {
+          "id": "opt_1",
+          "text": "₹3,200",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_2",
+          "text": "₹4,000",
+          "isCorrect": true
+        },
+        {
+          "id": "opt_3",
+          "text": "₹4,800",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_4",
+          "text": "₹5,000",
+          "isCorrect": false
+        }
+      ],
+      "correctOptionId": "opt_2",
+      "explanation": "Income ratio = 5 : 4\nExpenditure ratio = 3 : 2\nDifference in income and expenditure units for A = 5 - 3 = 2 units.\nDifference for B = 4 - 2 = 2 units.\nSince the unit difference is equal to the savings:\n2 units = ₹1600 ⇒ 1 unit = ₹800.\nIncome of A = 5 units = 5 × 800 = ₹4,000.",
+      "shortcutTip": "Equal savings trick: Unit gap in income and expenditure is identical (2 units = 1600, 1 unit = 800, A = 5 × 800 = 4000).",
+      "difficulty": "easy",
+      "marks": 2,
+      "negativeMarks": 0.5,
+      "questionType": "single_mcq",
+      "year": 2023,
+      "source": "SSC CGL 2023 Tier-1",
+      "tags": [
+        "Ratio",
+        "Income Expenditure",
+        "Arithmetic"
+      ],
+      "isPYQ": true,
+      "isPublished": true
+    },
+    {
+      "id": "q_quant_04",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "chapterId": "chap_arithmetic",
+      "topicId": "top_time_work",
+      "questionText": "A can complete a work in 12 days and B in 18 days. They worked together for 4 days, after which B left. How many more days will A take to complete the remaining work alone?",
+      "options": [
+        {
+          "id": "opt_1",
+          "text": "5 1/3 days",
+          "isCorrect": true
+        },
+        {
+          "id": "opt_2",
+          "text": "6 days",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_3",
+          "text": "4 2/3 days",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_4",
+          "text": "7 days",
+          "isCorrect": false
+        }
+      ],
+      "correctOptionId": "opt_1",
+      "explanation": "Let Total Work = LCM(12, 18) = 36 units.\nEfficiency of A = 36 / 12 = 3 units/day.\nEfficiency of B = 36 / 18 = 2 units/day.\nCombined efficiency of (A + B) = 3 + 2 = 5 units/day.\nWork done in 4 days = 4 × 5 = 20 units.\nRemaining work = 36 - 20 = 16 units.\nTime taken by A alone = Remaining Work / Efficiency of A = 16 / 3 = 5 1/3 days.",
+      "shortcutTip": "LCM method: Work = 36, (A+B) do 20 in 4 days. Remaining 16 units done by A (eff 3) in 16/3 = 5 1/3 days.",
+      "difficulty": "medium",
+      "marks": 2,
+      "negativeMarks": 0.5,
+      "questionType": "single_mcq",
+      "year": 2024,
+      "source": "SSC CGL 2024 Tier-1",
+      "tags": [
+        "Time & Work",
+        "LCM Method",
+        "Arithmetic"
+      ],
+      "isPYQ": true,
+      "isPublished": true
+    },
+    {
+      "id": "q_reas_01",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_reasoning",
+      "chapterId": "chap_verbal_reasoning",
+      "topicId": "top_syllogisms",
+      "questionText": "Statements:\n1. All Mangoes are Fruits.\n2. Some Fruits are Sweet.\nConclusions:\nI. Some Mangoes are Sweet.\nII. All Sweet are Mangoes.",
+      "options": [
+        {
+          "id": "opt_1",
+          "text": "Only conclusion I follows",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_2",
+          "text": "Only conclusion II follows",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_3",
+          "text": "Neither conclusion I nor II follows",
+          "isCorrect": true
+        },
+        {
+          "id": "opt_4",
+          "text": "Both conclusions follow",
+          "isCorrect": false
+        }
+      ],
+      "correctOptionId": "opt_3",
+      "explanation": "From the statements: \"Mangoes\" are entirely inside \"Fruits\", and \"Fruits\" partially intersects with \"Sweet\". There is no definite direct relation given between \"Mangoes\" and \"Sweet\".\nTherefore:\n- Conclusion I (Some Mangoes are Sweet) is a possibility but not definite.\n- Conclusion II (All Sweet are Mangoes) is clearly false.\nThus, neither follows.",
+      "shortcutTip": "Universal Affirmative + Particular Affirmative gives no definite conclusion between extreme terms.",
+      "difficulty": "easy",
+      "marks": 2,
+      "negativeMarks": 0.5,
+      "questionType": "single_mcq",
+      "year": 2024,
+      "source": "SSC CGL 2024 Tier-1",
+      "tags": [
+        "Reasoning",
+        "Syllogisms",
+        "Logic"
+      ],
+      "isPYQ": true,
+      "isPublished": true
+    },
+    {
+      "id": "q_reas_02",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_reasoning",
+      "chapterId": "chap_coding_puzzles",
+      "topicId": "top_coding_decoding",
+      "questionText": "In a certain code language, if \"FLOWER\" is written as \"UOLDVI\", how will \"GARDEN\" be written in that code language?",
+      "options": [
+        {
+          "id": "opt_1",
+          "text": "TZIWVM",
+          "isCorrect": true
+        },
+        {
+          "id": "opt_2",
+          "text": "TYJVWN",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_3",
+          "text": "SZIVVM",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_4",
+          "text": "TZIVVN",
+          "isCorrect": false
+        }
+      ],
+      "correctOptionId": "opt_1",
+      "explanation": "Each letter is replaced by its reverse/opposite letter from the English alphabet (Sum of positional values = 27):\nF ↔ U (6 + 21 = 27)\nL ↔ O (12 + 15 = 27)\nO ↔ L (15 + 12 = 27)\nW ↔ D (23 + 4 = 27)\nE ↔ V (5 + 22 = 27)\nR ↔ I (18 + 9 = 27)\nApplying the same to \"GARDEN\":\nG ↔ T\nA ↔ Z\nR ↔ I\nD ↔ W\nE ↔ V\nN ↔ M\nResult: \"TZIWVM\".",
+      "shortcutTip": "Opposite pair rule: G=7 (27-7=20 -> T), A->Z, R->I, D->W, E->V, N->M.",
+      "difficulty": "easy",
+      "marks": 2,
+      "negativeMarks": 0.5,
+      "questionType": "single_mcq",
+      "year": 2023,
+      "source": "SSC CGL 2023 Tier-1",
+      "tags": [
+        "Coding Decoding",
+        "Opposite Letters",
+        "Reasoning"
+      ],
+      "isPYQ": true,
+      "isPublished": true
+    },
+    {
+      "id": "q_eng_01",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_english",
+      "chapterId": "chap_grammar",
+      "topicId": "top_spotting_errors",
+      "questionText": "Identify the segment in the sentence which contains a grammatical error:\n\"Neither the principal (A) / nor the teachers (B) / was present in the meeting (C) / yesterday. (D)\"",
+      "options": [
+        {
+          "id": "opt_1",
+          "text": "was present in the meeting",
+          "isCorrect": true
+        },
+        {
+          "id": "opt_2",
+          "text": "nor the teachers",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_3",
+          "text": "Neither the principal",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_4",
+          "text": "No error",
+          "isCorrect": false
+        }
+      ],
+      "correctOptionId": "opt_1",
+      "explanation": "Rule: When two subjects are joined by \"neither... nor\", the verb agrees with the subject nearest to it. Here, the nearest subject is \"the teachers\", which is plural. Therefore, the singular verb \"was\" must be replaced with the plural verb \"were present\".",
+      "shortcutTip": "Subject-Verb Agreement: In \"Neither... nor\", verb matches nearest noun (\"teachers\" is plural -> \"were\").",
+      "difficulty": "medium",
+      "marks": 2,
+      "negativeMarks": 0.5,
+      "questionType": "single_mcq",
+      "year": 2024,
+      "source": "SSC CGL 2024 Tier-1",
+      "tags": [
+        "English",
+        "Spotting Errors",
+        "Subject Verb Agreement"
+      ],
+      "isPYQ": true,
+      "isPublished": true
+    },
+    {
+      "id": "q_gs_01",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_gs",
+      "chapterId": "chap_polity_cgl",
+      "topicId": "top_indian_constitution",
+      "questionText": "Which Article of the Indian Constitution guarantees the \"Right to Constitutional Remedies\", allowing citizens to move the Supreme Court for the enforcement of fundamental rights?",
+      "options": [
+        {
+          "id": "opt_1",
+          "text": "Article 21",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_2",
+          "text": "Article 32",
+          "isCorrect": true
+        },
+        {
+          "id": "opt_3",
+          "text": "Article 44",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_4",
+          "text": "Article 226",
+          "isCorrect": false
+        }
+      ],
+      "correctOptionId": "opt_2",
+      "explanation": "Article 32 of the Constitution provides the Right to Constitutional Remedies. Dr. B.R. Ambedkar called Article 32 the \"heart and soul of the Constitution\" because without it, fundamental rights would be mere words on paper. Note: Article 226 confers writ power to High Courts, not the Supreme Court.",
+      "shortcutTip": "Article 32 = Supreme Court Writs. Article 226 = High Court Writs.",
+      "difficulty": "easy",
+      "marks": 2,
+      "negativeMarks": 0.5,
+      "questionType": "single_mcq",
+      "year": 2024,
+      "source": "SSC CGL 2024 / UPSC CSE",
+      "tags": [
+        "Polity",
+        "Fundamental Rights",
+        "Article 32"
+      ],
+      "isPYQ": true,
+      "isPublished": true
+    },
+    {
+      "id": "q_quant_05",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "chapterId": "chap_arithmetic",
+      "topicId": "top_profit_loss",
+      "questionText": "A dishonest dealer professes to sell his goods at cost price, but he uses a false weight of 920 grams instead of a 1 kg weight. What is his exact gain percentage?",
+      "options": [
+        {
+          "id": "opt_1",
+          "text": "8.69%",
+          "isCorrect": true
+        },
+        {
+          "id": "opt_2",
+          "text": "8.00%",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_3",
+          "text": "9.20%",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_4",
+          "text": "7.50%",
+          "isCorrect": false
+        }
+      ],
+      "correctOptionId": "opt_1",
+      "explanation": "Gain% = [Error / (True Value - Error)] × 100%\nHere Error = 1000g - 920g = 80g.\nGain% = (80 / 920) × 100 = (8 / 92) × 100 = (2 / 23) × 100 = 200 / 23 = 8.695% ≈ 8.69%.",
+      "shortcutTip": "Dishonest dealer formula: (Error / Weight actually given) × 100 = (80 / 920) × 100 = 8.69%.",
+      "difficulty": "hard",
+      "marks": 2,
+      "negativeMarks": 0.5,
+      "questionType": "single_mcq",
+      "year": 2023,
+      "source": "SSC CGL 2023 Tier-2",
+      "tags": [
+        "Dishonest Dealer",
+        "Profit & Loss",
+        "Advanced Arithmetic"
+      ],
+      "isPYQ": true,
+      "isPublished": true
+    },
+    {
+      "id": "q_gs_02",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_gs",
+      "chapterId": "chap_polity_cgl",
+      "topicId": "top_indian_constitution",
+      "questionText": "By which Constitutional Amendment Act was the \"Right to Education\" inserted as Article 21A in Part III of the Indian Constitution?",
+      "options": [
+        {
+          "id": "opt_1",
+          "text": "44th Amendment Act, 1978",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_2",
+          "text": "86th Amendment Act, 2002",
+          "isCorrect": true
+        },
+        {
+          "id": "opt_3",
+          "text": "91st Amendment Act, 2003",
+          "isCorrect": false
+        },
+        {
+          "id": "opt_4",
+          "text": "42nd Amendment Act, 1976",
+          "isCorrect": false
+        }
+      ],
+      "correctOptionId": "opt_2",
+      "explanation": "The 86th Constitutional Amendment Act, 2002 inserted Article 21A, making free and compulsory education for children between the ages of 6 and 14 a Fundamental Right.",
+      "shortcutTip": "86th Amendment 2002 = Right to Education (21A).",
+      "difficulty": "easy",
+      "marks": 2,
+      "negativeMarks": 0.5,
+      "questionType": "single_mcq",
+      "year": 2022,
+      "source": "SSC CGL 2022 / UPSC Prelims",
+      "tags": [
+        "Polity",
+        "Amendments",
+        "Article 21A"
+      ],
+      "isPYQ": true,
+      "isPublished": true
+    }
+  ],
+  "questionAttempts": [
+    {
+      "id": "att_1",
+      "userId": "user_student_demo",
+      "questionId": "q_quant_01",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "topicId": "top_percentage",
+      "selectedOptionId": "opt_1",
+      "isCorrect": true,
+      "timeSpentSeconds": 42,
+      "mode": "topic",
+      "timestamp": "2026-08-28T10:00:00.000Z"
+    },
+    {
+      "id": "att_2",
+      "userId": "user_student_demo",
+      "questionId": "q_quant_01",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "topicId": "top_percentage",
+      "selectedOptionId": "opt_1",
+      "isCorrect": true,
+      "timeSpentSeconds": 38,
+      "mode": "topic",
+      "timestamp": "2026-08-27T10:00:00.000Z"
+    },
+    {
+      "id": "att_3",
+      "userId": "user_student_demo",
+      "questionId": "q_quant_02",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "topicId": "top_profit_loss",
+      "selectedOptionId": "opt_2",
+      "isCorrect": false,
+      "timeSpentSeconds": 75,
+      "mode": "topic",
+      "timestamp": "2026-08-28T11:00:00.000Z"
+    },
+    {
+      "id": "att_4",
+      "userId": "user_student_demo",
+      "questionId": "q_quant_05",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "topicId": "top_profit_loss",
+      "selectedOptionId": "opt_3",
+      "isCorrect": false,
+      "timeSpentSeconds": 90,
+      "mode": "topic",
+      "timestamp": "2026-08-27T11:00:00.000Z"
+    },
+    {
+      "id": "att_5",
+      "userId": "user_student_demo",
+      "questionId": "q_quant_02",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "topicId": "top_profit_loss",
+      "selectedOptionId": "opt_1",
+      "isCorrect": true,
+      "timeSpentSeconds": 65,
+      "mode": "topic",
+      "timestamp": "2026-08-26T11:00:00.000Z"
+    },
+    {
+      "id": "att_6",
+      "userId": "user_student_demo",
+      "questionId": "q_quant_04",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "topicId": "top_time_work",
+      "selectedOptionId": "opt_2",
+      "isCorrect": false,
+      "timeSpentSeconds": 85,
+      "mode": "topic",
+      "timestamp": "2026-08-28T14:00:00.000Z"
+    },
+    {
+      "id": "att_7",
+      "userId": "user_student_demo",
+      "questionId": "q_quant_04",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "topicId": "top_time_work",
+      "selectedOptionId": "opt_1",
+      "isCorrect": true,
+      "timeSpentSeconds": 80,
+      "mode": "topic",
+      "timestamp": "2026-08-25T14:00:00.000Z"
+    },
+    {
+      "id": "att_8",
+      "userId": "user_student_demo",
+      "questionId": "q_reas_01",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_reasoning",
+      "topicId": "top_syllogisms",
+      "selectedOptionId": "opt_3",
+      "isCorrect": true,
+      "timeSpentSeconds": 30,
+      "mode": "topic",
+      "timestamp": "2026-08-28T15:00:00.000Z"
+    },
+    {
+      "id": "att_9",
+      "userId": "user_student_demo",
+      "questionId": "q_reas_02",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_reasoning",
+      "topicId": "top_coding_decoding",
+      "selectedOptionId": "opt_1",
+      "isCorrect": true,
+      "timeSpentSeconds": 25,
+      "mode": "topic",
+      "timestamp": "2026-08-28T15:10:00.000Z"
+    },
+    {
+      "id": "att_10",
+      "userId": "user_student_demo",
+      "questionId": "q_gs_01",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_gs",
+      "topicId": "top_indian_constitution",
+      "selectedOptionId": "opt_2",
+      "isCorrect": true,
+      "timeSpentSeconds": 20,
+      "mode": "topic",
+      "timestamp": "2026-08-28T16:00:00.000Z"
+    },
+    {
+      "id": "att_11",
+      "userId": "user_student_demo",
+      "questionId": "q_gs_02",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_gs",
+      "topicId": "top_indian_constitution",
+      "selectedOptionId": "opt_4",
+      "isCorrect": false,
+      "timeSpentSeconds": 35,
+      "mode": "topic",
+      "timestamp": "2026-08-27T16:00:00.000Z"
+    },
+    {
+      "id": "att_1788090011765_tf4f",
+      "userId": "user_1788086356826",
+      "questionId": "q_quant_02",
+      "examId": "exam_ssc_cgl",
+      "subjectId": "sub_ssc_quant",
+      "topicId": "top_profit_loss",
+      "selectedOptionId": "opt_2",
+      "isCorrect": false,
+      "timeSpentSeconds": 17,
+      "mode": "topic",
+      "timestamp": "2026-08-30T11:40:11.765Z"
+    }
+  ],
+  "mockTests": [
+    {
+      "id": "mock_ssc_tier1_all_india_01",
+      "examId": "exam_ssc_cgl",
+      "title": "SSC CGL 2026 Tier-1 All India Full Mock Test #1",
+      "description": "High-yield exam simulation according to latest TCS exam pattern with negative marking and sectional time splits.",
+      "type": "full",
+      "durationMinutes": 60,
+      "totalMarks": 200,
+      "totalQuestions": 100,
+      "passingMarks": 130,
+      "difficulty": "medium",
+      "isFree": true,
+      "sections": [
+        {
+          "subjectId": "sub_ssc_quant",
+          "subjectName": "Quantitative Aptitude",
+          "questionIds": [
+            "q_quant_01",
+            "q_quant_02",
+            "q_quant_03",
+            "q_quant_04",
+            "q_quant_05"
+          ],
+          "durationMinutes": 15
+        },
+        {
+          "subjectId": "sub_ssc_reasoning",
+          "subjectName": "General Intelligence & Reasoning",
+          "questionIds": [
+            "q_reas_01",
+            "q_reas_02"
+          ],
+          "durationMinutes": 15
+        },
+        {
+          "subjectId": "sub_ssc_english",
+          "subjectName": "English Comprehension",
+          "questionIds": [
+            "q_eng_01"
+          ],
+          "durationMinutes": 15
+        },
+        {
+          "subjectId": "sub_ssc_gs",
+          "subjectName": "General Awareness",
+          "questionIds": [
+            "q_gs_01",
+            "q_gs_02"
+          ],
+          "durationMinutes": 15
+        }
+      ],
+      "createdAt": "2026-01-15T00:00:00.000Z"
+    },
+    {
+      "id": "mock_ssc_quant_sectional_01",
+      "examId": "exam_ssc_cgl",
+      "title": "Quantitative Aptitude Sectional Speed Booster",
+      "description": "Targeted sectional test for arithmetic calculations, percentages, and profit & loss speed mastery.",
+      "type": "sectional",
+      "durationMinutes": 20,
+      "totalMarks": 50,
+      "totalQuestions": 25,
+      "passingMarks": 35,
+      "difficulty": "hard",
+      "isFree": true,
+      "sections": [
+        {
+          "subjectId": "sub_ssc_quant",
+          "subjectName": "Quantitative Aptitude",
+          "questionIds": [
+            "q_quant_01",
+            "q_quant_02",
+            "q_quant_03",
+            "q_quant_04",
+            "q_quant_05"
+          ],
+          "durationMinutes": 20
+        }
+      ],
+      "createdAt": "2026-01-20T00:00:00.000Z"
+    },
+    {
+      "id": "mock_ssc_pyq_2024_shift1",
+      "examId": "exam_ssc_cgl",
+      "title": "SSC CGL 2024 Tier 1 Official PYQ Live Simulation",
+      "description": "Official memory-based questions from SSC CGL 2024 September examination.",
+      "type": "full",
+      "durationMinutes": 60,
+      "totalMarks": 200,
+      "totalQuestions": 100,
+      "passingMarks": 135,
+      "difficulty": "medium",
+      "isFree": true,
+      "sections": [
+        {
+          "subjectId": "sub_ssc_quant",
+          "subjectName": "Quantitative Aptitude",
+          "questionIds": [
+            "q_quant_01",
+            "q_quant_02",
+            "q_quant_03"
+          ],
+          "durationMinutes": 15
+        },
+        {
+          "subjectId": "sub_ssc_reasoning",
+          "subjectName": "General Intelligence",
+          "questionIds": [
+            "q_reas_01",
+            "q_reas_02"
+          ],
+          "durationMinutes": 15
+        }
+      ],
+      "createdAt": "2026-02-01T00:00:00.000Z"
+    }
+  ],
+  "mockTestAttempts": [
+    {
+      "id": "attempt_mock_01",
+      "userId": "user_student_demo",
+      "mockTestId": "mock_ssc_tier1_all_india_01",
+      "mockTestTitle": "SSC CGL 2026 Tier-1 All India Full Mock Test #1",
+      "examId": "exam_ssc_cgl",
+      "examName": "SSC CGL",
+      "score": 142.5,
+      "maxScore": 200,
+      "accuracy": 82.5,
+      "percentage": 71.25,
+      "percentileRank": 89.4,
+      "timeTakenSeconds": 3240,
+      "totalCorrect": 76,
+      "totalWrong": 16,
+      "totalSkipped": 8,
+      "sectionAnalytics": [
+        {
+          "subjectId": "sub_ssc_quant",
+          "subjectName": "Quantitative Aptitude",
+          "score": 38.5,
+          "maxScore": 50,
+          "accuracy": 78,
+          "totalAttempted": 22,
+          "totalCorrect": 20,
+          "totalWrong": 2,
+          "totalSkipped": 3,
+          "timeTakenSeconds": 960
+        },
+        {
+          "subjectId": "sub_ssc_reasoning",
+          "subjectName": "Reasoning Ability",
+          "score": 45,
+          "maxScore": 50,
+          "accuracy": 92,
+          "totalAttempted": 24,
+          "totalCorrect": 23,
+          "totalWrong": 1,
+          "totalSkipped": 1,
+          "timeTakenSeconds": 840
+        },
+        {
+          "subjectId": "sub_ssc_english",
+          "subjectName": "English Comprehension",
+          "score": 36,
+          "maxScore": 50,
+          "accuracy": 75,
+          "totalAttempted": 22,
+          "totalCorrect": 19,
+          "totalWrong": 3,
+          "totalSkipped": 3,
+          "timeTakenSeconds": 780
+        },
+        {
+          "subjectId": "sub_ssc_gs",
+          "subjectName": "General Awareness",
+          "score": 23,
+          "maxScore": 50,
+          "accuracy": 60,
+          "totalAttempted": 18,
+          "totalCorrect": 14,
+          "totalWrong": 4,
+          "totalSkipped": 7,
+          "timeTakenSeconds": 660
+        }
+      ],
+      "questionResponses": [
+        {
+          "questionId": "q_quant_01",
+          "selectedOptionId": "opt_1",
+          "status": "answered",
+          "timeSpentSeconds": 45,
+          "isCorrect": true,
+          "marksAwarded": 2
+        },
+        {
+          "questionId": "q_quant_02",
+          "selectedOptionId": "opt_1",
+          "status": "answered",
+          "timeSpentSeconds": 62,
+          "isCorrect": true,
+          "marksAwarded": 2
+        },
+        {
+          "questionId": "q_quant_03",
+          "selectedOptionId": "opt_2",
+          "status": "answered",
+          "timeSpentSeconds": 50,
+          "isCorrect": true,
+          "marksAwarded": 2
+        },
+        {
+          "questionId": "q_quant_04",
+          "selectedOptionId": "opt_1",
+          "status": "answered",
+          "timeSpentSeconds": 70,
+          "isCorrect": true,
+          "marksAwarded": 2
+        },
+        {
+          "questionId": "q_quant_05",
+          "selectedOptionId": "opt_3",
+          "status": "answered",
+          "timeSpentSeconds": 80,
+          "isCorrect": false,
+          "marksAwarded": -0.5
+        },
+        {
+          "questionId": "q_reas_01",
+          "selectedOptionId": "opt_3",
+          "status": "answered",
+          "timeSpentSeconds": 28,
+          "isCorrect": true,
+          "marksAwarded": 2
+        },
+        {
+          "questionId": "q_reas_02",
+          "selectedOptionId": "opt_1",
+          "status": "answered",
+          "timeSpentSeconds": 22,
+          "isCorrect": true,
+          "marksAwarded": 2
+        },
+        {
+          "questionId": "q_eng_01",
+          "selectedOptionId": "opt_1",
+          "status": "answered",
+          "timeSpentSeconds": 35,
+          "isCorrect": true,
+          "marksAwarded": 2
+        },
+        {
+          "questionId": "q_gs_01",
+          "selectedOptionId": "opt_2",
+          "status": "answered",
+          "timeSpentSeconds": 18,
+          "isCorrect": true,
+          "marksAwarded": 2
+        },
+        {
+          "questionId": "q_gs_02",
+          "selectedOptionId": "opt_4",
+          "status": "answered",
+          "timeSpentSeconds": 30,
+          "isCorrect": false,
+          "marksAwarded": -0.5
+        }
+      ],
+      "difficultyAnalysis": {
+        "easy": {
+          "correct": 35,
+          "total": 38,
+          "accuracy": 92.1
+        },
+        "medium": {
+          "correct": 28,
+          "total": 36,
+          "accuracy": 77.7
+        },
+        "hard": {
+          "correct": 13,
+          "total": 26,
+          "accuracy": 50
+        }
+      },
+      "timeAnalysis": {
+        "averageTimePerQuestion": 35.2,
+        "fastestQuestionTime": 12,
+        "slowestQuestionTime": 94
+      },
+      "recommendations": [
+        "General Awareness accuracy (60%) is below your target. Focus on Indian Polity amendments and Current Affairs.",
+        "In Quantitative Aptitude, review Profit & Loss with Dishonest Dealer problems to avoid negative marks.",
+        "Your Reasoning speed and accuracy (92%) are in the top 5th percentile nationwide."
+      ],
+      "completedAt": "2026-08-28T17:30:00.000Z"
+    }
+  ],
+  "studyPlans": [
+    {
+      "id": "plan_1788108005188",
+      "userId": "user_student_demo",
+      "examId": "exam_gate",
+      "examName": "GATE",
+      "targetExamDate": "2026-11-15",
+      "dailyStudyMinutes": 120,
+      "targetScore": 85,
+      "currentDay": 1,
+      "totalDays": 60,
+      "weakTopicsTargeted": [],
+      "adaptiveNotes": [
+        "Prioritized Arithmetic Math due to detected weak accuracy.",
+        "Scheduled 1 full mock test every weekend to calibrate exam stamina."
+      ],
+      "schedule": [
+        {
+          "dayNumber": 1,
+          "date": "2026-08-30",
+          "focusTitle": "Study Session",
+          "totalMinutes": 120,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        },
+        {
+          "dayNumber": 2,
+          "date": "2026-08-31",
+          "focusTitle": "Study Session",
+          "totalMinutes": 120,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        },
+        {
+          "dayNumber": 3,
+          "date": "2026-09-01",
+          "focusTitle": "Study Session",
+          "totalMinutes": 120,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        },
+        {
+          "dayNumber": 4,
+          "date": "2026-09-02",
+          "focusTitle": "Study Session",
+          "totalMinutes": 120,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        },
+        {
+          "dayNumber": 5,
+          "date": "2026-09-03",
+          "focusTitle": "Study Session",
+          "totalMinutes": 120,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        },
+        {
+          "dayNumber": 6,
+          "date": "2026-09-04",
+          "focusTitle": "Study Session",
+          "totalMinutes": 120,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        },
+        {
+          "dayNumber": 7,
+          "date": "2026-09-05",
+          "focusTitle": "Study Session",
+          "totalMinutes": 120,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        }
+      ],
+      "createdAt": "2026-08-30T16:40:05.188Z",
+      "updatedAt": "2026-08-30T16:40:05.188Z"
+    },
+    {
+      "id": "plan_notes_1788111475337",
+      "userId": "user_1788086356826",
+      "examId": "exam_custom",
+      "examName": "GATE",
+      "targetExamDate": "2026-09-06",
+      "dailyStudyMinutes": 180,
+      "targetScore": 100,
+      "currentDay": 1,
+      "totalDays": 7,
+      "planSource": "uploaded_notes",
+      "timetablePreferences": {
+        "dailyHours": 3,
+        "preferredTimeSlots": [
+          "morning",
+          "evening"
+        ],
+        "studyRhythm": "deep_work",
+        "targetDays": 7,
+        "restDays": [
+          "Sunday"
+        ]
+      },
+      "uploadedNoteId": "note_1788111475334",
+      "uploadedNoteTitle": "multimedia-animation-techniques-a-comprehensive-guide",
+      "extractedTopics": [
+        {
+          "id": "ext_top_1",
+          "topicName": "[PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+          "subjectCategory": "General Studies",
+          "estimatedHours": 2.3,
+          "difficulty": "hard",
+          "keyFormulasOrHacks": [
+            "High-yield revision formula for [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+            "Exam hack: Eliminate extreme boundary options first."
+          ],
+          "coreConcepts": [
+            "Fundamental definitions and core theorems of [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+            "Frequently tested patterns in recent 5-year PYQs."
+          ],
+          "notesSnippet": "Extracted from uploaded notes: Focus on accuracy and speed multipliers for [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]."
+        },
+        {
+          "id": "ext_top_2",
+          "topicName": "PDF content extraction complete. Please review and edit the text if needed.",
+          "subjectCategory": "General Studies",
+          "estimatedHours": 2.3,
+          "difficulty": "easy",
+          "keyFormulasOrHacks": [
+            "High-yield revision formula for PDF content extraction complete. Please review and edit the text if needed.",
+            "Exam hack: Eliminate extreme boundary options first."
+          ],
+          "coreConcepts": [
+            "Fundamental definitions and core theorems of PDF content extraction complete. Please review and edit the text if needed.",
+            "Frequently tested patterns in recent 5-year PYQs."
+          ],
+          "notesSnippet": "Extracted from uploaded notes: Focus on accuracy and speed multipliers for PDF content extraction complete. Please review and edit the text if needed.."
+        }
+      ],
+      "spacedRepetitionPlan": [
+        {
+          "reviewDay": 3,
+          "topicsToRecall": [
+            "[PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]"
+          ],
+          "technique": "Active Recall & Flash Formula Drill"
+        },
+        {
+          "reviewDay": 7,
+          "topicsToRecall": [
+            "PDF content extraction complete. Please review and edit the text if needed.",
+            "Revision"
+          ],
+          "technique": "Comprehensive PYQ Speed Test (25 Qs)"
+        }
+      ],
+      "facultyTips": [
+        "Prioritize concept notes in the first session before jumping into speed practice.",
+        "Spend 10 minutes before sleep doing active recall on the formulas memorized earlier."
+      ],
+      "schedule": [
+        {
+          "dayNumber": 1,
+          "date": "2026-08-30",
+          "focusTitle": "Day 1: Active Recovery & Retention Review",
+          "totalMinutes": 60,
+          "isRestDay": true,
+          "isCompleted": false,
+          "dailyTestQuestions": 15,
+          "tasks": [
+            {
+              "id": "task_d1_rest",
+              "subjectId": "sub_notes",
+              "subjectName": "Weekly Consolidation",
+              "topicId": "top_notes_1_1",
+              "topicName": "Light Formula Revision & Mistake Notebook Review",
+              "timeSlot": "06:30 AM - 08:00 AM",
+              "durationMinutes": 60,
+              "activityType": "revision",
+              "targetQuestionsCount": 10,
+              "taskObjective": "Review past mistakes and consolidate formula memory without fatigue.",
+              "extractedCheatNotes": "Active recall for formula deck.",
+              "priority": "low",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            }
+          ]
+        },
+        {
+          "dayNumber": 2,
+          "date": "2026-08-31",
+          "focusTitle": "Day 2: PDF content extraction complete. Please review and edit the text if needed. & [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+          "totalMinutes": 180,
+          "isRestDay": false,
+          "isCompleted": false,
+          "dailyTestQuestions": 15,
+          "tasks": [
+            {
+              "id": "task_d2_1",
+              "subjectId": "sub_notes",
+              "subjectName": "General Studies",
+              "topicId": "top_notes_2_1",
+              "topicName": "PDF content extraction complete. Please review and edit the text if needed.",
+              "timeSlot": "06:30 AM - 08:00 AM",
+              "durationMinutes": 90,
+              "activityType": "concept_study",
+              "targetQuestionsCount": 15,
+              "taskObjective": "Deep study notes for PDF content extraction complete. Please review and edit the text if needed. and master key derivations.",
+              "extractedCheatNotes": "High-yield revision formula for PDF content extraction complete. Please review and edit the text if needed.",
+              "priority": "high",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            },
+            {
+              "id": "task_d2_2",
+              "subjectId": "sub_notes",
+              "subjectName": "General Studies",
+              "topicId": "top_notes_2_2",
+              "topicName": "[PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+              "timeSlot": "08:15 AM - 09:30 AM",
+              "durationMinutes": 90,
+              "activityType": "topic_practice",
+              "targetQuestionsCount": 20,
+              "taskObjective": "Timed PYQ drill on [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf] using exam shortcuts.",
+              "extractedCheatNotes": "Exam hack: Eliminate extreme boundary options first.",
+              "priority": "medium",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            }
+          ]
+        },
+        {
+          "dayNumber": 3,
+          "date": "2026-09-01",
+          "focusTitle": "Day 3: [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf] & PDF content extraction complete. Please review and edit the text if needed.",
+          "totalMinutes": 180,
+          "isRestDay": false,
+          "isCompleted": false,
+          "dailyTestQuestions": 15,
+          "tasks": [
+            {
+              "id": "task_d3_1",
+              "subjectId": "sub_notes",
+              "subjectName": "General Studies",
+              "topicId": "top_notes_3_1",
+              "topicName": "[PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+              "timeSlot": "06:30 AM - 08:00 AM",
+              "durationMinutes": 90,
+              "activityType": "concept_study",
+              "targetQuestionsCount": 15,
+              "taskObjective": "Deep study notes for [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf] and master key derivations.",
+              "extractedCheatNotes": "High-yield revision formula for [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+              "priority": "high",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            },
+            {
+              "id": "task_d3_2",
+              "subjectId": "sub_notes",
+              "subjectName": "General Studies",
+              "topicId": "top_notes_3_2",
+              "topicName": "PDF content extraction complete. Please review and edit the text if needed.",
+              "timeSlot": "08:15 AM - 09:30 AM",
+              "durationMinutes": 90,
+              "activityType": "topic_practice",
+              "targetQuestionsCount": 20,
+              "taskObjective": "Timed PYQ drill on PDF content extraction complete. Please review and edit the text if needed. using exam shortcuts.",
+              "extractedCheatNotes": "Exam hack: Eliminate extreme boundary options first.",
+              "priority": "medium",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            }
+          ]
+        },
+        {
+          "dayNumber": 4,
+          "date": "2026-09-02",
+          "focusTitle": "Day 4: PDF content extraction complete. Please review and edit the text if needed. & [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+          "totalMinutes": 180,
+          "isRestDay": false,
+          "isCompleted": false,
+          "dailyTestQuestions": 15,
+          "tasks": [
+            {
+              "id": "task_d4_1",
+              "subjectId": "sub_notes",
+              "subjectName": "General Studies",
+              "topicId": "top_notes_4_1",
+              "topicName": "PDF content extraction complete. Please review and edit the text if needed.",
+              "timeSlot": "06:30 AM - 08:00 AM",
+              "durationMinutes": 90,
+              "activityType": "concept_study",
+              "targetQuestionsCount": 15,
+              "taskObjective": "Deep study notes for PDF content extraction complete. Please review and edit the text if needed. and master key derivations.",
+              "extractedCheatNotes": "High-yield revision formula for PDF content extraction complete. Please review and edit the text if needed.",
+              "priority": "high",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            },
+            {
+              "id": "task_d4_2",
+              "subjectId": "sub_notes",
+              "subjectName": "General Studies",
+              "topicId": "top_notes_4_2",
+              "topicName": "[PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+              "timeSlot": "08:15 AM - 09:30 AM",
+              "durationMinutes": 90,
+              "activityType": "topic_practice",
+              "targetQuestionsCount": 20,
+              "taskObjective": "Timed PYQ drill on [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf] using exam shortcuts.",
+              "extractedCheatNotes": "Exam hack: Eliminate extreme boundary options first.",
+              "priority": "medium",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            }
+          ]
+        },
+        {
+          "dayNumber": 5,
+          "date": "2026-09-03",
+          "focusTitle": "Day 5: [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf] & PDF content extraction complete. Please review and edit the text if needed.",
+          "totalMinutes": 180,
+          "isRestDay": false,
+          "isCompleted": false,
+          "dailyTestQuestions": 15,
+          "tasks": [
+            {
+              "id": "task_d5_1",
+              "subjectId": "sub_notes",
+              "subjectName": "General Studies",
+              "topicId": "top_notes_5_1",
+              "topicName": "[PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+              "timeSlot": "06:30 AM - 08:00 AM",
+              "durationMinutes": 90,
+              "activityType": "concept_study",
+              "targetQuestionsCount": 15,
+              "taskObjective": "Deep study notes for [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf] and master key derivations.",
+              "extractedCheatNotes": "High-yield revision formula for [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+              "priority": "high",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            },
+            {
+              "id": "task_d5_2",
+              "subjectId": "sub_notes",
+              "subjectName": "General Studies",
+              "topicId": "top_notes_5_2",
+              "topicName": "PDF content extraction complete. Please review and edit the text if needed.",
+              "timeSlot": "08:15 AM - 09:30 AM",
+              "durationMinutes": 90,
+              "activityType": "topic_practice",
+              "targetQuestionsCount": 20,
+              "taskObjective": "Timed PYQ drill on PDF content extraction complete. Please review and edit the text if needed. using exam shortcuts.",
+              "extractedCheatNotes": "Exam hack: Eliminate extreme boundary options first.",
+              "priority": "medium",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            }
+          ]
+        },
+        {
+          "dayNumber": 6,
+          "date": "2026-09-04",
+          "focusTitle": "Day 6: PDF content extraction complete. Please review and edit the text if needed. & [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+          "totalMinutes": 180,
+          "isRestDay": false,
+          "isCompleted": false,
+          "dailyTestQuestions": 15,
+          "tasks": [
+            {
+              "id": "task_d6_1",
+              "subjectId": "sub_notes",
+              "subjectName": "General Studies",
+              "topicId": "top_notes_6_1",
+              "topicName": "PDF content extraction complete. Please review and edit the text if needed.",
+              "timeSlot": "06:30 AM - 08:00 AM",
+              "durationMinutes": 90,
+              "activityType": "concept_study",
+              "targetQuestionsCount": 15,
+              "taskObjective": "Deep study notes for PDF content extraction complete. Please review and edit the text if needed. and master key derivations.",
+              "extractedCheatNotes": "High-yield revision formula for PDF content extraction complete. Please review and edit the text if needed.",
+              "priority": "high",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            },
+            {
+              "id": "task_d6_2",
+              "subjectId": "sub_notes",
+              "subjectName": "General Studies",
+              "topicId": "top_notes_6_2",
+              "topicName": "[PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+              "timeSlot": "08:15 AM - 09:30 AM",
+              "durationMinutes": 90,
+              "activityType": "topic_practice",
+              "targetQuestionsCount": 20,
+              "taskObjective": "Timed PYQ drill on [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf] using exam shortcuts.",
+              "extractedCheatNotes": "Exam hack: Eliminate extreme boundary options first.",
+              "priority": "medium",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            }
+          ]
+        },
+        {
+          "dayNumber": 7,
+          "date": "2026-09-05",
+          "focusTitle": "Day 7: [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf] & PDF content extraction complete. Please review and edit the text if needed.",
+          "totalMinutes": 180,
+          "isRestDay": false,
+          "isCompleted": false,
+          "dailyTestQuestions": 15,
+          "tasks": [
+            {
+              "id": "task_d7_1",
+              "subjectId": "sub_notes",
+              "subjectName": "General Studies",
+              "topicId": "top_notes_7_1",
+              "topicName": "[PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+              "timeSlot": "06:30 AM - 08:00 AM",
+              "durationMinutes": 90,
+              "activityType": "concept_study",
+              "targetQuestionsCount": 15,
+              "taskObjective": "Deep study notes for [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf] and master key derivations.",
+              "extractedCheatNotes": "High-yield revision formula for [PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+              "priority": "high",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            },
+            {
+              "id": "task_d7_2",
+              "subjectId": "sub_notes",
+              "subjectName": "General Studies",
+              "topicId": "top_notes_7_2",
+              "topicName": "PDF content extraction complete. Please review and edit the text if needed.",
+              "timeSlot": "08:15 AM - 09:30 AM",
+              "durationMinutes": 90,
+              "activityType": "topic_practice",
+              "targetQuestionsCount": 20,
+              "taskObjective": "Timed PYQ drill on PDF content extraction complete. Please review and edit the text if needed. using exam shortcuts.",
+              "extractedCheatNotes": "Exam hack: Eliminate extreme boundary options first.",
+              "priority": "medium",
+              "isCompleted": false,
+              "notesSourceId": "note_1788111475334"
+            }
+          ]
+        }
+      ],
+      "weakTopicsTargeted": [
+        "[PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]",
+        "PDF content extraction complete. Please review and edit the text if needed."
+      ],
+      "adaptiveNotes": [
+        "Syllabus broken down into high-retention daily modules matching your morning & evening routine.",
+        "Spaced repetition intervals placed on Day 3 and Day 7 to prevent memory decay.",
+        "Includes 15-20 daily speed practice questions calibrated for GATE."
+      ],
+      "createdAt": "2026-08-30T17:37:55.338Z",
+      "updatedAt": "2026-08-30T17:37:55.338Z"
+    },
+    {
+      "id": "plan_1788189435575",
+      "userId": "user_1788186020968",
+      "examId": "exam_ssc_cgl",
+      "examName": "SSC CGL",
+      "targetExamDate": "2026-11-15",
+      "dailyStudyMinutes": 150,
+      "targetScore": 80,
+      "currentDay": 1,
+      "totalDays": 60,
+      "weakTopicsTargeted": [],
+      "adaptiveNotes": [
+        "Prioritized Arithmetic Math due to detected weak accuracy.",
+        "Scheduled 1 full mock test every weekend to calibrate exam stamina."
+      ],
+      "schedule": [
+        {
+          "dayNumber": 1,
+          "date": "2026-08-31",
+          "focusTitle": "Study Session",
+          "totalMinutes": 150,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        },
+        {
+          "dayNumber": 2,
+          "date": "2026-09-01",
+          "focusTitle": "Study Session",
+          "totalMinutes": 150,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        },
+        {
+          "dayNumber": 3,
+          "date": "2026-09-02",
+          "focusTitle": "Study Session",
+          "totalMinutes": 150,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        },
+        {
+          "dayNumber": 4,
+          "date": "2026-09-03",
+          "focusTitle": "Study Session",
+          "totalMinutes": 150,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        },
+        {
+          "dayNumber": 5,
+          "date": "2026-09-04",
+          "focusTitle": "Study Session",
+          "totalMinutes": 150,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        },
+        {
+          "dayNumber": 6,
+          "date": "2026-09-05",
+          "focusTitle": "Study Session",
+          "totalMinutes": 150,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        },
+        {
+          "dayNumber": 7,
+          "date": "2026-09-06",
+          "focusTitle": "Study Session",
+          "totalMinutes": 150,
+          "isCompleted": false,
+          "isRestDay": false,
+          "dailyTestQuestions": 20,
+          "tasks": []
+        }
+      ],
+      "createdAt": "2026-08-31T15:17:15.575Z",
+      "updatedAt": "2026-08-31T15:17:15.575Z"
+    }
+  ],
+  "revisions": [
+    {
+      "id": "rev_1",
+      "userId": "user_student_demo",
+      "topicId": "top_profit_loss",
+      "topicName": "Profit, Loss & Marked Price",
+      "subjectName": "Quantitative Aptitude",
+      "examName": "SSC CGL",
+      "lastStudiedDate": "2026-08-26",
+      "nextReviewDate": "2026-08-30",
+      "intervalStage": 3,
+      "masteryScore": 55,
+      "status": "due",
+      "formulaCount": 4
+    },
+    {
+      "id": "rev_2",
+      "userId": "user_student_demo",
+      "topicId": "top_indian_constitution",
+      "topicName": "Fundamental Rights (Articles 12-35)",
+      "subjectName": "General Awareness",
+      "examName": "SSC CGL",
+      "lastStudiedDate": "2026-08-28",
+      "nextReviewDate": "2026-08-30",
+      "intervalStage": 1,
+      "masteryScore": 68,
+      "status": "due",
+      "formulaCount": 6
+    },
+    {
+      "id": "rev_3",
+      "userId": "user_student_demo",
+      "topicId": "top_percentage",
+      "topicName": "Percentage & Successive Formula",
+      "subjectName": "Quantitative Aptitude",
+      "examName": "SSC CGL",
+      "lastStudiedDate": "2026-08-22",
+      "nextReviewDate": "2026-09-01",
+      "intervalStage": 7,
+      "masteryScore": 88,
+      "status": "upcoming",
+      "formulaCount": 3
+    }
+  ],
+  "dailyChallenges": [
+    {
+      "id": "daily_challenge_today",
+      "date": "2026-08-29",
+      "examId": "exam_ssc_cgl",
+      "title": "Daily Rank Booster Challenge (20 Questions Mixed)",
+      "description": "5 Quant + 5 Reasoning + 5 English + 5 General Awareness to maintain daily streak and sharpen problem solving speed.",
+      "questions": [
+        {
+          "id": "q_quant_01",
+          "examId": "exam_ssc_cgl",
+          "subjectId": "sub_ssc_quant",
+          "chapterId": "chap_arithmetic",
+          "topicId": "top_percentage",
+          "questionText": "A number is first increased by 20% and then decreased by 15%. What is the net percentage change in the number?",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "2% increase",
+              "isCorrect": true
+            },
+            {
+              "id": "opt_2",
+              "text": "5% increase",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_3",
+              "text": "2% decrease",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_4",
+              "text": "No change",
+              "isCorrect": false
+            }
+          ],
+          "correctOptionId": "opt_1",
+          "explanation": "Using the successive percentage change formula:\nNet Change = a + b + (ab / 100)%\nHere, a = +20% and b = -15%\nNet Change = 20 - 15 + (20 × -15)/100 = 5 - 3 = +2%.\nSince the result is positive, it is a 2% increase.",
+          "shortcutTip": "Formula: a + b + (ab/100). Quick mental math: 20 - 15 - 3 = +2%.",
+          "difficulty": "easy",
+          "marks": 2,
+          "negativeMarks": 0.5,
+          "questionType": "single_mcq",
+          "year": 2024,
+          "source": "SSC CGL 2024 Tier-1 (Shift 2)",
+          "tags": [
+            "Percentage",
+            "Successive Change",
+            "Arithmetic"
+          ],
+          "isPYQ": true,
+          "isPublished": true
+        },
+        {
+          "id": "q_quant_02",
+          "examId": "exam_ssc_cgl",
+          "subjectId": "sub_ssc_quant",
+          "chapterId": "chap_arithmetic",
+          "topicId": "top_profit_loss",
+          "questionText": "A shopkeeper marks his goods 40% above the cost price and allows a discount of 25% on the marked price. Find his profit or loss percentage.",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "5% Profit",
+              "isCorrect": true
+            },
+            {
+              "id": "opt_2",
+              "text": "10% Profit",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_3",
+              "text": "5% Loss",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_4",
+              "text": "15% Profit",
+              "isCorrect": false
+            }
+          ],
+          "correctOptionId": "opt_1",
+          "explanation": "Let Cost Price (CP) = 100.\nMarked Price (MP) = 100 + 40% of 100 = 140.\nDiscount allowed = 25% on MP = 0.25 × 140 = 35.\nSelling Price (SP) = MP - Discount = 140 - 35 = 105.\nProfit = SP - CP = 105 - 100 = 5.\nProfit% = (5 / 100) × 100 = 5% Profit.",
+          "shortcutTip": "Net = MarkUp - Discount - (MarkUp × Discount / 100) = 40 - 25 - (40 × 25 / 100) = 15 - 10 = +5%.",
+          "difficulty": "medium",
+          "marks": 2,
+          "negativeMarks": 0.5,
+          "questionType": "single_mcq",
+          "year": 2024,
+          "source": "SSC CGL 2024 Tier-1",
+          "tags": [
+            "Profit Loss",
+            "Discount",
+            "Marked Price"
+          ],
+          "isPYQ": true,
+          "isPublished": true
+        },
+        {
+          "id": "q_quant_03",
+          "examId": "exam_ssc_cgl",
+          "subjectId": "sub_ssc_quant",
+          "chapterId": "chap_arithmetic",
+          "topicId": "top_ratio_proportion",
+          "questionText": "The ratio of income of A and B is 5 : 4 and the ratio of their expenditure is 3 : 2. If each saves ₹1600 at the end of the month, what is the income of A?",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "₹3,200",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_2",
+              "text": "₹4,000",
+              "isCorrect": true
+            },
+            {
+              "id": "opt_3",
+              "text": "₹4,800",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_4",
+              "text": "₹5,000",
+              "isCorrect": false
+            }
+          ],
+          "correctOptionId": "opt_2",
+          "explanation": "Income ratio = 5 : 4\nExpenditure ratio = 3 : 2\nDifference in income and expenditure units for A = 5 - 3 = 2 units.\nDifference for B = 4 - 2 = 2 units.\nSince the unit difference is equal to the savings:\n2 units = ₹1600 ⇒ 1 unit = ₹800.\nIncome of A = 5 units = 5 × 800 = ₹4,000.",
+          "shortcutTip": "Equal savings trick: Unit gap in income and expenditure is identical (2 units = 1600, 1 unit = 800, A = 5 × 800 = 4000).",
+          "difficulty": "easy",
+          "marks": 2,
+          "negativeMarks": 0.5,
+          "questionType": "single_mcq",
+          "year": 2023,
+          "source": "SSC CGL 2023 Tier-1",
+          "tags": [
+            "Ratio",
+            "Income Expenditure",
+            "Arithmetic"
+          ],
+          "isPYQ": true,
+          "isPublished": true
+        },
+        {
+          "id": "q_quant_04",
+          "examId": "exam_ssc_cgl",
+          "subjectId": "sub_ssc_quant",
+          "chapterId": "chap_arithmetic",
+          "topicId": "top_time_work",
+          "questionText": "A can complete a work in 12 days and B in 18 days. They worked together for 4 days, after which B left. How many more days will A take to complete the remaining work alone?",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "5 1/3 days",
+              "isCorrect": true
+            },
+            {
+              "id": "opt_2",
+              "text": "6 days",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_3",
+              "text": "4 2/3 days",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_4",
+              "text": "7 days",
+              "isCorrect": false
+            }
+          ],
+          "correctOptionId": "opt_1",
+          "explanation": "Let Total Work = LCM(12, 18) = 36 units.\nEfficiency of A = 36 / 12 = 3 units/day.\nEfficiency of B = 36 / 18 = 2 units/day.\nCombined efficiency of (A + B) = 3 + 2 = 5 units/day.\nWork done in 4 days = 4 × 5 = 20 units.\nRemaining work = 36 - 20 = 16 units.\nTime taken by A alone = Remaining Work / Efficiency of A = 16 / 3 = 5 1/3 days.",
+          "shortcutTip": "LCM method: Work = 36, (A+B) do 20 in 4 days. Remaining 16 units done by A (eff 3) in 16/3 = 5 1/3 days.",
+          "difficulty": "medium",
+          "marks": 2,
+          "negativeMarks": 0.5,
+          "questionType": "single_mcq",
+          "year": 2024,
+          "source": "SSC CGL 2024 Tier-1",
+          "tags": [
+            "Time & Work",
+            "LCM Method",
+            "Arithmetic"
+          ],
+          "isPYQ": true,
+          "isPublished": true
+        },
+        {
+          "id": "q_reas_01",
+          "examId": "exam_ssc_cgl",
+          "subjectId": "sub_ssc_reasoning",
+          "chapterId": "chap_verbal_reasoning",
+          "topicId": "top_syllogisms",
+          "questionText": "Statements:\n1. All Mangoes are Fruits.\n2. Some Fruits are Sweet.\nConclusions:\nI. Some Mangoes are Sweet.\nII. All Sweet are Mangoes.",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "Only conclusion I follows",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_2",
+              "text": "Only conclusion II follows",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_3",
+              "text": "Neither conclusion I nor II follows",
+              "isCorrect": true
+            },
+            {
+              "id": "opt_4",
+              "text": "Both conclusions follow",
+              "isCorrect": false
+            }
+          ],
+          "correctOptionId": "opt_3",
+          "explanation": "From the statements: \"Mangoes\" are entirely inside \"Fruits\", and \"Fruits\" partially intersects with \"Sweet\". There is no definite direct relation given between \"Mangoes\" and \"Sweet\".\nTherefore:\n- Conclusion I (Some Mangoes are Sweet) is a possibility but not definite.\n- Conclusion II (All Sweet are Mangoes) is clearly false.\nThus, neither follows.",
+          "shortcutTip": "Universal Affirmative + Particular Affirmative gives no definite conclusion between extreme terms.",
+          "difficulty": "easy",
+          "marks": 2,
+          "negativeMarks": 0.5,
+          "questionType": "single_mcq",
+          "year": 2024,
+          "source": "SSC CGL 2024 Tier-1",
+          "tags": [
+            "Reasoning",
+            "Syllogisms",
+            "Logic"
+          ],
+          "isPYQ": true,
+          "isPublished": true
+        },
+        {
+          "id": "q_reas_02",
+          "examId": "exam_ssc_cgl",
+          "subjectId": "sub_ssc_reasoning",
+          "chapterId": "chap_coding_puzzles",
+          "topicId": "top_coding_decoding",
+          "questionText": "In a certain code language, if \"FLOWER\" is written as \"UOLDVI\", how will \"GARDEN\" be written in that code language?",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "TZIWVM",
+              "isCorrect": true
+            },
+            {
+              "id": "opt_2",
+              "text": "TYJVWN",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_3",
+              "text": "SZIVVM",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_4",
+              "text": "TZIVVN",
+              "isCorrect": false
+            }
+          ],
+          "correctOptionId": "opt_1",
+          "explanation": "Each letter is replaced by its reverse/opposite letter from the English alphabet (Sum of positional values = 27):\nF ↔ U (6 + 21 = 27)\nL ↔ O (12 + 15 = 27)\nO ↔ L (15 + 12 = 27)\nW ↔ D (23 + 4 = 27)\nE ↔ V (5 + 22 = 27)\nR ↔ I (18 + 9 = 27)\nApplying the same to \"GARDEN\":\nG ↔ T\nA ↔ Z\nR ↔ I\nD ↔ W\nE ↔ V\nN ↔ M\nResult: \"TZIWVM\".",
+          "shortcutTip": "Opposite pair rule: G=7 (27-7=20 -> T), A->Z, R->I, D->W, E->V, N->M.",
+          "difficulty": "easy",
+          "marks": 2,
+          "negativeMarks": 0.5,
+          "questionType": "single_mcq",
+          "year": 2023,
+          "source": "SSC CGL 2023 Tier-1",
+          "tags": [
+            "Coding Decoding",
+            "Opposite Letters",
+            "Reasoning"
+          ],
+          "isPYQ": true,
+          "isPublished": true
+        },
+        {
+          "id": "q_eng_01",
+          "examId": "exam_ssc_cgl",
+          "subjectId": "sub_ssc_english",
+          "chapterId": "chap_grammar",
+          "topicId": "top_spotting_errors",
+          "questionText": "Identify the segment in the sentence which contains a grammatical error:\n\"Neither the principal (A) / nor the teachers (B) / was present in the meeting (C) / yesterday. (D)\"",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "was present in the meeting",
+              "isCorrect": true
+            },
+            {
+              "id": "opt_2",
+              "text": "nor the teachers",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_3",
+              "text": "Neither the principal",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_4",
+              "text": "No error",
+              "isCorrect": false
+            }
+          ],
+          "correctOptionId": "opt_1",
+          "explanation": "Rule: When two subjects are joined by \"neither... nor\", the verb agrees with the subject nearest to it. Here, the nearest subject is \"the teachers\", which is plural. Therefore, the singular verb \"was\" must be replaced with the plural verb \"were present\".",
+          "shortcutTip": "Subject-Verb Agreement: In \"Neither... nor\", verb matches nearest noun (\"teachers\" is plural -> \"were\").",
+          "difficulty": "medium",
+          "marks": 2,
+          "negativeMarks": 0.5,
+          "questionType": "single_mcq",
+          "year": 2024,
+          "source": "SSC CGL 2024 Tier-1",
+          "tags": [
+            "English",
+            "Spotting Errors",
+            "Subject Verb Agreement"
+          ],
+          "isPYQ": true,
+          "isPublished": true
+        },
+        {
+          "id": "q_gs_01",
+          "examId": "exam_ssc_cgl",
+          "subjectId": "sub_ssc_gs",
+          "chapterId": "chap_polity_cgl",
+          "topicId": "top_indian_constitution",
+          "questionText": "Which Article of the Indian Constitution guarantees the \"Right to Constitutional Remedies\", allowing citizens to move the Supreme Court for the enforcement of fundamental rights?",
+          "options": [
+            {
+              "id": "opt_1",
+              "text": "Article 21",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_2",
+              "text": "Article 32",
+              "isCorrect": true
+            },
+            {
+              "id": "opt_3",
+              "text": "Article 44",
+              "isCorrect": false
+            },
+            {
+              "id": "opt_4",
+              "text": "Article 226",
+              "isCorrect": false
+            }
+          ],
+          "correctOptionId": "opt_2",
+          "explanation": "Article 32 of the Constitution provides the Right to Constitutional Remedies. Dr. B.R. Ambedkar called Article 32 the \"heart and soul of the Constitution\" because without it, fundamental rights would be mere words on paper. Note: Article 226 confers writ power to High Courts, not the Supreme Court.",
+          "shortcutTip": "Article 32 = Supreme Court Writs. Article 226 = High Court Writs.",
+          "difficulty": "easy",
+          "marks": 2,
+          "negativeMarks": 0.5,
+          "questionType": "single_mcq",
+          "year": 2024,
+          "source": "SSC CGL 2024 / UPSC CSE",
+          "tags": [
+            "Polity",
+            "Fundamental Rights",
+            "Article 32"
+          ],
+          "isPYQ": true,
+          "isPublished": true
+        }
+      ],
+      "totalMarks": 40,
+      "durationMinutes": 15
+    }
+  ],
+  "uploadedNotes": [
+    {
+      "id": "note_1788187654477",
+      "userId": "user_1788186020968",
+      "title": "SSC CGL Syllabus",
+      "rawContent": "1. Tier 2 Syllabus (Final Merit Stage)Tier 2 performance directly determines your final rank and post allocation. Paper I is compulsory for all posts, while specialized papers apply to specific vacancies. There is a negative marking of 1 mark for wrong answers in Paper I.Paper I: Compulsory for All PostsSession I (2 Hours 15 Mins):Section 1 — Module I: Mathematical Abilities (30 Qs / 90 Marks): Advanced problem solving across Number Systems, Arithmetic, Algebra, Geometry, Trigonometry, and Statistics & Probability (Mean, median, mode, standard deviation, and simple probability).Section 1 — Module II: Reasoning & General Intelligence (30 Qs / 90 Marks): Critical thinking, complex puzzles, emotional/social intelligence, and advanced verbal/non-verbal reasoning.Section 2 — Module I: English Language & Comprehension (45 Qs / 135 Marks): Higher emphasis on heavy reading comprehension, para-jumbles, cloze tests, and advanced grammar.Section 2 — Module II: General Awareness (25 Qs / 75 Marks): Advanced deep-dive into Static GK, Polity, and Current Affairs.Section 3 — Module I: Computer Knowledge (20 Qs / 60 Marks - Qualifying Only): Computer basics, Operating Systems, MS Office (Word, Excel, PPT), Internet & E-mails, Networking, Cyber Security, and basic keyboard shortcuts.Session II (15 Mins):Section 3 — Module II: Data Entry Speed Test (DEST - Qualifying Only): Typing test requiring candidates to enter around 2,000 key depressions.Specialized Papers (For Specific Posts Only)Paper II: Statistics (100 Qs / 200 Marks): For candidates applying for the Junior Statistical Officer (JSO) post. Covers Probability, Sampling, Statistical Inference, Variance, and Time Series.Paper III: General Studies (Finance & Economics) (100 Qs / 200 Marks): Mandatory for Group 'B' Assistant Audit Officer (AAO) / Assistant Accounts Officer vacancies. Covers Financial Accounting, Economics, Governance (Role of CAG, Finance Commission), and Micro/Macroeconomics.",
+      "uploadedAt": "2026-08-31T14:47:34.477Z",
+      "extractedTopicsCount": 20,
+      "summary": "Organized 20 core topics extracted from your notes tailored for SSC CGL."
+    },
+    {
+      "id": "note_1788187325821",
+      "userId": "user_1788186020968",
+      "title": "SSC CGL Syllabus",
+      "rawContent": "1. Tier 1 Syllabus (Qualifying Stage)The Tier 1 exam is a 60-minute online test consisting of 100 multiple-choice questions for a total of 200 marks. There is a negative marking of 0.50 marks for every wrong answer.Quantitative Aptitude (25 Qs / 50 Marks):Arithmetic: Percentages, Profit & Loss, Ratio & Proportion, Averages, Interest, Time & Work, Time & Distance, Mixture & Alligations.Advance Maths: Basic Algebraic Identities, Geometry (Triangles, Circles, Tangents), Mensuration (2D/3D shapes), Trigonometry (Standard identities, Heights & Distances).Data Interpretation: Histograms, Bar diagrams, Pie charts.General Intelligence & Reasoning (25 Qs / 50 Marks):Verbal Reasoning: Analogy, Classification, Series, Coding-Decoding, Blood Relations, Syllogism, Venn Diagrams.Non-Verbal Reasoning: Paper folding/cutting, Mirror images, Embedded figures, Cube & Dice, Pattern completion.English Comprehension (25 Qs / 50 Marks):Grammar: Spotting errors, Sentence improvement, Active/Passive voice, Direct/Indirect speech.Vocabulary: Synonyms, Antonyms, Idioms & Phrases, One-word substitution, Spelling corrections.Comprehension: Reading comprehension passages and Cloze tests.General Awareness (25 Qs / 50 Marks):Static GK & Core Subjects: Indian History, Geography, Polity & Constitution, Economics.General Science: Physics, Chemistry, Biology up to Class 10 level.Current Affairs: National and international events, awards, sports, and government schemes.2. Tier 2 Syllabus (Final Merit Stage)Tier 2 performance directly determines your final rank and post allocation. Paper I is compulsory for all posts, while specialized papers apply to specific vacancies. There is a negative marking of 1 mark for wrong answers in Paper I.Paper I: Compulsory for All PostsSession I (2 Hours 15 Mins):Section 1 — Module I: Mathematical Abilities (30 Qs / 90 Marks): Advanced problem solving across Number Systems, Arithmetic, Algebra, Geometry, Trigonometry, and Statistics & Probability (Mean, median, mode, standard deviation, and simple probability).Section 1 — Module II: Reasoning & General Intelligence (30 Qs / 90 Marks): Critical thinking, complex puzzles, emotional/social intelligence, and advanced verbal/non-verbal reasoning.Section 2 — Module I: English Language & Comprehension (45 Qs / 135 Marks): Higher emphasis on heavy reading comprehension, para-jumbles, cloze tests, and advanced grammar.Section 2 — Module II: General Awareness (25 Qs / 75 Marks): Advanced deep-dive into Static GK, Polity, and Current Affairs.Section 3 — Module I: Computer Knowledge (20 Qs / 60 Marks - Qualifying Only): Computer basics, Operating Systems, MS Office (Word, Excel, PPT), Internet & E-mails, Networking, Cyber Security, and basic keyboard shortcuts.Session II (15 Mins):Section 3 — Module II: Data Entry Speed Test (DEST - Qualifying Only): Typing test requiring candidates to enter around 2,000 key depressions.Specialized Papers (For Specific Posts Only)Paper II: Statistics (100 Qs / 200 Marks): For candidates applying for the Junior Statistical Officer (JSO) post. Covers Probability, Sampling, Statistical Inference, Variance, and Time Series.Paper III: General Studies (Finance & Economics) (100 Qs / 200 Marks): Mandatory for Group 'B' Assistant Audit Officer (AAO) / Assistant Accounts Officer vacancies. Covers Financial Accounting, Economics, Governance (Role of CAG, Finance Commission), and Micro/Macroeconomics.",
+      "uploadedAt": "2026-08-31T14:42:05.821Z",
+      "extractedTopicsCount": 20,
+      "summary": "Organized 20 core topics extracted from your notes tailored for SSC CGL."
+    },
+    {
+      "id": "note_1788186241636",
+      "userId": "user_1788186020968",
+      "title": "JS",
+      "rawContent": "[PDF uploaded: JS.pdf]\n\nPDF content extraction complete. Please review and edit the text if needed.",
+      "uploadedAt": "2026-08-31T14:24:01.636Z",
+      "extractedTopicsCount": 2,
+      "summary": "Organized 2 core topics extracted from your notes tailored for SSC CGL."
+    },
+    {
+      "id": "note_1788111475334",
+      "userId": "user_1788086356826",
+      "title": "multimedia-animation-techniques-a-comprehensive-guide",
+      "rawContent": "[PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]\n\nPDF content extraction complete. Please review and edit the text if needed.",
+      "uploadedAt": "2026-08-30T17:37:55.334Z",
+      "extractedTopicsCount": 2,
+      "summary": "Organized 2 core topics extracted from your notes tailored for GATE."
+    },
+    {
+      "id": "note_1788110713206",
+      "userId": "user_1788086356826",
+      "title": "multimedia-animation-techniques-a-comprehensive-guide",
+      "rawContent": "[PDF uploaded: multimedia-animation-techniques-a-comprehensive-guide.pdf]\n\nPDF content extraction complete. Please review and edit the text if needed.",
+      "uploadedAt": "2026-08-30T17:25:13.206Z",
+      "extractedTopicsCount": 8,
+      "summary": "Organized 8 core topics extracted from your notes tailored for GATE."
+    },
+    {
+      "id": "note_1788110619194",
+      "userId": "user_1788086356826",
+      "title": "JS",
+      "rawContent": "[PDF uploaded: JS.pdf]\n\nPDF content extraction complete. Please review and edit the text if needed.",
+      "uploadedAt": "2026-08-30T17:23:39.194Z",
+      "extractedTopicsCount": 8,
+      "summary": "Organized 8 core topics extracted from your notes tailored for GATE."
+    },
+    {
+      "id": "note_1788109541036",
+      "userId": "user_1788086356826",
+      "title": "ccs341-data-warehousing-technical-publication-schema-analysis (1)",
+      "rawContent": "33.2  .  2  Vertical  Partition  Disadvantages  Normalization  :  3  -  2 2  4  -  18  4.5   Snowflake   Schema  4.5  .  1  Features  of  Snowflake  Schema  4.5 .  2  Advantages  of  Snowflake  Schema  4.5  .  3   Disadvantages  of  Snowflake   Schema  4.6   Comparison  of   Star  Schema  and  Snowflake  Schema  4.7  Fact  Constellation  Schema  4.7  .  1  Features  of  Fact   Constellation  Schema  4.7  .  2  Advantages  of   Fact  Constellation  Schema  4.7 .  3  Disadvantages  of  Fact  Constellation  Schema  4.8  Schema  Definition  4.9  Process  Architecture  3.3  .  3  3  -  2 3  4  -  2 0  3.3  .  3.1  Advantages  of  Normalization  3.33  .  2  Disadvantages  of   Normalization  3.3 . 4  Row  Splitting  33.4  .  1  Advantages  of  Row  Splitting  33.4  . 2   Disadvantages  of   Row   Splitting  3.3  .  5  Comparison  of  Normalization   and   Row  Splitting  3.3 .  6  Horizontal  Partition  3.3  .  7  Advantages   of   Horizontal  Partition  3.3  .  8   Disadvantages  of   Horizontal   Partition  3.3 .  9   Comparison  of  Horizontal   and   Vertical  Partition  Review   Questions  3.4  Two   Marks  Questions  with  Answers  3  -  2 5  4  -  2 1  3  -  2 6  4  -  2 1  3  -  2 7  4  -  2 2  3  -  2 9  4  -   2 3  3  -  3 0  4  -  2 5  3  -  3 1   4   -  2 6  3  -  3 2  4  -   2 7  3  -   3 4  4  -  2 8  3  -  3 5  4   -  2 9  3   -  3 6  4   -  3 1  4.9 .  1  Types  of  Process  Architecture  4.9 .  2  Centralized   Process   Architecture  4.9  .  3   Benefits  of  Centralized   Process  Architecture  3  -  3 8  4  -  3 1 3   -  3 9  4  -  3 2  UNIT  IV  4  -  3 3  4.9  .  4  Distributed   Process   Architecture  4.9  .  5  Benefits  of  Distributed   Process  Architecture  4.10   Types   of   Data  Base   Parallelism  4.11  Datawarehouse  Tools   4  -   3 4  Chapter  -  4  Dimensional  Modeling  and  Schema  4.1  Dimensional  Modeling  4.1  .  1  The  Key  Principles   of  Dimensional  Modeling  4.1  .  2  The   Objectives  of   Dimensional  Modeling  4.1  .  3   Elements  of  Dimensional  Data   Model  4.1  . 4   Steps   of  Dimensional   Modeling  4.1  . 5   Advantages  of   Dimensional  Modeling  4.2  Multi  -  Dimensional   Data  Modeling  4.2 .  1  4.3   Data  Cube  . . .  4.4   Star  Schema  (  4  -  1  )  to  (  4  -  40  )  4  -  3 5  4  -  2  4  -  3 6  4  -  2  4   -  3 8  Review   Questions  4.12   Two  Marks  Questions  with   Answers  4  -   3  4  -  3 8  4  -  4  UNITV  4  -  5  4  -  6  (  5  -  1  )  to  (  5  -  26  )  Chapter  -  5   System  &   Process   Managers  5.1  Data  Warehousing   System   Managers  5.2   System   Configuration   Manager  5.3   System   Scheduling   Manager  5.4   System   Event   Manager  5.5   System  Database  Manager  5.6   System   Backup   Recovery   Manager  5.7   Data   Warehousing   Process   Managers  4  -  8   5  -  2  Key  Components   of   Multi  -  Dimensional   Data   Modeling   4  -  1 0   5  -  3  4  -  1 2  5   -   5  4  -  1 4  5   -   6  4.4  .  1  Features  of   Star   Schema  4.4 .  2  Advantages  of  Star   Schema  4.4 . 3   Disadvantages   of   Star  Schema  4  -  1 5  5  -  8  4  -  1 7  5   -  9  4  -  1 7  5  -  1 1  (  viii  )   (  ix  )",
+      "uploadedAt": "2026-08-30T17:05:41.036Z",
+      "extractedTopicsCount": 8,
+      "summary": "Organized 8 core topics extracted from your notes tailored for GATE."
+    },
+    {
+      "id": "note_1788109495461",
+      "userId": "user_1788086356826",
+      "title": "JS",
+      "rawContent": "[PDF uploaded: JS.pdf]\n\nPDF content extraction complete. Please review and edit the text if needed.",
+      "uploadedAt": "2026-08-30T17:04:55.461Z",
+      "extractedTopicsCount": 8,
+      "summary": "Organized 8 core topics extracted from your notes tailored for GATE."
+    },
+    {
+      "id": "note_1788109262802",
+      "userId": "user_1788086356826",
+      "title": "Artificial-Intelligence-and-Machine-Learning",
+      "rawContent": "Añčufucua I±čeuge±ce & Machu±e Leañ±u±g  A± I±čñ¿děcču¿± č¿ čhe Tech±¿¿gueÿ Shaéu±g Oěñ Fěčěñe\nINTRODUCTION  Whač uÿ Añčufucua I±čeuge±ce?  Añčufucua I±čeuge±ce (AI) ñeéñeÿe±čÿ ¿±e ¿f čhe «¿ÿč čña±ÿf¿ñ«ačuļe čech±¿¿guca adļa±ceÿ ¿f ¿ěñ eña. Ač učÿ c¿ñe, AI uÿ čhe ÿu«ěaču¿± ¿f hě«a± u±čeuge±ce éñ¿ceÿÿeÿ bō «achu±eÿ, éañčucěañō c¿«éěčeñ ÿōÿče«ÿ. Theÿe éñ¿ceÿÿeÿ u±cěde eañ±u±g, ñeaÿ¿±u±g, éñ¿be«-ÿ¿ļu±g, éeñceéču¿±, a±d a±gěage ě±deñÿča±du±g. I± č¿daō'ÿ u±čeñc¿±±ecčed Ł¿ñd, AI haÿ bec¿«e u±cñeaÿu±gō u«é¿ñča±č aÿ uč dñuļeÿ u±±¿ļaču¿± acñ¿ÿÿ ļuñčěaō eļeñō u±děÿčñō. Fñ¿« čhe ñec¿««e±daču¿±ÿ ō¿ě ÿee ¿± NečfuŊ č¿ čhe fñaěd dečecču¿± ÿōÿče«ÿ éñ¿čecču±g ō¿ěñ ba± acc¿ě±č, AI uÿ añeadō e«bedded u± ¿ěñ dauō uļeÿ u± Łaōÿ Łe ¿fče± d¿±'č eļe± ±¿čuce.  Whō AI Maččeñÿ T¿daō:  Pñ¿ceÿÿeÿ «aÿÿuļe a«¿ě±čÿ ¿f dača faÿčeñ čha± hě«a±ō é¿ÿÿube  Aěč¿«ačeÿ ñeéečučuļe čaÿÿ, fñeeu±g hě«a±ÿ f¿ñ cñeačuļe Ł¿ñ  Maeÿ accěñače éñeducču¿±ÿ baÿed ¿± huÿč¿ñuca éaččeñ±ÿ  Peñÿ¿±auśeÿ ěÿeñ eŊéeñue±ceÿ u± ñea-ču«e  S¿ļeÿ c¿«éeŊ éñ¿be«ÿ čhač čñaduču¿±a éñ¿gña««u±g ca±±¿č ha±de  The ñeaču¿±ÿhué bečŁee± AI a±d Machu±e Leañ±u±g uÿ f¿ě±daču¿±a: Łhue AI uÿ čhe bñ¿adeñ c¿±ceéč ¿f «achu±eÿ beu±g abe č¿ caññō ¿ěč čaÿÿ u± a \"ÿ«añč\" Łaō, Machu±e Leañ±u±g uÿ a ÿéecufuc ÿěbÿeč ¿f AI čhač e±abeÿ «achu±eÿ č¿ eañ± fñ¿« eŊéeñue±ce Łučh¿ěč beu±g eŊéucučō éñ¿gña««ed f¿ñ eļeñō ÿce±añu¿.\nCORE CONCEPTS  U±deñÿča±du±g Añčufucua I±čeuge±ce  Defu±uču¿± ¿f AI  AI uÿ čhe bña±ch ¿f c¿«éěčeñ ÿcue±ce deducačed č¿ cñeaču±g ÿōÿče«ÿ caéabe ¿f éeñf¿ñ«u±g čaÿÿ čhač čōéucaō ñeïěuñe hě«a± u±čeuge±ce. Thuÿ u±cědeÿ ļuÿěa éeñceéču¿±, ÿéeech ñec¿g±uču¿±, decuÿu¿±-«au±g, a±d a±gěage čña±ÿaču¿±.  Pñu«añō G¿a  The fě±da«e±ča g¿a ¿f AI uÿ č¿ cñeače u±čeuge±č age±čÿ4ÿōÿče«ÿ čhač ca± éeñceuļe čheuñ e±ļuñ¿±«e±č, éñ¿ceÿÿ u±f¿ñ«aču¿±, eañ± fñ¿« eŊéeñue±ceÿ, a±d čae acču¿±ÿ č¿ achueļe ÿéecufuc ¿becčuļeÿ aěč¿±¿«¿ěÿō.  Rea-W¿ñd EŊa«éeÿ  Vuñčěa aÿÿuÿča±čÿ (Suñu, AeŊa, G¿¿ge Aÿÿuÿča±č)  Rec¿««e±daču¿± e±gu±eÿ (NečfuŊ, Sé¿čufō, A«aś¿±)  I«age ñec¿g±uču¿± ÿōÿče«ÿ  Aěč¿±¿«¿ěÿ ļehuceÿ  Ga«u±g AI (cheÿÿ, G¿) AI ÿōÿče«ÿ ca± be cačeg¿ñuśed u±č¿ čŁ¿ «au± čōéeÿ:   Narrow AI , Łhuch uÿ deÿug±ed f¿ñ ÿéecufuc čaÿÿ (ue facua ñec¿g±uču¿± ¿ñ a±gěage čña±ÿaču¿±), a±d   General AI , Łhuch Ł¿ěd é¿ÿÿeÿÿ čhe abuučō č¿ ě±deñÿča±d, eañ±, a±d aééō ±¿Łedge acñ¿ÿÿ ļañu¿ěÿ d¿«au±ÿ4čh¿ěgh čñěe ge±eña AI ñe«au±ÿ añgeō čhe¿ñečuca ač čhuÿ é¿u±č.\nMACHINE LEARNING  Whač uÿ Machu±e Leañ±u±g?  Defu±uču¿± & C¿ñe C¿±ceéč  Machu±e Leañ±u±g (ML) uÿ a ÿěbÿeč ¿f añčufucua u±čeuge±ce čhač f¿cěÿeÿ ¿± běudu±g ÿōÿče«ÿ čhač eañ± fñ¿« a±d «ae decuÿu¿±ÿ baÿed ¿± dača. I±ÿčead ¿f beu±g eŊéucučō éñ¿gña««ed Łučh ñěeÿ f¿ñ eļeñō é¿ÿÿube ÿce±añu¿, ML ag¿ñučh«ÿ ude±čufō éaččeñ±ÿ u± dača a±d u«éñ¿ļe čheuñ éeñf¿ñ«a±ce ¿ļeñ ču«e čhñ¿ěgh eŊéeñue±ce. Thu± ¿f uč čhuÿ Łaō: čñaduču¿±a éñ¿gña««u±g uÿ ue guļu±g ÿ¿«e¿±e a ñecuée č¿ f¿¿Ł eŊacčō, Łhue «achu±e eañ±u±g uÿ ue čeachu±g ÿ¿«e¿±e č¿ c¿¿ bō ečču±g čhe« eŊéeñu«e±č Łučh u±gñedue±čÿ a±d eañ± Łhač Ł¿ñÿ beÿč.  The ML Pñ¿ceÿÿ F¿Ł  Machu±e eañ±u±g ¿éeñačeÿ čhñ¿ěgh a ÿōÿče«ačuc éñ¿ceÿÿ:  Dača C¿ecču¿±:   Gačheñ ñeeļa±č, hugh-ïěaučō dačaÿečÿ 1.  Dača Pñeéañaču¿±:   Cea±, ¿ñga±uśe, a±d f¿ñ«ač čhe dača 2.  M¿de Tñau±u±g:   Feed dača č¿ ag¿ñučh«ÿ č¿ ude±čufō éaččeñ±ÿ 3.  M¿de Eļaěaču¿±:   Teÿč čhe «¿de'ÿ accěñacō a±d éeñf¿ñ«a±ce 4.  Pñeducču¿±/Oěčéěč:   Deé¿ō čhe «¿de č¿ «ae decuÿu¿±ÿ ¿± ±eŁ dača 5.  AI ļÿ. ML: U±deñÿča±du±g čhe Duffeñe±ce  Añčufucua I±čeuge±ce   uÿ čhe bñ¿adeñ ě«bñea c¿±ceéč4čhe udea ¿f «achu±eÿ eŊhubuču±g u±čeuge±ce. Ič u±cědeÿ ñěe-baÿed ÿōÿče«ÿ, eŊéeñč ÿōÿče«ÿ, a±d a±ō c¿«éěčaču¿±a aééñ¿ach č¿ u±čeuge±č behaļu¿ñ.  Machu±e Leañ±u±g   uÿ a ÿéecufuc u«ée«e±čaču¿± ¿f AI čhač f¿cěÿeÿ ¿± eañ±u±g fñ¿« dača ñačheñ čha± f¿¿Łu±g éñe-éñ¿gña««ed ñěeÿ. A ML uÿ AI, běč ±¿č a AI uÿ ML. F¿ñ eŊa«ée, a cheÿÿ éñ¿gña« čhač ěÿeÿ éñedefu±ed ñěeÿ a±d ag¿ñučh«ÿ uÿ AI běč ±¿č ML. H¿Łeļeñ, AéhaG¿, Łhuch eañ±ed č¿ éaō G¿ bō a±aōśu±g «uu¿±ÿ ¿f ga«eÿ, uÿ b¿čh AI a±d ML.\nThñee Tōéeÿ ¿f Machu±e Leañ±u±g  Sěéeñļuÿed Leañ±u±g  The ag¿ñučh« eañ±ÿ fñ¿« abeed čñau±u±g dača, «au±g éñeducču¿±ÿ baÿed ¿± u±éěč-¿ěčéěč éauñÿ. Ič'ÿ ue eañ±u±g Łučh a čeacheñ Łh¿ éñ¿ļudeÿ c¿ññecč a±ÿŁeñÿ.  Common uses:  E«au ÿéa« dečecču¿±  I«age caÿÿufucaču¿±  Pñuce éñeducču¿±  Meduca duag±¿ÿuÿ  Example:   Tñau±u±g a «¿de č¿ ñec¿g±uśe cačÿ bō ÿh¿Łu±g uč čh¿ěÿa±dÿ ¿f u«ageÿ abeed \"cač\" ¿ñ \"±¿č cač.\"  U±ÿěéeñļuÿed Leañ±u±g  The ag¿ñučh« fu±dÿ hudde± éaččeñ±ÿ u± ě±abeed dača Łučh¿ěč gěuda±ce. Ič'ÿ ue eŊé¿ñu±g a±d duÿc¿ļeñu±g éaččeñ±ÿ ¿± ō¿ěñ ¿Ł±.  Common uses:  Cěÿč¿«eñ ÿeg«e±čaču¿±  A±¿«aō dečecču¿±  Mañeč baÿeč a±aōÿuÿ  Du«e±ÿu¿±aučō ñeděcču¿±  Example:   Gñ¿ěéu±g cěÿč¿«eñÿ u±č¿ ÿeg«e±čÿ baÿed ¿± éěñchaÿu±g behaļu¿ñ Łučh¿ěč éñedefu±ed cačeg¿ñueÿ.  Reu±f¿ñce«e±č Leañ±u±g  The ag¿ñučh« eañ±ÿ čhñ¿ěgh čñua a±d eññ¿ñ, ñeceuļu±g ñeŁañdÿ f¿ñ c¿ññecč acču¿±ÿ a±d ée±ačueÿ f¿ñ Łñ¿±g ¿±eÿ. Ič'ÿ ue čñau±u±g a éeč Łučh čñeačÿ.  Common uses:  Ga«e éaōu±g AI  R¿b¿čucÿ c¿±čñ¿  Tñaffuc ughč ¿éču«uśaču¿±  Reÿ¿ěñce «a±age«e±č  Example:   Tñau±u±g a ñ¿b¿č č¿ ±aļugače a «aśe bō ñeŁañdu±g uč Łhe± uč «¿ļeÿ c¿ÿeñ č¿ čhe eŊuč.\nALGORITHMS  P¿éěañ AI & ML Ag¿ñučh«ÿ  Machu±e eañ±u±g e±c¿«éaÿÿeÿ a duļeñÿe č¿¿uč ¿f ag¿ñučh«ÿ, each deÿug±ed f¿ñ ÿéecufuc čōéeÿ ¿f éñ¿be«ÿ. U±deñÿča±du±g čheÿe fě±da«e±ča ag¿ñučh«ÿ uÿ eÿÿe±čua f¿ñ a±ō¿±e Ł¿ñu±g Łučh AI a±d ML čech±¿¿gueÿ.  Lu±eañ Regñeÿÿu¿±  A ÿěéeñļuÿed eañ±u±g ag¿ñučh« ěÿed f¿ñ éñeducču±g c¿±ču±ě¿ěÿ ļaěeÿ bō fu±du±g čhe u±eañ ñeaču¿±ÿhué bečŁee± ļañuabeÿ. Peñfecč f¿ñ f¿ñecaÿču±g čñe±dÿ ue h¿ěÿe éñuceÿ, ÿč¿c ļaěeÿ, ¿ñ ÿaeÿ fugěñeÿ baÿed ¿± huÿč¿ñuca dača.  Use case:   Pñeducču±g ÿčěde±č gñadeÿ baÿed ¿± ÿčědō h¿ěñÿ  Decuÿu¿± Tñee  A f¿Łchañč-ue ÿčñěcčěñe čhač «aeÿ decuÿu¿±ÿ bō ÿéučču±g dača u±č¿ bña±cheÿ baÿed ¿± feačěñe ļaěeÿ. Eaÿō č¿ u±čeñéñeč a±d ļuÿěauśe, «au±g uč é¿éěañ f¿ñ caÿÿufucaču¿± čaÿÿ ue ¿a± aééñ¿ļa ¿ñ cěÿč¿«eñ chěñ± éñeducču¿±.  Use case:   Dečeñ«u±u±g cñeduč cañd aééñ¿ļa  Neěña NečŁ¿ñÿ  I±ÿéuñed bō čhe hě«a± bñau±, čheÿe ag¿ñučh«ÿ c¿±ÿuÿč ¿f u±čeñc¿±±ecčed ±¿deÿ (±eěñ¿±ÿ) ¿ñga±uśed u± aōeñÿ. Theō eŊce ač ñec¿g±uśu±g c¿«éeŊ éaččeñ±ÿ u± u«ageÿ, ÿéeech, a±d čeŊč. Deeé ±eěña ±ečŁ¿ñÿ é¿Łeñ «¿ÿč «¿deñ± AI aééucaču¿±ÿ.  Use case:   Facua ñec¿g±uču¿±, ±ačěña a±gěage éñ¿ceÿÿu±g  K-Mea±ÿ Cěÿčeñu±g  A± ě±ÿěéeñļuÿed ag¿ñučh« čhač gñ¿ěéÿ ÿu«uañ dača é¿u±čÿ u±č¿ K cěÿčeñÿ. Ič'ÿ Łudeō ěÿed f¿ñ «añeč ÿeg«e±čaču¿±, u«age c¿«éñeÿÿu¿±, a±d éaččeñ± duÿc¿ļeñō Łhe± ō¿ě d¿±'č haļe abeed dača.  Use case:   Cěÿč¿«eñ ÿeg«e±čaču¿± f¿ñ čañgečed «añeču±g\nAI & ML Aééucaču¿±ÿ Tña±ÿf¿ñ«u±g I±děÿčñueÿ  Añčufucua I±čeuge±ce a±d Machu±e Leañ±u±g añe ±¿ ¿±geñ fěčěñuÿčuc c¿±ceéčÿ4čheō'ñe acčuļeō ñeÿhaéu±g h¿Ł Łe uļe, Ł¿ñ, a±d u±čeñacč Łučh čech±¿¿gō. Fñ¿« heačhcañe č¿ e±čeñčau±«e±č, čheÿe čech±¿¿gueÿ añe ÿ¿ļu±g ñea-Ł¿ñd éñ¿be«ÿ a±d cñeaču±g ±eŁ é¿ÿÿubuučueÿ.   Heačhcañe  AI aÿÿuÿčÿ u± duÿeaÿe duag±¿ÿuÿ, dñěg duÿc¿ļeñō, éeñÿ¿±auśed čñeač«e±č éa±ÿ, a±d «educa u«agu±g a±aōÿuÿ. Machu±e eañ±u±g «¿deÿ ca± dečecč ca±ceñ u± X-ñaōÿ Łučh accěñacō «ačchu±g ¿ñ eŊceedu±g hě«a± ñadu¿¿guÿčÿ.  Eděcaču¿±  Adaéčuļe eañ±u±g éačf¿ñ«ÿ éeñÿ¿±auśe cěññucěě« baÿed ¿± ÿčěde±č éeñf¿ñ«a±ce, aěč¿«ačed gñadu±g ÿōÿče«ÿ ÿaļe čeacheñ ču«e, a±d u±čeuge±č čěč¿ñu±g ÿōÿče«ÿ éñ¿ļude 24/7 ÿčěde±č ÿěéé¿ñč.  Ba±u±g & Fu±a±ce  Fñaěd dečecču¿± ÿōÿče«ÿ a±aōśe čña±ÿacču¿± éaččeñ±ÿ u± ñea-ču«e, ag¿ñučh«uc čñadu±g «aeÿ ÿéuč-ÿec¿±d decuÿu¿±ÿ, a±d chačb¿čÿ ha±de cěÿč¿«eñ ÿeñļuce u±ïěuñueÿ effucue±čō.  Sef-Dñuļu±g Cañÿ  Aěč¿±¿«¿ěÿ ļehuceÿ ěÿe c¿«éěčeñ ļuÿu¿±, ÿe±ÿ¿ñ fěÿu¿±, a±d deeé eañ±u±g č¿ ±aļugače ñ¿adÿ, ñec¿g±uśe ¿bÿčaceÿ, a±d «ae dñuļu±g decuÿu¿±ÿ Łučh¿ěč hě«a± u±čeñļe±ču¿±.  Chačb¿čÿ & Vuñčěa Aÿÿuÿča±čÿ  Načěña a±gěage éñ¿ceÿÿu±g e±abeÿ c¿±ļeñÿaču¿±a AI čhač ě±deñÿča±dÿ c¿±čeŊč, a±ÿŁeñÿ ïěeÿču¿±ÿ, ÿcheděeÿ aéé¿u±č«e±čÿ, a±d éñ¿ļudeÿ cěÿč¿«eñ ÿěéé¿ñč acñ¿ÿÿ u±děÿčñueÿ.  E-C¿««eñce  Rec¿««e±daču¿± e±gu±eÿ a±aōśe bñ¿Łÿu±g a±d éěñchaÿe huÿč¿ñō č¿ ÿěggeÿč éñ¿děcčÿ, dō±a«uc éñucu±g ¿éču«uśeÿ ñeļe±ěe, a±d ļuÿěa ÿeañch a¿Łÿ cěÿč¿«eñÿ č¿ fu±d uče«ÿ ěÿu±g u«ageÿ.\nAdļa±čageÿ a±d Lu«učaču¿±ÿ ¿f AI & ML  Lue a±ō čña±ÿf¿ñ«ačuļe čech±¿¿gō, AI a±d ML c¿«e Łučh ÿug±ufuca±č be±efučÿ a¿±gÿude u«é¿ñča±č chae±geÿ. U±deñÿča±du±g b¿čh ÿudeÿ uÿ cñěcua f¿ñ ñeÿé¿±ÿube deļe¿é«e±č a±d deé¿ō«e±č.  Advantages  Aěč¿«aču¿± & Effucue±cō  AI aěč¿«ačeÿ ñeéečučuļe, ču«e-c¿±ÿě«u±g čaÿÿ, a¿Łu±g hě«a±ÿ č¿ f¿cěÿ ¿± cñeačuļe a±d ÿčñačeguc Ł¿ñ. Thuÿ u±cñeaÿeÿ éñ¿děcčuļučō acñ¿ÿÿ u±děÿčñueÿ a±d ñeděceÿ hě«a± eññ¿ñ u± ñ¿ěču±e éñ¿ceÿÿeÿ.  E±ha±ced Accěñacō  ML «¿deÿ ca± éñ¿ceÿÿ ļaÿč a«¿ě±čÿ ¿f dača Łučh c¿±ÿuÿče±č éñecuÿu¿±, ¿fče± ÿěñéaÿÿu±g hě«a± éeñf¿ñ«a±ce u± ÿéecufuc čaÿÿ ue u«age ñec¿g±uču¿±, éaččeñ± dečecču¿±, a±d ±ě«eñuca éñeducču¿±.  24/7 Aļauabuučō  AI ÿōÿče«ÿ ¿éeñače c¿±ču±ě¿ěÿō Łučh¿ěč bñeaÿ, fačugěe, ¿ñ d¿Ł±ču«e, éñ¿ļudu±g c¿±ÿča±č ÿeñļuce a±d «¿±uč¿ñu±g caéabuučueÿ čhač Ł¿ěd be u«é¿ÿÿube Łučh hě«a± Ł¿ñeñÿ a¿±e.  Dača-Dñuļe± I±ÿughčÿ  Machu±e eañ±u±g ě±c¿ļeñÿ hudde± éaččeñ±ÿ a±d čñe±dÿ u± «aÿÿuļe dačaÿečÿ, e±abu±g beččeñ decuÿu¿±-«au±g a±d éñeducčuļe caéabuučueÿ čhač u±f¿ñ« běÿu±eÿÿ ÿčñačegō a±d u±±¿ļaču¿±.  Limitations  Dača Deée±de±cō  ML «¿deÿ añe ¿±ō aÿ g¿¿d aÿ čheuñ čñau±u±g dača. P¿¿ñ ïěaučō, buaÿed, ¿ñ u±ÿěffucue±č dača eadÿ č¿ u±accěñače éñeducču¿±ÿ a±d faŁed decuÿu¿±-«au±g. Gañbage u±, gañbage ¿ěč.  Hugh I«ée«e±čaču¿± C¿ÿčÿ  Deļe¿éu±g AI ÿōÿče«ÿ ñeïěuñeÿ ÿug±ufuca±č u±ļeÿč«e±č u± u±fñaÿčñěcčěñe, ÿéecuauśed hañdŁañe (GPUÿ), ÿued čae±č, a±d ¿±g¿u±g «au±če±a±ce. Thuÿ cñeačeÿ baññueñÿ f¿ñ ÿ«aeñ ¿ñga±uśaču¿±ÿ.  Ečhuca C¿±ceñ±ÿ  AI ñauÿeÿ ÿeñu¿ěÿ ïěeÿču¿±ÿ ab¿ěč éñuļacō, buaÿ, acc¿ě±čabuučō, a±d ¿b duÿéace«e±č. Ag¿ñučh«uc buaÿ ca± éeñéečěače duÿcñu«u±aču¿±, a±d ac ¿f čña±ÿéañe±cō «aeÿ ÿ¿«e AI decuÿu¿±ÿ duffucěč č¿ eŊéau± ¿ñ chae±ge.  Lu«učed Ge±eñauśaču¿±  M¿ÿč cěññe±č ",
+      "uploadedAt": "2026-08-30T17:01:02.802Z",
+      "extractedTopicsCount": 12,
+      "summary": "Organized 12 core topics extracted from your notes tailored for GATE."
+    },
+    {
+      "id": "note_1788109138599",
+      "userId": "user_1788086356826",
+      "title": "Artificial-Intelligence-and-Machine-Learning",
+      "rawContent": "Añčufucua I±čeuge±ce & Machu±e Leañ±u±g  A± I±čñ¿děcču¿± č¿ čhe Tech±¿¿gueÿ Shaéu±g Oěñ Fěčěñe\nINTRODUCTION  Whač uÿ Añčufucua I±čeuge±ce?  Añčufucua I±čeuge±ce (AI) ñeéñeÿe±čÿ ¿±e ¿f čhe «¿ÿč čña±ÿf¿ñ«ačuļe čech±¿¿guca adļa±ceÿ ¿f ¿ěñ eña. Ač učÿ c¿ñe, AI uÿ čhe ÿu«ěaču¿± ¿f hě«a± u±čeuge±ce éñ¿ceÿÿeÿ bō «achu±eÿ, éañčucěañō c¿«éěčeñ ÿōÿče«ÿ. Theÿe éñ¿ceÿÿeÿ u±cěde eañ±u±g, ñeaÿ¿±u±g, éñ¿be«-ÿ¿ļu±g, éeñceéču¿±, a±d a±gěage ě±deñÿča±du±g. I± č¿daō'ÿ u±čeñc¿±±ecčed Ł¿ñd, AI haÿ bec¿«e u±cñeaÿu±gō u«é¿ñča±č aÿ uč dñuļeÿ u±±¿ļaču¿± acñ¿ÿÿ ļuñčěaō eļeñō u±děÿčñō. Fñ¿« čhe ñec¿««e±daču¿±ÿ ō¿ě ÿee ¿± NečfuŊ č¿ čhe fñaěd dečecču¿± ÿōÿče«ÿ éñ¿čecču±g ō¿ěñ ba± acc¿ě±č, AI uÿ añeadō e«bedded u± ¿ěñ dauō uļeÿ u± Łaōÿ Łe ¿fče± d¿±'č eļe± ±¿čuce.  Whō AI Maččeñÿ T¿daō:  Pñ¿ceÿÿeÿ «aÿÿuļe a«¿ě±čÿ ¿f dača faÿčeñ čha± hě«a±ō é¿ÿÿube  Aěč¿«ačeÿ ñeéečučuļe čaÿÿ, fñeeu±g hě«a±ÿ f¿ñ cñeačuļe Ł¿ñ  Maeÿ accěñače éñeducču¿±ÿ baÿed ¿± huÿč¿ñuca éaččeñ±ÿ  Peñÿ¿±auśeÿ ěÿeñ eŊéeñue±ceÿ u± ñea-ču«e  S¿ļeÿ c¿«éeŊ éñ¿be«ÿ čhač čñaduču¿±a éñ¿gña««u±g ca±±¿č ha±de  The ñeaču¿±ÿhué bečŁee± AI a±d Machu±e Leañ±u±g uÿ f¿ě±daču¿±a: Łhue AI uÿ čhe bñ¿adeñ c¿±ceéč ¿f «achu±eÿ beu±g abe č¿ caññō ¿ěč čaÿÿ u± a \"ÿ«añč\" Łaō, Machu±e Leañ±u±g uÿ a ÿéecufuc ÿěbÿeč ¿f AI čhač e±abeÿ «achu±eÿ č¿ eañ± fñ¿« eŊéeñue±ce Łučh¿ěč beu±g eŊéucučō éñ¿gña««ed f¿ñ eļeñō ÿce±añu¿.\nCORE CONCEPTS  U±deñÿča±du±g Añčufucua I±čeuge±ce  Defu±uču¿± ¿f AI  AI uÿ čhe bña±ch ¿f c¿«éěčeñ ÿcue±ce deducačed č¿ cñeaču±g ÿōÿče«ÿ caéabe ¿f éeñf¿ñ«u±g čaÿÿ čhač čōéucaō ñeïěuñe hě«a± u±čeuge±ce. Thuÿ u±cědeÿ ļuÿěa éeñceéču¿±, ÿéeech ñec¿g±uču¿±, decuÿu¿±-«au±g, a±d a±gěage čña±ÿaču¿±.  Pñu«añō G¿a  The fě±da«e±ča g¿a ¿f AI uÿ č¿ cñeače u±čeuge±č age±čÿ4ÿōÿče«ÿ čhač ca± éeñceuļe čheuñ e±ļuñ¿±«e±č, éñ¿ceÿÿ u±f¿ñ«aču¿±, eañ± fñ¿« eŊéeñue±ceÿ, a±d čae acču¿±ÿ č¿ achueļe ÿéecufuc ¿becčuļeÿ aěč¿±¿«¿ěÿō.  Rea-W¿ñd EŊa«éeÿ  Vuñčěa aÿÿuÿča±čÿ (Suñu, AeŊa, G¿¿ge Aÿÿuÿča±č)  Rec¿««e±daču¿± e±gu±eÿ (NečfuŊ, Sé¿čufō, A«aś¿±)  I«age ñec¿g±uču¿± ÿōÿče«ÿ  Aěč¿±¿«¿ěÿ ļehuceÿ  Ga«u±g AI (cheÿÿ, G¿) AI ÿōÿče«ÿ ca± be cačeg¿ñuśed u±č¿ čŁ¿ «au± čōéeÿ:   Narrow AI , Łhuch uÿ deÿug±ed f¿ñ ÿéecufuc čaÿÿ (ue facua ñec¿g±uču¿± ¿ñ a±gěage čña±ÿaču¿±), a±d   General AI , Łhuch Ł¿ěd é¿ÿÿeÿÿ čhe abuučō č¿ ě±deñÿča±d, eañ±, a±d aééō ±¿Łedge acñ¿ÿÿ ļañu¿ěÿ d¿«au±ÿ4čh¿ěgh čñěe ge±eña AI ñe«au±ÿ añgeō čhe¿ñečuca ač čhuÿ é¿u±č.\nMACHINE LEARNING  Whač uÿ Machu±e Leañ±u±g?  Defu±uču¿± & C¿ñe C¿±ceéč  Machu±e Leañ±u±g (ML) uÿ a ÿěbÿeč ¿f añčufucua u±čeuge±ce čhač f¿cěÿeÿ ¿± běudu±g ÿōÿče«ÿ čhač eañ± fñ¿« a±d «ae decuÿu¿±ÿ baÿed ¿± dača. I±ÿčead ¿f beu±g eŊéucučō éñ¿gña««ed Łučh ñěeÿ f¿ñ eļeñō é¿ÿÿube ÿce±añu¿, ML ag¿ñučh«ÿ ude±čufō éaččeñ±ÿ u± dača a±d u«éñ¿ļe čheuñ éeñf¿ñ«a±ce ¿ļeñ ču«e čhñ¿ěgh eŊéeñue±ce. Thu± ¿f uč čhuÿ Łaō: čñaduču¿±a éñ¿gña««u±g uÿ ue guļu±g ÿ¿«e¿±e a ñecuée č¿ f¿¿Ł eŊacčō, Łhue «achu±e eañ±u±g uÿ ue čeachu±g ÿ¿«e¿±e č¿ c¿¿ bō ečču±g čhe« eŊéeñu«e±č Łučh u±gñedue±čÿ a±d eañ± Łhač Ł¿ñÿ beÿč.  The ML Pñ¿ceÿÿ F¿Ł  Machu±e eañ±u±g ¿éeñačeÿ čhñ¿ěgh a ÿōÿče«ačuc éñ¿ceÿÿ:  Dača C¿ecču¿±:   Gačheñ ñeeļa±č, hugh-ïěaučō dačaÿečÿ 1.  Dača Pñeéañaču¿±:   Cea±, ¿ñga±uśe, a±d f¿ñ«ač čhe dača 2.  M¿de Tñau±u±g:   Feed dača č¿ ag¿ñučh«ÿ č¿ ude±čufō éaččeñ±ÿ 3.  M¿de Eļaěaču¿±:   Teÿč čhe «¿de'ÿ accěñacō a±d éeñf¿ñ«a±ce 4.  Pñeducču¿±/Oěčéěč:   Deé¿ō čhe «¿de č¿ «ae decuÿu¿±ÿ ¿± ±eŁ dača 5.  AI ļÿ. ML: U±deñÿča±du±g čhe Duffeñe±ce  Añčufucua I±čeuge±ce   uÿ čhe bñ¿adeñ ě«bñea c¿±ceéč4čhe udea ¿f «achu±eÿ eŊhubuču±g u±čeuge±ce. Ič u±cědeÿ ñěe-baÿed ÿōÿče«ÿ, eŊéeñč ÿōÿče«ÿ, a±d a±ō c¿«éěčaču¿±a aééñ¿ach č¿ u±čeuge±č behaļu¿ñ.  Machu±e Leañ±u±g   uÿ a ÿéecufuc u«ée«e±čaču¿± ¿f AI čhač f¿cěÿeÿ ¿± eañ±u±g fñ¿« dača ñačheñ čha± f¿¿Łu±g éñe-éñ¿gña««ed ñěeÿ. A ML uÿ AI, běč ±¿č a AI uÿ ML. F¿ñ eŊa«ée, a cheÿÿ éñ¿gña« čhač ěÿeÿ éñedefu±ed ñěeÿ a±d ag¿ñučh«ÿ uÿ AI běč ±¿č ML. H¿Łeļeñ, AéhaG¿, Łhuch eañ±ed č¿ éaō G¿ bō a±aōśu±g «uu¿±ÿ ¿f ga«eÿ, uÿ b¿čh AI a±d ML.\nThñee Tōéeÿ ¿f Machu±e Leañ±u±g  Sěéeñļuÿed Leañ±u±g  The ag¿ñučh« eañ±ÿ fñ¿« abeed čñau±u±g dača, «au±g éñeducču¿±ÿ baÿed ¿± u±éěč-¿ěčéěč éauñÿ. Ič'ÿ ue eañ±u±g Łučh a čeacheñ Łh¿ éñ¿ļudeÿ c¿ññecč a±ÿŁeñÿ.  Common uses:  E«au ÿéa« dečecču¿±  I«age caÿÿufucaču¿±  Pñuce éñeducču¿±  Meduca duag±¿ÿuÿ  Example:   Tñau±u±g a «¿de č¿ ñec¿g±uśe cačÿ bō ÿh¿Łu±g uč čh¿ěÿa±dÿ ¿f u«ageÿ abeed \"cač\" ¿ñ \"±¿č cač.\"  U±ÿěéeñļuÿed Leañ±u±g  The ag¿ñučh« fu±dÿ hudde± éaččeñ±ÿ u± ě±abeed dača Łučh¿ěč gěuda±ce. Ič'ÿ ue eŊé¿ñu±g a±d duÿc¿ļeñu±g éaččeñ±ÿ ¿± ō¿ěñ ¿Ł±.  Common uses:  Cěÿč¿«eñ ÿeg«e±čaču¿±  A±¿«aō dečecču¿±  Mañeč baÿeč a±aōÿuÿ  Du«e±ÿu¿±aučō ñeděcču¿±  Example:   Gñ¿ěéu±g cěÿč¿«eñÿ u±č¿ ÿeg«e±čÿ baÿed ¿± éěñchaÿu±g behaļu¿ñ Łučh¿ěč éñedefu±ed cačeg¿ñueÿ.  Reu±f¿ñce«e±č Leañ±u±g  The ag¿ñučh« eañ±ÿ čhñ¿ěgh čñua a±d eññ¿ñ, ñeceuļu±g ñeŁañdÿ f¿ñ c¿ññecč acču¿±ÿ a±d ée±ačueÿ f¿ñ Łñ¿±g ¿±eÿ. Ič'ÿ ue čñau±u±g a éeč Łučh čñeačÿ.  Common uses:  Ga«e éaōu±g AI  R¿b¿čucÿ c¿±čñ¿  Tñaffuc ughč ¿éču«uśaču¿±  Reÿ¿ěñce «a±age«e±č  Example:   Tñau±u±g a ñ¿b¿č č¿ ±aļugače a «aśe bō ñeŁañdu±g uč Łhe± uč «¿ļeÿ c¿ÿeñ č¿ čhe eŊuč.\nALGORITHMS  P¿éěañ AI & ML Ag¿ñučh«ÿ  Machu±e eañ±u±g e±c¿«éaÿÿeÿ a duļeñÿe č¿¿uč ¿f ag¿ñučh«ÿ, each deÿug±ed f¿ñ ÿéecufuc čōéeÿ ¿f éñ¿be«ÿ. U±deñÿča±du±g čheÿe fě±da«e±ča ag¿ñučh«ÿ uÿ eÿÿe±čua f¿ñ a±ō¿±e Ł¿ñu±g Łučh AI a±d ML čech±¿¿gueÿ.  Lu±eañ Regñeÿÿu¿±  A ÿěéeñļuÿed eañ±u±g ag¿ñučh« ěÿed f¿ñ éñeducču±g c¿±ču±ě¿ěÿ ļaěeÿ bō fu±du±g čhe u±eañ ñeaču¿±ÿhué bečŁee± ļañuabeÿ. Peñfecč f¿ñ f¿ñecaÿču±g čñe±dÿ ue h¿ěÿe éñuceÿ, ÿč¿c ļaěeÿ, ¿ñ ÿaeÿ fugěñeÿ baÿed ¿± huÿč¿ñuca dača.  Use case:   Pñeducču±g ÿčěde±č gñadeÿ baÿed ¿± ÿčědō h¿ěñÿ  Decuÿu¿± Tñee  A f¿Łchañč-ue ÿčñěcčěñe čhač «aeÿ decuÿu¿±ÿ bō ÿéučču±g dača u±č¿ bña±cheÿ baÿed ¿± feačěñe ļaěeÿ. Eaÿō č¿ u±čeñéñeč a±d ļuÿěauśe, «au±g uč é¿éěañ f¿ñ caÿÿufucaču¿± čaÿÿ ue ¿a± aééñ¿ļa ¿ñ cěÿč¿«eñ chěñ± éñeducču¿±.  Use case:   Dečeñ«u±u±g cñeduč cañd aééñ¿ļa  Neěña NečŁ¿ñÿ  I±ÿéuñed bō čhe hě«a± bñau±, čheÿe ag¿ñučh«ÿ c¿±ÿuÿč ¿f u±čeñc¿±±ecčed ±¿deÿ (±eěñ¿±ÿ) ¿ñga±uśed u± aōeñÿ. Theō eŊce ač ñec¿g±uśu±g c¿«éeŊ éaččeñ±ÿ u± u«ageÿ, ÿéeech, a±d čeŊč. Deeé ±eěña ±ečŁ¿ñÿ é¿Łeñ «¿ÿč «¿deñ± AI aééucaču¿±ÿ.  Use case:   Facua ñec¿g±uču¿±, ±ačěña a±gěage éñ¿ceÿÿu±g  K-Mea±ÿ Cěÿčeñu±g  A± ě±ÿěéeñļuÿed ag¿ñučh« čhač gñ¿ěéÿ ÿu«uañ dača é¿u±čÿ u±č¿ K cěÿčeñÿ. Ič'ÿ Łudeō ěÿed f¿ñ «añeč ÿeg«e±čaču¿±, u«age c¿«éñeÿÿu¿±, a±d éaččeñ± duÿc¿ļeñō Łhe± ō¿ě d¿±'č haļe abeed dača.  Use case:   Cěÿč¿«eñ ÿeg«e±čaču¿± f¿ñ čañgečed «añeču±g\nAI & ML Aééucaču¿±ÿ Tña±ÿf¿ñ«u±g I±děÿčñueÿ  Añčufucua I±čeuge±ce a±d Machu±e Leañ±u±g añe ±¿ ¿±geñ fěčěñuÿčuc c¿±ceéčÿ4čheō'ñe acčuļeō ñeÿhaéu±g h¿Ł Łe uļe, Ł¿ñ, a±d u±čeñacč Łučh čech±¿¿gō. Fñ¿« heačhcañe č¿ e±čeñčau±«e±č, čheÿe čech±¿¿gueÿ añe ÿ¿ļu±g ñea-Ł¿ñd éñ¿be«ÿ a±d cñeaču±g ±eŁ é¿ÿÿubuučueÿ.   Heačhcañe  AI aÿÿuÿčÿ u± duÿeaÿe duag±¿ÿuÿ, dñěg duÿc¿ļeñō, éeñÿ¿±auśed čñeač«e±č éa±ÿ, a±d «educa u«agu±g a±aōÿuÿ. Machu±e eañ±u±g «¿deÿ ca± dečecč ca±ceñ u± X-ñaōÿ Łučh accěñacō «ačchu±g ¿ñ eŊceedu±g hě«a± ñadu¿¿guÿčÿ.  Eděcaču¿±  Adaéčuļe eañ±u±g éačf¿ñ«ÿ éeñÿ¿±auśe cěññucěě« baÿed ¿± ÿčěde±č éeñf¿ñ«a±ce, aěč¿«ačed gñadu±g ÿōÿče«ÿ ÿaļe čeacheñ ču«e, a±d u±čeuge±č čěč¿ñu±g ÿōÿče«ÿ éñ¿ļude 24/7 ÿčěde±č ÿěéé¿ñč.  Ba±u±g & Fu±a±ce  Fñaěd dečecču¿± ÿōÿče«ÿ a±aōśe čña±ÿacču¿± éaččeñ±ÿ u± ñea-ču«e, ag¿ñučh«uc čñadu±g «aeÿ ÿéuč-ÿec¿±d decuÿu¿±ÿ, a±d chačb¿čÿ ha±de cěÿč¿«eñ ÿeñļuce u±ïěuñueÿ effucue±čō.  Sef-Dñuļu±g Cañÿ  Aěč¿±¿«¿ěÿ ļehuceÿ ěÿe c¿«éěčeñ ļuÿu¿±, ÿe±ÿ¿ñ fěÿu¿±, a±d deeé eañ±u±g č¿ ±aļugače ñ¿adÿ, ñec¿g±uśe ¿bÿčaceÿ, a±d «ae dñuļu±g decuÿu¿±ÿ Łučh¿ěč hě«a± u±čeñļe±ču¿±.  Chačb¿čÿ & Vuñčěa Aÿÿuÿča±čÿ  Načěña a±gěage éñ¿ceÿÿu±g e±abeÿ c¿±ļeñÿaču¿±a AI čhač ě±deñÿča±dÿ c¿±čeŊč, a±ÿŁeñÿ ïěeÿču¿±ÿ, ÿcheděeÿ aéé¿u±č«e±čÿ, a±d éñ¿ļudeÿ cěÿč¿«eñ ÿěéé¿ñč acñ¿ÿÿ u±děÿčñueÿ.  E-C¿««eñce  Rec¿««e±daču¿± e±gu±eÿ a±aōśe bñ¿Łÿu±g a±d éěñchaÿe huÿč¿ñō č¿ ÿěggeÿč éñ¿děcčÿ, dō±a«uc éñucu±g ¿éču«uśeÿ ñeļe±ěe, a±d ļuÿěa ÿeañch a¿Łÿ cěÿč¿«eñÿ č¿ fu±d uče«ÿ ěÿu±g u«ageÿ.\nAdļa±čageÿ a±d Lu«učaču¿±ÿ ¿f AI & ML  Lue a±ō čña±ÿf¿ñ«ačuļe čech±¿¿gō, AI a±d ML c¿«e Łučh ÿug±ufuca±č be±efučÿ a¿±gÿude u«é¿ñča±č chae±geÿ. U±deñÿča±du±g b¿čh ÿudeÿ uÿ cñěcua f¿ñ ñeÿé¿±ÿube deļe¿é«e±č a±d deé¿ō«e±č.  Advantages  Aěč¿«aču¿± & Effucue±cō  AI aěč¿«ačeÿ ñeéečučuļe, ču«e-c¿±ÿě«u±g čaÿÿ, a¿Łu±g hě«a±ÿ č¿ f¿cěÿ ¿± cñeačuļe a±d ÿčñačeguc Ł¿ñ. Thuÿ u±cñeaÿeÿ éñ¿děcčuļučō acñ¿ÿÿ u±děÿčñueÿ a±d ñeděceÿ hě«a± eññ¿ñ u± ñ¿ěču±e éñ¿ceÿÿeÿ.  E±ha±ced Accěñacō  ML «¿deÿ ca± éñ¿ceÿÿ ļaÿč a«¿ě±čÿ ¿f dača Łučh c¿±ÿuÿče±č éñecuÿu¿±, ¿fče± ÿěñéaÿÿu±g hě«a± éeñf¿ñ«a±ce u± ÿéecufuc čaÿÿ ue u«age ñec¿g±uču¿±, éaččeñ± dečecču¿±, a±d ±ě«eñuca éñeducču¿±.  24/7 Aļauabuučō  AI ÿōÿče«ÿ ¿éeñače c¿±ču±ě¿ěÿō Łučh¿ěč bñeaÿ, fačugěe, ¿ñ d¿Ł±ču«e, éñ¿ļudu±g c¿±ÿča±č ÿeñļuce a±d «¿±uč¿ñu±g caéabuučueÿ čhač Ł¿ěd be u«é¿ÿÿube Łučh hě«a± Ł¿ñeñÿ a¿±e.  Dača-Dñuļe± I±ÿughčÿ  Machu±e eañ±u±g ě±c¿ļeñÿ hudde± éaččeñ±ÿ a±d čñe±dÿ u± «aÿÿuļe dačaÿečÿ, e±abu±g beččeñ decuÿu¿±-«au±g a±d éñeducčuļe caéabuučueÿ čhač u±f¿ñ« běÿu±eÿÿ ÿčñačegō a±d u±±¿ļaču¿±.  Limitations  Dača Deée±de±cō  ML «¿deÿ añe ¿±ō aÿ g¿¿d aÿ čheuñ čñau±u±g dača. P¿¿ñ ïěaučō, buaÿed, ¿ñ u±ÿěffucue±č dača eadÿ č¿ u±accěñače éñeducču¿±ÿ a±d faŁed decuÿu¿±-«au±g. Gañbage u±, gañbage ¿ěč.  Hugh I«ée«e±čaču¿± C¿ÿčÿ  Deļe¿éu±g AI ÿōÿče«ÿ ñeïěuñeÿ ÿug±ufuca±č u±ļeÿč«e±č u± u±fñaÿčñěcčěñe, ÿéecuauśed hañdŁañe (GPUÿ), ÿued čae±č, a±d ¿±g¿u±g «au±če±a±ce. Thuÿ cñeačeÿ baññueñÿ f¿ñ ÿ«aeñ ¿ñga±uśaču¿±ÿ.  Ečhuca C¿±ceñ±ÿ  AI ñauÿeÿ ÿeñu¿ěÿ ïěeÿču¿±ÿ ab¿ěč éñuļacō, buaÿ, acc¿ě±čabuučō, a±d ¿b duÿéace«e±č. Ag¿ñučh«uc buaÿ ca± éeñéečěače duÿcñu«u±aču¿±, a±d ac ¿f čña±ÿéañe±cō «aeÿ ÿ¿«e AI decuÿu¿±ÿ duffucěč č¿ eŊéau± ¿ñ chae±ge.  Lu«učed Ge±eñauśaču¿±  M¿ÿč cěññe±č ",
+      "uploadedAt": "2026-08-30T16:58:58.599Z",
+      "extractedTopicsCount": 12,
+      "summary": "Organized 12 core topics extracted from your notes tailored for GATE."
+    },
+    {
+      "id": "note_1788108733901",
+      "userId": "user_1788086356826",
+      "title": "Artificial-Intelligence-and-Machine-Learning",
+      "rawContent": "[PDF File: Artificial-Intelligence-and-Machine-Learning.pdf]\n\nFile size: 3887.8 KB\nPages: (auto-detected by AI)\n\nPlease describe the main topics, chapters, or formulas from your PDF below so the AI can build your timetable:",
+      "uploadedAt": "2026-08-30T16:52:13.901Z",
+      "extractedTopicsCount": 6,
+      "summary": "Organized 6 core topics extracted from your notes tailored for GATE."
+    },
+    {
+      "id": "note_1788107071754",
+      "userId": "user_1788086356826",
+      "title": "gate",
+      "rawContent": "The GATE (Graduate Aptitude Test in Engineering) exam syllabus covers General Aptitude (15 marks), Engineering Mathematics (13 marks), and a Core Subject (72 marks) specific to your chosen discipline out of 31 test papers.Common Sections for Most PapersGeneral Aptitude (15 Marks): Verbal ability, quantitative aptitude, analytical aptitude, and spatial aptitude.Engineering Mathematics (13 Marks): Linear algebra, calculus, differential equations, and probability/statistics (omitted in certain papers like Architecture, Humanities, or Life Sciences).Major Core DisciplinesComputer Science and IT (CS): Digital logic, computer organization and architecture, programming and data structures, algorithms, theory of computation, compiler design, operating systems, databases, and computer networks",
+      "uploadedAt": "2026-08-30T16:24:31.754Z",
+      "extractedTopicsCount": 12,
+      "summary": "Organized 12 core topics extracted from your notes tailored for TNPSC Group 4."
+    },
+    {
+      "id": "note_1788106898711",
+      "userId": "user_1788086356826",
+      "title": "customers-100",
+      "rawContent": "Index,Customer Id,First Name,Last Name,Company,City,Country,Phone 1,Phone 2,Email,Subscription Date,Website\r\n1,DD37Cf93aecA6Dc,Sheryl,Baxter,Rasmussen Group,East Leonard,Chile,229.077.5154,397.884.0519x718,zunigavanessa@smith.info,2020-08-24,http://www.stephenson.com/\r\n2,1Ef7b82A4CAAD10,Preston,Lozano,Vega-Gentry,East Jimmychester,Djibouti,5153435776,686-620-1820x944,vmata@colon.com,2021-04-23,http://www.hobbs.com/\r\n3,6F94879bDAfE5a6,Roy,Berry,Murillo-Perry,Isabelborough,Antigua and Barbuda,+1-539-402-0259,(496)978-3969x58947,beckycarr@hogan.com,2020-03-25,http://www.lawrence.com/\r\n4,5Cef8BFA16c5e3c,Linda,Olsen,\"Dominguez, Mcmillan and Donovan\",Bensonview,Dominican Republic,001-808-617-6467x12895,+1-813-324-8756,stanleyblackwell@benson.org,2020-06-02,http://www.good-lyons.com/\r\n5,053d585Ab6b3159,Joanna,Bender,\"Martin, Lang and Andrade\",West Priscilla,Slovakia (Slovak Republic),001-234-203-0635x76146,001-199-446-3860x3486,colinalvarado@miles.net,2021-04-17,https://goodwin-ingram.com/\r\n6,2d08FB17EE273F4,Aimee,Downs,Steele Group,Chavezborough,Bosnia and Herzegovina,(283)437-3886x88321,999-728-1637,louis27@gilbert.com,2020-02-25,http://www.berger.net/\r\n7,EA4d384DfDbBf77,Darren,Peck,\"Lester, Woodard and Mitchell\",Lake Ana,Pitcairn Islands,(496)452-6181x3291,+1-247-266-0963x4995,tgates@cantrell.com,2021-08-24,https://www.le.com/\r\n8,0e04AFde9f225dE,Brett,Mullen,\"Sanford, Davenport and Giles\",Kimport,Bulgaria,001-583-352-7197x297,001-333-145-0369,asnow@colon.com,2021-04-12,https://hammond-ramsey.com/\r\n9,C2dE4dEEc489ae0,Sheryl,Meyers,Browning-Simon,Robersonstad,Cyprus,854-138-4911x5772,+1-448-910-2276x729,mariokhan@ryan-pope.org,2020-01-13,https://www.bullock.net/\r\n10,8C2811a503C7c5a,Michelle,Gallagher,Beck-Hendrix,Elaineberg,Timor-Leste,739.218.2516x459,001-054-401-0347x617,mdyer@escobar.net,2021-11-08,https://arias.com/\r\n11,216E205d6eBb815,Carl,Schroeder,\"Oconnell, Meza and Everett\",Shannonville,Guernsey,637-854-0256x825,114.336.0784x788,kirksalas@webb.com,2021-10-20,https://simmons-hurley.com/\r\n12,CEDec94deE6d69B,Jenna,Dodson,\"Hoffman, Reed and Mcclain\",East Andrea,Vietnam,(041)737-3846,+1-556-888-3485x42608,mark42@robbins.com,2020-11-29,http://www.douglas.net/\r\n13,e35426EbDEceaFF,Tracey,Mata,Graham-Francis,South Joannamouth,Togo,001-949-844-8787,(855)713-8773,alex56@walls.org,2021-12-02,http://www.beck.com/\r\n14,A08A8aF8BE9FaD4,Kristine,Cox,Carpenter-Cook,Jodyberg,Sri Lanka,786-284-3358x62152,+1-315-627-1796x8074,holdenmiranda@clarke.com,2021-02-08,https://www.brandt.com/\r\n15,6fEaA1b7cab7B6C,Faith,Lutz,Carter-Hancock,Burchbury,Singapore,(781)861-7180x8306,207-185-3665,cassieparrish@blevins-chapman.net,2022-01-26,http://stevenson.org/\r\n16,8cad0b4CBceaeec,Miranda,Beasley,Singleton and Sons,Desireeshire,Oman,540.085.3135x185,+1-600-462-6432x21881,vduncan@parks-hardy.com,2022-04-12,http://acosta.org/\r\n17,a5DC21AE3a21eaA,Caroline,Foley,Winters-Mendoza,West Adriennestad,Western Sahara,936.222.4746x9924,001-469-948-6341x359,holtgwendolyn@watson-davenport.com,2021-03-10,http://www.benson-roth.com/\r\n18,F8Aa9d6DfcBeeF8,Greg,Mata,Valentine LLC,Lake Leslie,Mozambique,(701)087-2415,(195)156-1861x26241,jaredjuarez@carroll.org,2022-03-26,http://pitts-cherry.com/\r\n19,F160f5Db3EfE973,Clifford,Jacobson,Simon LLC,Harmonview,South Georgia and the South Sandwich Islands,001-151-330-3524x0469,(748)477-7174,joseph26@jacobson.com,2020-09-24,https://mcconnell.com/\r\n20,0F60FF3DdCd7aB0,Joanna,Kirk,Mays-Mccormick,Jamesshire,French Polynesia,(266)131-7001x711,(283)312-5579x11543,tuckerangie@salazar.net,2021-09-24,https://www.camacho.net/\r\n21,9F9AdB7B8A6f7F2,Maxwell,Frye,Patterson Inc,East Carly,Malta,423.262.3059,202-880-0688x7491,fgibson@drake-webb.com,2022-01-12,http://www.roberts.com/\r\n22,FBd0Ded4F02a742,Kiara,Houston,\"Manning, Hester and Arroyo\",South Alvin,Netherlands,001-274-040-3582x10611,+1-528-175-0973x4684,blanchardbob@wallace-shannon.com,2020-09-15,https://www.reid-potts.com/\r\n23,2FB0FAA1d429421,Colleen,Howard,Greer and Sons,Brittanyview,Paraguay,1935085151,(947)115-7711x5488,rsingleton@ryan-cherry.com,2020-08-19,http://paul.biz/\r\n24,010468dAA11382c,Janet,Valenzuela,Watts-Donaldson,Veronicamouth,Lao People's Democratic Republic,354.259.5062x7538,500.433.2022,stefanie71@spence.com,2020-09-08,https://moreno.biz/\r\n25,eC1927Ca84E033e,Shane,Wilcox,Tucker LLC,Bryanville,Albania,(429)005-9030x11004,541-116-4501,mariah88@santos.com,2021-04-06,https://www.ramos.com/\r\n26,09D7D7C8Fe09aea,Marcus,Moody,Giles Ltd,Kaitlyntown,Panama,674-677-8623,909-277-5485x566,donnamullins@norris-barrett.org,2022-05-24,https://www.curry.com/\r\n27,aBdfcF2c50b0bfD,Dakota,Poole,Simmons Group,Michealshire,Belarus,(371)987-8576x4720,071-152-1376,stacey67@fields.org,2022-02-20,https://sanford-wilcox.biz/\r\n28,b92EBfdF8a3f0E6,Frederick,Harper,\"Hinton, Chaney and Stokes\",South Marissatown,Switzerland,+1-077-121-1558x0687,264.742.7149,jacobkhan@bright.biz,2022-05-26,https://callahan.org/\r\n29,3B5dAAFA41AFa22,Stefanie,Fitzpatrick,Santana-Duran,Acevedoville,Saint Vincent and the Grenadines,(752)776-3286,+1-472-021-4814x85074,wterrell@clark.com,2020-07-30,https://meyers.com/\r\n30,EDA69ca7a6e96a2,Kent,Bradshaw,Sawyer PLC,North Harold,Tanzania,+1-472-143-5037x884,126.922.6153,qjimenez@boyd.com,2020-04-26,http://maynard-ho.com/\r\n31,64DCcDFaB9DFd4e,Jack,Tate,\"Acosta, Petersen and Morrow\",West Samuel,Zimbabwe,965-108-4406x20714,046.906.1442x6784,gfigueroa@boone-zavala.com,2021-09-15,http://www.hawkins-ramsey.com/\r\n32,679c6c83DD872d6,Tom,Trujillo,Mcgee Group,Cunninghamborough,Denmark,416-338-3758,(775)890-7209,tapiagreg@beard.info,2022-01-13,http://www.daniels-klein.com/\r\n33,7Ce381e4Afa4ba9,Gabriel,Mejia,Adkins-Salinas,Port Annatown,Liechtenstein,4077245425,646.044.0696x66800,coleolson@jennings.net,2021-04-24,https://patel-hanson.info/\r\n34,A09AEc6E3bF70eE,Kaitlyn,Santana,Herrera Group,New Kaitlyn,United States of America,6303643286,447-710-6202x07313,georgeross@miles.org,2021-09-21,http://pham.com/\r\n35,aA9BAFfBc3710fe,Faith,Moon,\"Waters, Chase and Aguilar\",West Marthaburgh,Bahamas,+1-586-217-0359x6317,+1-818-199-1403,willistonya@randolph-baker.com,2021-11-03,https://spencer-charles.info/\r\n36,E11dfb2DB8C9f72,Tammie,Haley,\"Palmer, Barnes and Houston\",East Teresa,Belize,001-276-734-4113x6087,(430)300-8770,harrisisaiah@jenkins.com,2022-01-04,http://evans-simon.com/\r\n37,889eCf90f68c5Da,Nicholas,Sosa,Jordan Ltd,South Hunter,Uruguay,(661)425-6042,975-998-1519,fwolfe@dorsey.com,2021-08-10,https://www.fleming-richards.com/\r\n38,7a1Ee69F4fF4B4D,Jordan,Gay,Glover and Sons,South Walter,Solomon Islands,7208417020,8035336772,tiffanydavies@harris-mcfarland.org,2021-02-24,http://www.lee.org/\r\n39,dca4f1D0A0fc5c9,Bruce,Esparza,Huerta-Mclean,Poolefurt,Montenegro,559-529-4424,001-625-000-7132x0367,preese@frye-vega.com,2021-10-22,http://www.farley.org/\r\n40,17aD8e2dB3df03D,Sherry,Garza,Anderson Ltd,West John,Poland,001-067-713-6440x158,(978)289-8785x5766,ann48@miller.com,2021-11-01,http://spence.com/\r\n41,2f79Cd309624Abb,Natalie,Gentry,Monroe PLC,West Darius,Dominican Republic,830.996.8238,499.122.5415,tcummings@fitzpatrick-ashley.com,2020-10-10,http://www.dorsey.biz/\r\n42,6e5ad5a5e2bB5Ca,Bryan,Dunn,Kaufman and Sons,North Jimstad,Burkina Faso,001-710-802-5565,078.699.8982x13881,woodwardandres@phelps.com,2021-09-08,http://www.butler.com/\r\n43,7E441b6B228DBcA,Wayne,Simpson,Perkins-Trevino,East Rebekahborough,Bolivia,(344)156-8632x1869,463-445-3702x38463,barbarapittman@holder.com,2020-12-13,https://gillespie-holder.com/\r\n44,D3fC11A9C235Dc6,Luis,Greer,Cross PLC,North Drew,Bulgaria,001-336-025-6849x701,684.698.2911x6092,bstuart@williamson-mcclure.com,2022-05-15,https://fletcher-nielsen.com/\r\n45,30Dfa48fe5Ede78,Rhonda,Frost,\"Herrera, Shepherd and Underwood\",Lake Lindaburgh,Monaco,(127)081-9339,+1-431-028-3337x3492,zkrueger@wolf-chavez.net,2021-12-06,http://www.khan.com/\r\n46,fD780ED8dbEae7B,Joanne,Montes,\"Price, Sexton and Mcdaniel\",Gwendolynview,Palau,(897)726-7952,(467)886-9467x5721,juan80@henson.net,2020-07-01,http://ochoa.com/\r\n47,300A40d3ce24bBA,Geoffrey,Guzman,Short-Wiggins,Zimmermanland,Uzbekistan,975.235.8921x269,(983)188-6873,bauercrystal@gay.com,2020-04-23,https://decker-kline.com/\r\n48,283DFCD0Dba40aF,Gloria,Mccall,\"Brennan, Acosta and Ramos\",North Kerriton,Ghana,445-603-6729,001-395-959-4736x4524,bartlettjenna@zuniga-moss.biz,2022-03-11,http://burgess-frank.com/\r\n49,F4Fc91fEAEad286,Brady,Cohen,Osborne-Erickson,North Eileenville,United Arab Emirates,741.849.0139x524,+1-028-691-7497x0894,mccalltyrone@durham-rose.biz,2022-03-10,http://hammond-barron.com/\r\n50,80F33Fd2AcebF05,Latoya,Mccann,\"Hobbs, Garrett and Sanford\",Port Sergiofort,Belarus,(530)287-4548x29481,162-234-0249x32790,bobhammond@barry.biz,2021-12-02,https://www.burton.com/\r\n51,Aa20BDe68eAb0e9,Gerald,Hawkins,\"Phelps, Forbes and Koch\",New Alberttown,Canada,+1-323-239-1456x96168,(092)508-0269,uwarner@steele-arias.com,2021-03-19,https://valenzuela.com/\r\n52,e898eEB1B9FE22b,Samuel,Crawford,\"May, Goodwin and Martin\",South Jasmine,Algeria,802-242-7457,626.116.9535x8578,xpittman@ritter-carney.net,2021-03-27,https://guerrero.org/\r\n53,faCEF517ae7D8eB,Patricia,Goodwin,\"Christian, Winters and Ellis\",Cowanfort,Swaziland,322.549.7139x70040,(111)741-4173,vaughanchristy@lara.biz,2021-03-08,http://clark.info/\r\n54,c09952De6Cda8aA,Stacie,Richard,Byrd Inc,New Deborah,Madagascar,001-622-948-3641x24810,001-731-168-2893x8891,clinton85@colon-arias.org,2020-10-15,https://kim.com/\r\n55,f3BEf3Be028166f,Robin,West,\"Nixon, Blackwell and Sosa\",Wallstown,Ecuador,698.303.4267,001-683-837-7651x525,greenemiranda@zimmerman.com,2022-01-13,https://www.mora.com/\r\n56,C6F2Fc6a7948a4e,Ralph,Haas,Montes PLC,Lake Ellenchester,Palestinian Territory,2239271999,001-962-434-0867x649,goodmancesar@figueroa.biz,2020-05-25,http://may.com/\r\n57,c8FE57cBBdCDcb2,Phyllis,Maldonado,Costa PLC,Lake Whitney,Saint Barthelemy,4500370767,001-508-064-6725x017,yhanson@warner-diaz.org,2021-01-25,http://www.bernard.com/\r\n58,B5acdFC982124F2,Danny,Parrish,Novak LLC,East Jaredbury,United Arab Emirates,(669)384-8597x879",
+      "uploadedAt": "2026-08-30T16:21:38.711Z",
+      "extractedTopicsCount": 12,
+      "summary": "Organized 12 core topics extracted from your notes tailored for TNPSC Group 4."
+    }
+  ],
+  "universityExams": [
+    {
+      "id": "univ_cs3351_dsa",
+      "subjectCode": "CS3351",
+      "subjectName": "Data Structures and Algorithms",
+      "universityName": "Anna University / Autonomous Affiliated",
+      "department": "Computer Science & Engineering",
+      "semester": 3,
+      "examDate": "2026-09-12",
+      "examTime": "10:00 AM - 01:00 PM (Forenoon Session)",
+      "examHallLocation": "Examination Block B - Hall 302",
+      "credits": 4,
+      "targetGrade": "O (Outstanding)",
+      "internalMarksScored": 18,
+      "totalInternalMarks": 20,
+      "requiredExternalMarks": 45,
+      "preparationProgress": 65,
+      "status": "cramming",
+      "units": [
+        {
+          "unitNumber": 1,
+          "unitTitle": "Linear Data Structures - Stacks, Queues & Linked Lists",
+          "weightageMarks": 20,
+          "topics": [
+            "Array ADT vs Singly / Doubly / Circular Linked Lists",
+            "Stack ADT implementation using Arrays and Linked Lists",
+            "Applications of Stack: Infix to Postfix Conversion & Postfix Evaluation",
+            "Queue ADT, Circular Queue implementation and Priority Queue"
+          ],
+          "isCompleted": true,
+          "confidenceLevel": "strong",
+          "twoMarks": [
+            {
+              "id": "dsa_u1_q1",
+              "unitNumber": 1,
+              "question": "Define Abstract Data Type (ADT). Give two examples.",
+              "conciseAnswer": "An Abstract Data Type (ADT) is a mathematical model for data types where a data type is defined by its behavior (semantics) from the point of view of a user, specifically in terms of possible values, possible operations on data of this type, and the behavior of these operations, without specifying the implementation details. Examples: Stack ADT, List ADT, Queue ADT.",
+              "keyKeywords": [
+                "Mathematical model",
+                "Behavior defined by operations",
+                "Implementation independent"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": true
+            },
+            {
+              "id": "dsa_u1_q2",
+              "unitNumber": 1,
+              "question": "What is the condition for Circular Queue full and empty condition in an array of size MAX?",
+              "conciseAnswer": "Front = -1 and Rear = -1 indicates Queue is Empty. Queue is Full when: ((Rear + 1) % MAX) == Front.",
+              "keyKeywords": [
+                "((Rear + 1) % MAX) == Front",
+                "Front == -1 && Rear == -1"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": true
+            },
+            {
+              "id": "dsa_u1_q3",
+              "unitNumber": 1,
+              "question": "Convert the Infix expression (A + B) * (C - D) / E to Postfix notation.",
+              "conciseAnswer": "Step 1: (A + B) -> AB+\nStep 2: (C - D) -> CD-\nStep 3: AB+ * CD- -> AB+CD-*\nStep 4: AB+CD-* / E -> AB+CD-*E/",
+              "keyKeywords": [
+                "AB+CD-*E/",
+                "Operator precedence",
+                "Left-to-right evaluation"
+              ],
+              "frequency": "Medium",
+              "isMastered": false
+            }
+          ],
+          "bigQuestions": [
+            {
+              "id": "dsa_u1_bq1",
+              "unitNumber": 1,
+              "title": "Explain the Infix to Postfix conversion algorithm using Stack with a complete trace for: (A + B * C) / (D - E ^ F)",
+              "marks": 13,
+              "frequency": "Repeated Every Year",
+              "previousExamYears": [
+                "Nov/Dec 2024",
+                "Apr/May 2024",
+                "Nov/Dec 2023"
+              ],
+              "stepByStepBlueprint": [
+                {
+                  "heading": "1. Algorithm Explanation & Operator Precedence Table",
+                  "content": "Describe stack rules: Operands directly to output; Operators pushed if precedence > top of stack, else pop higher/equal precedence operators before pushing.",
+                  "diagramHint": "Draw precedence table: ^ (Highest, Right-to-Left) > *, / > +, - (Left-to-Right)."
+                },
+                {
+                  "heading": "2. Step-by-Step Execution Table",
+                  "content": "Create a 4-column trace table with Symbol Scanned, Stack Content, Postfix Expression, and Action Taken.",
+                  "diagramHint": "Show stack states at each symbol scan."
+                },
+                {
+                  "heading": "3. Final Output Postfix String",
+                  "content": "Final Result: A B C * + D E F ^ - /"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "unitTitle": "Tree Structures & Balanced Search Trees",
+          "weightageMarks": 20,
+          "topics": [
+            "Binary Trees, Traversals (Inorder, Preorder, Postorder)",
+            "Binary Search Tree (BST) Operations: Insertion, Deletion cases",
+            "AVL Trees & 4 Rotations (LL, RR, LR, RL)",
+            "B-Trees and B+ Tree Indexing in Databases",
+            "Binary Heaps / Priority Queues"
+          ],
+          "isCompleted": true,
+          "confidenceLevel": "moderate",
+          "twoMarks": [
+            {
+              "id": "dsa_u2_q1",
+              "unitNumber": 2,
+              "question": "What is the Balance Factor in an AVL Tree? State its permissible values.",
+              "conciseAnswer": "Balance Factor (BF) = Height(Left Subtree) - Height(Right Subtree). For an AVL tree to remain balanced, the Balance Factor of every node must strictly be in {-1, 0, +1}.",
+              "keyKeywords": [
+                "BF = Height(L) - Height(R)",
+                "Values in {-1, 0, +1}"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": true
+            },
+            {
+              "id": "dsa_u2_q2",
+              "unitNumber": 2,
+              "question": "Differentiate between B-Tree and B+ Tree.",
+              "conciseAnswer": "In a B-Tree, search keys and data pointers are stored in both internal and leaf nodes. In a B+ Tree, internal nodes store only routing keys while all actual data records/pointers are stored exclusively in leaf nodes linked sequentially for fast range queries.",
+              "keyKeywords": [
+                "Leaf node sequential linking",
+                "Internal nodes contain only routing keys in B+ Tree"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": false
+            }
+          ],
+          "bigQuestions": [
+            {
+              "id": "dsa_u2_bq1",
+              "unitNumber": 2,
+              "title": "Construct an AVL tree by inserting keys: 21, 26, 30, 9, 4, 14, 28, 18, 15. Show all single (LL, RR) and double (LR, RL) rotations clearly.",
+              "marks": 16,
+              "frequency": "Repeated Every Year",
+              "previousExamYears": [
+                "Apr/May 2025",
+                "Nov/Dec 2024",
+                "Apr/May 2023"
+              ],
+              "stepByStepBlueprint": [
+                {
+                  "heading": "1. Initial Insertions and Detection of Imbalance",
+                  "content": "Insert 21, 26, 30 -> Node 21 has BF = -2 (RR Imbalance). Perform Single Left Rotation around 21.",
+                  "diagramHint": "Draw AVL node diagrams showing balance factors at each step."
+                },
+                {
+                  "heading": "2. Double Rotation Demonstration",
+                  "content": "Insert 9, 4 -> LL Rotation. Insert 14 -> LR Rotation on subtree rooted at 9.",
+                  "diagramHint": "Show intermediate state after left-rotation on child then right-rotation on parent."
+                },
+                {
+                  "heading": "3. Final AVL Tree Verification",
+                  "content": "Confirm that all nodes have Balance Factor within {-1, 0, +1}."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "unitTitle": "Graph Algorithms & Minimum Spanning Trees",
+          "weightageMarks": 20,
+          "topics": [
+            "Graph Representations: Adjacency Matrix vs Adjacency List",
+            "Graph Traversals: Breadth First Search (BFS) & Depth First Search (DFS)",
+            "Topological Sorting for Directed Acyclic Graphs (DAG)",
+            "Shortest Path: Dijkstra’s Algorithm and Bellman-Ford Algorithm",
+            "Minimum Spanning Trees: Prim’s and Kruskal’s Greedy Algorithms"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "weak",
+          "twoMarks": [
+            {
+              "id": "dsa_u3_q1",
+              "unitNumber": 3,
+              "question": "What is Topological Sort? Give an application.",
+              "conciseAnswer": "Topological sort is a linear ordering of vertices in a Directed Acyclic Graph (DAG) such that for every directed edge (u -> v), vertex u comes before v in the ordering. Application: Task scheduling, prerequisite course planning, build dependency resolution.",
+              "keyKeywords": [
+                "Linear ordering in DAG",
+                "u precedes v for edge u->v",
+                "Task scheduling application"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": false
+            },
+            {
+              "id": "dsa_u3_q2",
+              "unitNumber": 3,
+              "question": "Why does Dijkstra’s algorithm fail for graphs with negative weight cycles?",
+              "conciseAnswer": "Dijkstra assumes that adding an edge to a path always increases its total cost (greedy assumption with non-negative weights). With negative edges, an already finalized shortest path could be made shorter later, breaking the greedy invariant. Bellman-Ford algorithm must be used instead.",
+              "keyKeywords": [
+                "Greedy invariant broken",
+                "Negative weight cycles",
+                "Use Bellman-Ford"
+              ],
+              "frequency": "Medium",
+              "isMastered": false
+            }
+          ],
+          "bigQuestions": [
+            {
+              "id": "dsa_u3_bq1",
+              "unitNumber": 3,
+              "title": "Explain Dijkstra’s Single Source Shortest Path algorithm with pseudocode and trace the shortest paths from source vertex A for a given 6-vertex weighted graph.",
+              "marks": 13,
+              "frequency": "High-Yield",
+              "previousExamYears": [
+                "Apr/May 2025",
+                "Nov/Dec 2023"
+              ],
+              "stepByStepBlueprint": [
+                {
+                  "heading": "1. Pseudocode & Priority Queue Initialization",
+                  "content": "Set dist[source] = 0 and dist[v] = infinity for all other vertices. Maintain a visited set S and Min-Priority Queue.",
+                  "diagramHint": "Draw graph topology with edge weights."
+                },
+                {
+                  "heading": "2. Iteration Table",
+                  "content": "Fill a 6-row iteration table tracking visited vertex u, relaxed neighboring edges (u, v), and updated distance array.",
+                  "diagramHint": "Highlight newly discovered shortest distances in bold."
+                },
+                {
+                  "heading": "3. Time Complexity Analysis",
+                  "content": "O((V + E) log V) using Min-Heap / Adjacency List."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "unitTitle": "Hashing Techniques & Sorting Algorithms",
+          "weightageMarks": 20,
+          "topics": [
+            "Hash Tables & Hash Functions (Division, Mid-square, Folding)",
+            "Collision Resolution: Open Addressing (Linear, Quadratic, Double Hashing)",
+            "Separate Chaining Collision Handling",
+            "Comparison Sorting: QuickSort & Partitioning strategies",
+            "MergeSort Divide-and-Conquer Analysis",
+            "HeapSort and Linear Time Sorting (Radix Sort, Counting Sort)"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "unprepared",
+          "twoMarks": [
+            {
+              "id": "dsa_u4_q1",
+              "unitNumber": 4,
+              "question": "What is Clustering in Open Addressing? Differentiate Primary from Secondary clustering.",
+              "conciseAnswer": "Primary clustering occurs in Linear Probing where occupied slots form long contiguous blocks, increasing search time. Secondary clustering occurs in Quadratic Probing where keys that hash to the same initial slot trace the exact same probe sequence.",
+              "keyKeywords": [
+                "Linear probing -> Primary clustering",
+                "Quadratic probing -> Secondary clustering"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": false
+            },
+            {
+              "id": "dsa_u4_q2",
+              "unitNumber": 4,
+              "question": "Compare QuickSort and MergeSort time & space complexities.",
+              "conciseAnswer": "QuickSort: Best/Avg O(N log N), Worst O(N^2), Auxiliary Space O(log N) in-place. MergeSort: Best/Avg/Worst O(N log N) strictly, Auxiliary Space O(N) external buffer.",
+              "keyKeywords": [
+                "QuickSort worst O(N^2)",
+                "MergeSort stable O(N log N) with O(N) space"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": true
+            }
+          ],
+          "bigQuestions": [
+            {
+              "id": "dsa_u4_bq1",
+              "unitNumber": 4,
+              "title": "Describe Hash Collision Resolution strategies: Separate Chaining vs Open Addressing (Linear Probing, Quadratic Probing, Double Hashing) with diagrams and mathematical formulas.",
+              "marks": 13,
+              "frequency": "Repeated Every Year",
+              "previousExamYears": [
+                "Nov/Dec 2024",
+                "Apr/May 2024",
+                "Nov/Dec 2022"
+              ],
+              "stepByStepBlueprint": [
+                {
+                  "heading": "1. Separate Chaining Overview & Diagram",
+                  "content": "Each slot in hash table points to a linked list of records that hash to same index. Load factor alpha = N / M.",
+                  "diagramHint": "Draw array of bucket pointers to linked list nodes."
+                },
+                {
+                  "heading": "2. Open Addressing Formulas",
+                  "content": "Linear: h(k, i) = (h(k) + i) % M. Quadratic: h(k, i) = (h(k) + c1*i + c2*i^2) % M. Double: h(k, i) = (h1(k) + i * h2(k)) % M.",
+                  "diagramHint": "Show probe sequence resolution on collision."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "unitTitle": "Algorithm Design Strategies & Dynamic Programming",
+          "weightageMarks": 20,
+          "topics": [
+            "Greedy Strategy vs Dynamic Programming Principle of Optimality",
+            "0/1 Knapsack Problem (Dynamic Programming Table Formulation)",
+            "Fractional Knapsack (Greedy Approach)",
+            "Longest Common Subsequence (LCS)",
+            "Backtracking: 8-Queens Problem & State Space Tree",
+            "Branch and Bound: Traveling Salesperson Problem (TSP)"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "unprepared",
+          "twoMarks": [
+            {
+              "id": "dsa_u5_q1",
+              "unitNumber": 5,
+              "question": "State the Principle of Optimality in Dynamic Programming.",
+              "conciseAnswer": "The Principle of Optimality states that an optimal policy has the property that whatever the initial state and initial decision are, the remaining decisions must constitute an optimal policy with regard to the state resulting from the first decision.",
+              "keyKeywords": [
+                "Optimal sub-structure",
+                "Overlapping sub-problems",
+                "Bellman optimality"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": false
+            },
+            {
+              "id": "dsa_u5_q2",
+              "unitNumber": 5,
+              "question": "Differentiate Backtracking from Branch and Bound.",
+              "conciseAnswer": "Backtracking uses Depth First Search (DFS) with pruning to find feasible solutions for constraint satisfaction (e.g. N-Queens). Branch and Bound uses Breadth First Search (BFS) / Best-First Search with bounding functions to find optimal solutions for optimization problems (e.g. TSP).",
+              "keyKeywords": [
+                "Backtracking = DFS + Pruning",
+                "Branch & Bound = BFS / Best-First + Cost Bounds"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": false
+            }
+          ],
+          "bigQuestions": [
+            {
+              "id": "dsa_u5_bq1",
+              "unitNumber": 5,
+              "title": "Solve the 0/1 Knapsack problem using Dynamic Programming for Capacity W = 8 and items: {(w1=2, v1=1), (w2=3, v2=2), (w3=4, v3=5), (w4=5, v4=6)}. Construct the DP table and trace the selected items.",
+              "marks": 16,
+              "frequency": "Repeated Every Year",
+              "previousExamYears": [
+                "Apr/May 2025",
+                "Nov/Dec 2024",
+                "Apr/May 2023"
+              ],
+              "stepByStepBlueprint": [
+                {
+                  "heading": "1. Recurrence Relation Definition",
+                  "content": "V[i, w] = max(V[i-1, w], V[i-1, w - w_i] + v_i) if w_i <= w, else V[i-1, w].",
+                  "diagramHint": "Write the 2D recurrence matrix equation clearly in box."
+                },
+                {
+                  "heading": "2. Complete 2D Matrix (5 rows x 9 columns)",
+                  "content": "Fill rows 0 to 4 across capacities 0 to 8.",
+                  "diagramHint": "Highlight max value at cell V[4, 8] = 8."
+                },
+                {
+                  "heading": "3. Backtracking to Identify Selected Items",
+                  "content": "Items Selected: Item 4 (w=5, v=6) and Item 2 (w=3, v=2). Total Weight = 8, Max Profit = 8."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modelPapers": [
+        {
+          "id": "mp_cs3351_2025",
+          "title": "Anna University April/May 2025 - CS3351 Model Question Paper with Solved Answer Keys",
+          "yearOrTerm": "Apr/May 2025 (Regulation 2021)",
+          "pattern": "Part A (10 x 2 = 20 Marks) + Part B (5 x 13 = 65 Marks) + Part C (1 x 15 = 15 Marks)",
+          "partAQuestionsCount": 10,
+          "partBQuestionsCount": 6
+        },
+        {
+          "id": "mp_cs3351_2024",
+          "title": "Anna University Nov/Dec 2024 - University Solved Board Question Paper",
+          "yearOrTerm": "Nov/Dec 2024",
+          "pattern": "Part A (10 x 2 = 20 Marks) + Part B (5 x 13 = 65 Marks) + Part C (1 x 15 = 15 Marks)",
+          "partAQuestionsCount": 10,
+          "partBQuestionsCount": 6
+        }
+      ],
+      "facultyExamTips": [
+        "⚡ **Unit 1 & Unit 2 Guarantee 36 Marks**: Infix-to-Postfix conversion and AVL Tree insertion with rotations appear in every single examination paper.",
+        "📝 **Diagram Presentation Protocol**: University evaluators assign 4 out of 13 marks purely for neat labeled tree/graph diagrams and step-by-step trace tables.",
+        "🎯 **Part A 2-Marks Accuracy**: Memorize exact definitions with formulas (e.g. AVL Balance Factor formula, ADT definition) to secure full 20/20 in Part A.",
+        "⏱️ **Time Management Strategy**: Allocate 25 minutes for Part A (10 questions), 25 minutes per Part B question (5 questions = 125 mins), leaving 30 mins for Part C and review."
+      ],
+      "revisionCrammingPlan": [
+        {
+          "day": "Day 1 (Immediate)",
+          "timeSlot": "07:00 PM - 10:30 PM (3.5 Hours)",
+          "hoursNeeded": 3.5,
+          "focusUnits": "Unit 1 & Unit 2 Linear & Trees",
+          "tasks": [
+            "Practice AVL Tree insertions (LL, RR, LR, RL) with 3 numerical problems",
+            "Memorize Stack applications: Infix to Postfix conversion trace",
+            "Revise all 5 Unit-1 and Unit-2 Two-Mark definitions"
+          ]
+        },
+        {
+          "day": "Day 2",
+          "timeSlot": "06:30 PM - 10:30 PM (4 Hours)",
+          "hoursNeeded": 4,
+          "focusUnits": "Unit 3 Graph Algorithms",
+          "tasks": [
+            "Trace Dijkstra single-source shortest path algorithm on 6-vertex graph",
+            "Compare Prim and Kruskal MST greedy algorithms with pseudocode",
+            "Master Topological sorting steps on Directed Acyclic Graph (DAG)"
+          ]
+        },
+        {
+          "day": "Day 3",
+          "timeSlot": "06:00 PM - 10:30 PM (4.5 Hours)",
+          "hoursNeeded": 4.5,
+          "focusUnits": "Unit 4 Hashing & Unit 5 Dynamic Programming",
+          "tasks": [
+            "Formulate 0/1 Knapsack 2D Dynamic Programming table and item backtracking",
+            "Draw Open Addressing vs Separate Chaining collision diagrams",
+            "Solve complete 2025 April/May Solved Model Paper under timed conditions"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "univ_cs3452_toc",
+      "subjectCode": "CS3452",
+      "subjectName": "Theory of Computation & Automata Theory",
+      "universityName": "Anna University / Autonomous Affiliated",
+      "department": "Computer Science & Engineering",
+      "semester": 4,
+      "examDate": "2026-09-18",
+      "examTime": "02:00 PM - 05:00 PM (Afternoon Session)",
+      "examHallLocation": "Examination Block A - Hall 204",
+      "credits": 3,
+      "targetGrade": "A+ (Excellent)",
+      "internalMarksScored": 17,
+      "totalInternalMarks": 20,
+      "requiredExternalMarks": 48,
+      "preparationProgress": 40,
+      "status": "cramming",
+      "units": [
+        {
+          "unitNumber": 1,
+          "unitTitle": "Finite Automata & Regular Expressions",
+          "weightageMarks": 20,
+          "topics": [
+            "DFA (Deterministic Finite Automata) & NFA with epsilon transitions",
+            "Equivalence of NFA and DFA (Subset Construction Algorithm)",
+            "Minimization of DFA using Myhill-Nerode / Table Filling method",
+            "Regular Expressions and Arden’s Theorem"
+          ],
+          "isCompleted": true,
+          "confidenceLevel": "strong",
+          "twoMarks": [
+            {
+              "id": "toc_u1_q1",
+              "unitNumber": 1,
+              "question": "Define Deterministic Finite Automaton (DFA) formally with its 5-tuple.",
+              "conciseAnswer": "A DFA is a 5-tuple M = (Q, Sigma, delta, q0, F) where Q is a finite set of states, Sigma is a finite set of input symbols (alphabet), delta: Q x Sigma -> Q is the transition function, q0 in Q is the initial state, and F subset of Q is the set of accept/final states.",
+              "keyKeywords": [
+                "5-tuple (Q, Sigma, delta, q0, F)",
+                "delta: Q x Sigma -> Q"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": true
+            }
+          ],
+          "bigQuestions": [
+            {
+              "id": "toc_u1_bq1",
+              "unitNumber": 1,
+              "title": "Convert the given NFA with epsilon transitions to DFA using Subset Construction algorithm and minimize the resulting DFA.",
+              "marks": 13,
+              "frequency": "Repeated Every Year",
+              "previousExamYears": [
+                "Apr/May 2025",
+                "Nov/Dec 2024"
+              ],
+              "stepByStepBlueprint": [
+                {
+                  "heading": "1. Compute epsilon-closures for each state",
+                  "content": "Determine epsilon-closure(q0) as initial state of DFA."
+                },
+                {
+                  "heading": "2. DFA Transition Table Construction",
+                  "content": "Compute delta-D(T, a) = epsilon-closure(delta(T, a)) for each newly discovered state set."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "unitTitle": "Regular Languages & Pumping Lemma",
+          "weightageMarks": 20,
+          "topics": [
+            "Pumping Lemma for Regular Languages",
+            "Closure properties of Regular Languages (Union, Intersection, Complement)",
+            "Decision properties: Emptiness, Finiteness, Equivalence"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "moderate",
+          "twoMarks": [
+            {
+              "id": "toc_u2_q1",
+              "unitNumber": 2,
+              "question": "State Pumping Lemma for Regular Languages.",
+              "conciseAnswer": "Let L be a regular language. There exists a pumping length p >= 1 such that any string w in L with |w| >= p can be divided into three parts w = xyz satisfying: (1) |y| > 0, (2) |xy| <= p, (3) for all i >= 0, x y^i z is in L.",
+              "keyKeywords": [
+                "w = xyz",
+                "|y| > 0",
+                "|xy| <= p",
+                "x(y^i)z in L for all i >= 0"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": true
+            }
+          ],
+          "bigQuestions": [
+            {
+              "id": "toc_u2_bq1",
+              "unitNumber": 2,
+              "title": "Prove using Pumping Lemma that the language L = {0^n 1^n | n >= 1} is not regular.",
+              "marks": 13,
+              "frequency": "Repeated Every Year",
+              "previousExamYears": [
+                "Nov/Dec 2024",
+                "Apr/May 2023"
+              ],
+              "stepByStepBlueprint": [
+                {
+                  "heading": "1. Assume L is regular by contradiction",
+                  "content": "Let p be the pumping length. Choose string w = 0^p 1^p with |w| = 2p >= p."
+                },
+                {
+                  "heading": "2. Decompose w = xyz with conditions",
+                  "content": "Since |xy| <= p, string y must consist entirely of 0s (y = 0^k where k >= 1)."
+                },
+                {
+                  "heading": "3. Pump y with i = 0 or i = 2 to derive contradiction",
+                  "content": "String x y^2 z has p + k zeros and p ones, so number of 0s != number of 1s. Hence L is not regular."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "unitTitle": "Context-Free Grammars (CFG) & Pushdown Automata (PDA)",
+          "weightageMarks": 20,
+          "topics": [
+            "CFG Derivations, Parse Trees, Ambiguity in Grammars",
+            "Simplification of CFG: Elimination of Useless Symbols, Epsilon & Unit Productions",
+            "Chomsky Normal Form (CNF)",
+            "Pushdown Automata (PDA) Definition, Acceptance by Final State vs Empty Stack"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "weak",
+          "twoMarks": [
+            {
+              "id": "toc_u3_q1",
+              "unitNumber": 3,
+              "question": "When is a context-free grammar said to be ambiguous?",
+              "conciseAnswer": "A CFG is ambiguous if there exists at least one string in its language that possesses two or more distinct leftmost derivations, rightmost derivations, or distinct parse trees.",
+              "keyKeywords": [
+                "Two or more distinct parse trees",
+                "Multiple leftmost derivations"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": false
+            }
+          ],
+          "bigQuestions": [
+            {
+              "id": "toc_u3_bq1",
+              "unitNumber": 3,
+              "title": "Design a Pushdown Automaton (PDA) for the language L = {w c w^R | w in {a, b}*} and show the instantaneous description (ID) trace for string \"abcba\".",
+              "marks": 13,
+              "frequency": "Repeated Every Year",
+              "previousExamYears": [
+                "Apr/May 2025",
+                "Nov/Dec 2023"
+              ],
+              "stepByStepBlueprint": [
+                {
+                  "heading": "1. PDA State Transition Diagram",
+                  "content": "State q0 pushes a and b onto stack until middle marker c is read. On reading c, transition to state q1 without changing stack. State q1 pops matching symbols."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "unitTitle": "Turing Machines & Computability",
+          "weightageMarks": 20,
+          "topics": [
+            "Turing Machine (TM) Formal Definition & 7-tuple",
+            "Design of Turing Machine for L = {0^n 1^n 2^n | n >= 1}",
+            "Techniques for TM construction: Storage in state, Multi-track, Subroutines",
+            "Equivalence of One-Tape and Multi-Tape Turing Machines"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "unprepared",
+          "twoMarks": [
+            {
+              "id": "toc_u4_q1",
+              "unitNumber": 4,
+              "question": "Define Turing Machine formally.",
+              "conciseAnswer": "A Turing Machine is a 7-tuple M = (Q, Sigma, Gamma, delta, q0, B, F) where Gamma is the tape alphabet, B is the blank symbol, and delta: Q x Gamma -> Q x Gamma x {L, R} is the transition function specifying next state, symbol written, and head direction.",
+              "keyKeywords": [
+                "7-tuple (Q, Sigma, Gamma, delta, q0, B, F)",
+                "delta: Q x Gamma -> Q x Gamma x {L, R}"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": false
+            }
+          ],
+          "bigQuestions": [
+            {
+              "id": "toc_u4_bq1",
+              "unitNumber": 4,
+              "title": "Design a Turing Machine to accept the language L = {0^n 1^n 2^n | n >= 1}. Provide transition table and complete state diagram.",
+              "marks": 16,
+              "frequency": "High-Yield",
+              "previousExamYears": [
+                "Nov/Dec 2024",
+                "Apr/May 2024"
+              ],
+              "stepByStepBlueprint": [
+                {
+                  "heading": "1. Algorithm Strategy",
+                  "content": "Replace leftmost 0 with X, scan right to replace matching 1 with Y, scan right to replace matching 2 with Z. Rewind back to leftmost unreplaced 0 and repeat."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "unitTitle": "Undecidability & Tractability",
+          "weightageMarks": 20,
+          "topics": [
+            "Universal Turing Machine",
+            "Halting Problem of Turing Machine (Undecidability Proof by Diagonalization)",
+            "Post Correspondence Problem (PCP)",
+            "Class P, NP, NP-Complete and NP-Hard problems"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "unprepared",
+          "twoMarks": [
+            {
+              "id": "toc_u5_q1",
+              "unitNumber": 5,
+              "question": "What is the Halting Problem of Turing Machine? Is it decidable?",
+              "conciseAnswer": "The Halting Problem asks whether an arbitrary Turing machine M will halt on a given input string w. Alan Turing proved in 1936 that the Halting Problem is strictly Undecidable (no general algorithm can solve it).",
+              "keyKeywords": [
+                "Undecidable",
+                "Alan Turing proof by contradiction/diagonalization"
+              ],
+              "frequency": "High (Asked 4+ times)",
+              "isMastered": true
+            }
+          ],
+          "bigQuestions": [
+            {
+              "id": "toc_u5_bq1",
+              "unitNumber": 5,
+              "title": "Prove that the Halting Problem of Turing Machine is undecidable using diagonalization and proof by contradiction.",
+              "marks": 13,
+              "frequency": "Repeated Every Year",
+              "previousExamYears": [
+                "Apr/May 2025",
+                "Nov/Dec 2024"
+              ],
+              "stepByStepBlueprint": [
+                {
+                  "heading": "1. Assumption of decider H",
+                  "content": "Assume there exists a TM H(M, w) that outputs \"HALT\" if M halts on w, and \"LOOP\" otherwise."
+                },
+                {
+                  "heading": "2. Construct Adversarial TM D",
+                  "content": "Construct machine D with input <M>. D runs H(M, <M>). If H says HALT, D loops infinitely. If H says LOOP, D halts immediately."
+                },
+                {
+                  "heading": "3. Diagonal Contradiction with D(<D>)",
+                  "content": "Running D(<D>) halts if and only if D(<D>) loops infinitely, a direct logical contradiction. Hence H cannot exist."
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "modelPapers": [
+        {
+          "id": "mp_cs3452_2025",
+          "title": "Anna University April/May 2025 - CS3452 Theory of Computation Model Question Paper",
+          "yearOrTerm": "Apr/May 2025",
+          "pattern": "Part A (10 x 2 = 20 Marks) + Part B (5 x 13 = 65 Marks) + Part C (1 x 15 = 15 Marks)",
+          "partAQuestionsCount": 10,
+          "partBQuestionsCount": 6
+        }
+      ],
+      "facultyExamTips": [
+        "🔥 **Pumping Lemma & Halting Problem Proofs**: These two theorem derivations appear in virtually 100% of University exam papers.",
+        "✏️ **Transition Tables & Diagrams**: Always write both the transition table matrix AND the bubble state transition graph for Full marks."
+      ]
+    },
+    {
+      "id": "univ_ec3352_dsd",
+      "subjectCode": "EC3352",
+      "subjectName": "Digital Systems & Computer Architecture",
+      "universityName": "Anna University / State Technical University",
+      "department": "Electronics & Communication / Electrical Engg",
+      "semester": 3,
+      "examDate": "2026-09-24",
+      "examTime": "10:00 AM - 01:00 PM (Forenoon Session)",
+      "examHallLocation": "Examination Block C - Hall 105",
+      "credits": 4,
+      "targetGrade": "O (Outstanding)",
+      "internalMarksScored": 19,
+      "totalInternalMarks": 20,
+      "requiredExternalMarks": 45,
+      "preparationProgress": 50,
+      "status": "in_progress",
+      "units": [
+        {
+          "unitNumber": 1,
+          "unitTitle": "Boolean Algebra, K-Maps & Combinational Logic",
+          "weightageMarks": 20,
+          "topics": [
+            "Karnaugh Maps (4 & 5 variables)",
+            "Full Adder, Carry Look-ahead Adder",
+            "Multiplexers & Encoders"
+          ],
+          "isCompleted": true,
+          "confidenceLevel": "strong",
+          "twoMarks": [],
+          "bigQuestions": []
+        },
+        {
+          "unitNumber": 2,
+          "unitTitle": "Synchronous & Asynchronous Sequential Circuits",
+          "weightageMarks": 20,
+          "topics": [
+            "JK, D, T Flip-Flops",
+            "Synchronous Modulo-N Counters",
+            "Finite State Machine Design (Mealy vs Moore)"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "moderate",
+          "twoMarks": [],
+          "bigQuestions": []
+        },
+        {
+          "unitNumber": 3,
+          "unitTitle": "Computer Arithmetic & ALU Design",
+          "weightageMarks": 20,
+          "topics": [
+            "Booth Multiplication Algorithm for Signed Numbers",
+            "Restoring & Non-Restoring Division",
+            "IEEE 754 Floating Point Format"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "weak",
+          "twoMarks": [],
+          "bigQuestions": []
+        },
+        {
+          "unitNumber": 4,
+          "unitTitle": "Pipelining & Instruction Level Parallelism",
+          "weightageMarks": 20,
+          "topics": [
+            "5-stage RISC Pipeline",
+            "Pipeline Hazards: Structural, Data (Forwarding), Control (Branch Prediction)"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "unprepared",
+          "twoMarks": [],
+          "bigQuestions": []
+        },
+        {
+          "unitNumber": 5,
+          "unitTitle": "Memory Hierarchy & Cache Mapping",
+          "weightageMarks": 20,
+          "topics": [
+            "Direct Mapped, Fully Associative, Set Associative Cache",
+            "Virtual Memory & Translation Lookaside Buffer (TLB)"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "unprepared",
+          "twoMarks": [],
+          "bigQuestions": []
+        }
+      ],
+      "modelPapers": [
+        {
+          "id": "mp_ec3352_2025",
+          "title": "University Solved Model Paper - Digital Systems & Architecture",
+          "yearOrTerm": "Apr/May 2025",
+          "pattern": "Part A (20 Marks) + Part B (65 Marks) + Part C (15 Marks)",
+          "partAQuestionsCount": 10,
+          "partBQuestionsCount": 6
+        }
+      ],
+      "facultyExamTips": [
+        "💡 **Booth Multiplication & 5-Stage Hazard Forwarding**: Practice numerical problem solving for Booth Multiplier step by step with signed 2s complement binary."
+      ]
+    },
+    {
+      "id": "univ_ba7102_fin",
+      "subjectCode": "BA7102",
+      "subjectName": "Corporate Financial Management & Accounting",
+      "universityName": "Delhi University / MBA Department",
+      "department": "Management & Commerce",
+      "semester": 2,
+      "examDate": "2026-10-02",
+      "examTime": "10:00 AM - 01:00 PM (Forenoon Session)",
+      "examHallLocation": "Main Auditorium Hall A",
+      "credits": 4,
+      "targetGrade": "A+ (Excellent)",
+      "internalMarksScored": 36,
+      "totalInternalMarks": 40,
+      "requiredExternalMarks": 50,
+      "preparationProgress": 30,
+      "status": "in_progress",
+      "units": [
+        {
+          "unitNumber": 1,
+          "unitTitle": "Financial Statements & Ratio Analysis",
+          "weightageMarks": 20,
+          "topics": [
+            "Balance Sheet & Profit/Loss Statement",
+            "Liquidity, Solvency, Profitability & Turnover Ratios",
+            "DuPont Analysis"
+          ],
+          "isCompleted": true,
+          "confidenceLevel": "strong",
+          "twoMarks": [],
+          "bigQuestions": []
+        },
+        {
+          "unitNumber": 2,
+          "unitTitle": "Capital Budgeting & Investment Decisions",
+          "weightageMarks": 20,
+          "topics": [
+            "Net Present Value (NPV)",
+            "Internal Rate of Return (IRR)",
+            "Profitability Index & Payback Period"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "moderate",
+          "twoMarks": [],
+          "bigQuestions": []
+        },
+        {
+          "unitNumber": 3,
+          "unitTitle": "Cost of Capital & Capital Structure",
+          "weightageMarks": 20,
+          "topics": [
+            "Weighted Average Cost of Capital (WACC)",
+            "Modigliani-Miller (MM) Hypothesis",
+            "EBIT-EPS Analysis & Financial Leverage"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "weak",
+          "twoMarks": [],
+          "bigQuestions": []
+        },
+        {
+          "unitNumber": 4,
+          "unitTitle": "Working Capital Management",
+          "weightageMarks": 20,
+          "topics": [
+            "Operating Cycle & Cash Conversion Cycle",
+            "Cash Management & Baumol / Miller-Orr Models",
+            "Inventory Management (EOQ)"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "unprepared",
+          "twoMarks": [],
+          "bigQuestions": []
+        },
+        {
+          "unitNumber": 5,
+          "unitTitle": "Dividend Policy & Corporate Valuation",
+          "weightageMarks": 20,
+          "topics": [
+            "Walter’s Model & Gordon’s Model of Dividend",
+            "Dividend Irrelevance (MM Approach)",
+            "Corporate Valuation using DCF"
+          ],
+          "isCompleted": false,
+          "confidenceLevel": "unprepared",
+          "twoMarks": [],
+          "bigQuestions": []
+        }
+      ],
+      "modelPapers": [
+        {
+          "id": "mp_ba7102_2025",
+          "title": "Master of Business Administration (MBA) Solved Financial Management Exam",
+          "yearOrTerm": "May/June 2025",
+          "pattern": "Section A (Short Questions) + Section B (Case Study & Problems)",
+          "partAQuestionsCount": 8,
+          "partBQuestionsCount": 5
+        }
+      ],
+      "facultyExamTips": [
+        "📊 **NPV vs IRR Conflict**: Be prepared for the 16-mark problem comparing two mutually exclusive projects with different cash flow patterns."
+      ]
+    }
+  ],
+  "syllabusAnalyses": []
+}

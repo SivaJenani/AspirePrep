@@ -1,0 +1,88 @@
+{
+  "entities": {
+    "userProfile": {
+      "title": "UserProfile",
+      "description": "User profile data, xp points, streak metrics and basic info.",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string", "description": "The unique Firebase Auth User UID." },
+        "name": { "type": "string", "description": "User display name." },
+        "email": { "type": "string", "description": "User account email address." },
+        "xp": { "type": "integer", "description": "Total accumulated preparation Experience Points (XP)." },
+        "streakDays": { "type": "integer", "description": "Consecutive days of study." },
+        "role": { "type": "string", "enum": ["student", "admin"], "description": "User system permission role." },
+        "updatedAt": { "type": "string", "format": "date-time", "description": "ISO timestamp of the last profile update." }
+      },
+      "required": ["uid", "name", "email", "xp", "streakDays", "role"]
+    },
+    "topicProgress": {
+      "title": "TopicProgress",
+      "description": "Specific study progress tracking record for an exam syllabus topic.",
+      "type": "object",
+      "properties": {
+        "topicId": { "type": "string" },
+        "subjectId": { "type": "string" },
+        "chapterId": { "type": "string" },
+        "examId": { "type": "string" },
+        "status": { "type": "string", "enum": ["not_started", "in_progress", "revision_needed", "completed", "mastered"] },
+        "confidenceRating": { "type": "integer" },
+        "notes": { "type": "string" },
+        "studyMinutesLogged": { "type": "integer" },
+        "masteryPercent": { "type": "integer" },
+        "lastStudiedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["topicId", "status", "lastStudiedAt"]
+    },
+    "mistakeEntry": {
+      "title": "MistakeEntry",
+      "description": "An entry representing a questions incorrectly answered by the student for revision.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "questionText": { "type": "string" },
+        "correctAnswer": { "type": "string" },
+        "userAnswer": { "type": "string" },
+        "errorTag": { "type": "string", "enum": ["Silly Error", "Conceptual Gap", "Calculation Slip", "Time Pressure", "Misread Question"] },
+        "userNotes": { "type": "string" },
+        "isMastered": { "type": "boolean" },
+        "retestSuccessCount": { "type": "integer" },
+        "lastAttemptedAt": { "type": "string", "format": "date-time" }
+      },
+      "required": ["id", "questionText", "correctAnswer", "userAnswer", "errorTag", "isMastered", "lastAttemptedAt"]
+    },
+    "flashcardEntry": {
+      "title": "FlashcardEntry",
+      "description": "A formula or flashcard entry tracking spacing repetition status.",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "question": { "type": "string" },
+        "answer": { "type": "string" },
+        "category": { "type": "string" },
+        "masteryStatus": { "type": "string", "enum": ["learning", "review_needed", "mastered"] },
+        "intervalStageDays": { "type": "integer" },
+        "timesReviewed": { "type": "integer" },
+        "lastReviewedDate": { "type": "string" }
+      },
+      "required": ["id", "question", "answer", "masteryStatus", "timesReviewed"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "userProfile",
+      "description": "User profile private records."
+    },
+    "/users/{userId}/topicProgress/{topicId}": {
+      "schema": "topicProgress",
+      "description": "User study track log per syllabus topic."
+    },
+    "/users/{userId}/mistakes/{mistakeId}": {
+      "schema": "mistakeEntry",
+      "description": "Notebook record of past quiz mistakes."
+    },
+    "/users/{userId}/flashcards/{flashcardId}": {
+      "schema": "flashcardEntry",
+      "description": "Formula and revision cards spaced repetition states."
+    }
+  }
+}

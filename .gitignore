@@ -1,0 +1,28 @@
+node_modules/
+build/
+dist/
+coverage/
+.DS_Store
+*.log
+
+# Env files — ignore all except examples
+.env*
+!.env.example
+!**/.env.example
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Backend build output
+backend/dist/
+
+# Frontend build output
+frontend/dist/
+
+# Data directory (persistent JSON DB — optional to commit)
+data/db.json
