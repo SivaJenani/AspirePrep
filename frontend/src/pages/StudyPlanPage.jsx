@@ -4,7 +4,7 @@ import {
     Calendar, CheckCircle2, Sparkles, Brain, Play, RefreshCw,
     BookOpen, Check, FolderOpen, Clock, Target, TrendingUp,
     ChevronRight, Zap, ListChecks, BarChart2, Award, AlertCircle,
-    BookMarked, Flame
+    BookMarked, Flame, Plus, Trash2, Printer, CheckSquare, ShieldCheck
 } from 'lucide-react';
 import { api } from '../lib/api';
 import { useAppStore } from '../store/useAppStore';
@@ -16,25 +16,30 @@ import { KanbanView } from '../components/study/KanbanView';
 import { CalendarView } from '../components/study/CalendarView';
 import { TimelineView } from '../components/study/TimelineView';
 import { SyllabusUploaderModal } from '../components/study/SyllabusUploaderModal';
+import { FocusStudyRoomModal } from '../components/study/FocusStudyRoomModal';
+import { AddTaskModal } from '../components/study/AddTaskModal';
+import { PrintableTimetableModal } from '../components/study/PrintableTimetableModal';
+import { StudyPlanEfficacyBanner } from '../components/study/StudyPlanEfficacyBanner';
+import { SyllabusCoverageMatrix } from '../components/study/SyllabusCoverageMatrix';
 
 // ─── Small reusable components ───────────────────────────────────────────────
 
 const StatBadge = ({ icon: Icon, label, value, color = 'indigo' }) => {
     const colors = {
-        indigo: 'bg-indigo-50 border-indigo-200 text-indigo-700 dark:bg-slate-800 dark:border-slate-700 dark:text-indigo-300',
-        emerald: 'bg-emerald-50 border-emerald-200 text-emerald-700 dark:bg-slate-800 dark:border-slate-700 dark:text-emerald-300',
-        amber: 'bg-amber-50 border-amber-200 text-amber-700 dark:bg-slate-800 dark:border-slate-700 dark:text-amber-300',
-        rose: 'bg-rose-50 border-rose-200 text-rose-700 dark:bg-slate-800 dark:border-slate-700 dark:text-rose-300',
-        purple: 'bg-purple-50 border-purple-200 text-purple-700 dark:bg-slate-800 dark:border-slate-700 dark:text-purple-300',
+        indigo: 'bg-indigo-50/80 border-indigo-200 text-indigo-700 dark:bg-[#151b2e] dark:border-[#2a3350] dark:text-indigo-300',
+        emerald: 'bg-emerald-50/80 border-emerald-200 text-emerald-700 dark:bg-[#151b2e] dark:border-[#2a3350] dark:text-emerald-300',
+        amber: 'bg-amber-50/80 border-amber-200 text-amber-700 dark:bg-[#151b2e] dark:border-[#2a3350] dark:text-amber-300',
+        rose: 'bg-rose-50/80 border-rose-200 text-rose-700 dark:bg-[#151b2e] dark:border-[#2a3350] dark:text-rose-300',
+        purple: 'bg-purple-50/80 border-purple-200 text-purple-700 dark:bg-[#151b2e] dark:border-[#2a3350] dark:text-purple-300',
     };
     return (
-        <div className={`flex items-center gap-3 rounded-xl border p-4 ${colors[color]}`}>
+        <div className={`flex items-center gap-3 rounded-xl border p-4 shadow-xs ${colors[color]}`}>
             <div className="shrink-0">
                 <Icon className="h-5 w-5" />
             </div>
             <div>
                 <div className="text-[11px] font-bold uppercase tracking-wider opacity-70">{label}</div>
-                <div className="mt-0.5 text-base font-extrabold">{value}</div>
+                <div className="mt-0.5 text-base font-extrabold font-mono tabular-nums">{value}</div>
             </div>
         </div>
     );
@@ -75,6 +80,17 @@ const ActivityTypePill = ({ type }) => {
 
 // ─── Main Page ────────────────────────────────────────────────────────────────
 
+const cleanTopicTitle = (text) => {
+    if (!text) return '';
+    return String(text)
+        .replace(/\*\*(.*?)\*\*/g, '$1')
+        .replace(/\*(.*?)\*/g, '$1')
+        .replace(/__(.*?)__/g, '$1')
+        .replace(/^[\d]+[\.\)]\s*/, '')
+        .replace(/^[-•*]\s*/, '')
+        .trim();
+};
+
 export const StudyPlanPage = () => {
     const { user } = useAppStore();
     const navigate = useNavigate();
@@ -88,6 +104,14 @@ export const StudyPlanPage = () => {
     const [scheduleView, setScheduleView] = useState('checklist');
     const [loading, setLoading] = useState(true);
     const [successToast, setSuccessToast] = useState(null);
+
+    // High-Efficacy & Focus Room States
+    const [focusRoomTask, setFocusRoomTask] = useState(null);
+    const [focusRoomDay, setFocusRoomDay] = useState(1);
+    const [isFocusRoomOpen, setIsFocusRoomOpen] = useState(false);
+    const [isAddTaskOpen, setIsAddTaskOpen] = useState(false);
+    const [addTaskDayNumber, setAddTaskDayNumber] = useState(1);
+    const [isPrintModalOpen, setIsPrintModalOpen] = useState(false);
 
     useEffect(() => {
         loadStudyPlan();
@@ -190,6 +214,41 @@ export const StudyPlanPage = () => {
         }
     };
 
+    const handleDeleteTask = async (taskId) => {
+        try {
+            const res = await api.post('/study-plan/task/delete', { taskId });
+            if (res.data?.studyPlan) {
+                setStudyPlan(res.data.studyPlan);
+                showToast('🗑️ Task removed from timetable.');
+            }
+        } catch (err) {
+            console.error('Delete task failed:', err);
+        }
+    };
+
+    const handleCompleteAllDay = async (dayNumber) => {
+        try {
+            const res = await api.post('/study-plan/day/complete-all', { dayNumber });
+            if (res.data?.studyPlan) {
+                setStudyPlan(res.data.studyPlan);
+                showToast(`🎉 Day ${dayNumber} fully completed! +${res.data.earnedXp || 75} XP & Streak advanced!`);
+            }
+        } catch (err) {
+            console.error('Complete all day failed:', err);
+        }
+    };
+
+    const handleOpenFocusRoom = (task, dayNumber) => {
+        setFocusRoomTask(task);
+        setFocusRoomDay(dayNumber);
+        setIsFocusRoomOpen(true);
+    };
+
+    const handleOpenAddTaskModal = (dayNumber = 1) => {
+        setAddTaskDayNumber(dayNumber);
+        setIsAddTaskOpen(true);
+    };
+
     const showToast = (msg) => {
         setSuccessToast(msg);
         setTimeout(() => setSuccessToast(null), 3500);
@@ -215,7 +274,7 @@ export const StudyPlanPage = () => {
     }
 
     return (
-        <div className="min-h-screen bg-slate-50 pb-20 dark:bg-slate-950">
+        <div className="min-h-screen bg-slate-50 pb-20 dark:bg-[#0b1120] font-sans">
 
             {/* ── Toast ─────────────────────────────────────────────────── */}
             {successToast && (
@@ -228,18 +287,18 @@ export const StudyPlanPage = () => {
             )}
 
             {/* ── Hero Header (Light + Dark Theme) ─────────────────────── */}
-            <div className="border-b border-slate-200 bg-gradient-to-br from-slate-50 via-indigo-50/40 to-purple-50/30 px-4 py-10 sm:px-6 lg:px-8 dark:border-slate-800 dark:bg-none dark:bg-slate-900">
+            <div className="border-b border-slate-200 bg-gradient-to-br from-slate-50 via-indigo-50/40 to-purple-50/30 px-4 py-10 sm:px-6 lg:px-8 dark:border-slate-800 dark:bg-none dark:bg-[#0b1120]">
                 <div className="mx-auto max-w-7xl space-y-8">
 
                     {/* Top bar */}
                     <div className="flex flex-wrap items-center justify-between gap-3">
-                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-cyan-400">
                             <Calendar className="h-4 w-4" />
                             Adaptive Study Engine & Timetable Planner
                         </div>
                         <button
                             onClick={() => setIsSavedNotesOpen(true)}
-                            className="flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 shadow-sm transition hover:bg-slate-50 hover:text-slate-900 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300 dark:hover:bg-slate-700 dark:hover:text-white"
+                            className="flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs font-semibold text-slate-600 shadow-xs transition hover:bg-slate-50 hover:text-slate-900 dark:border-[#2a3350] dark:bg-[#151b2e] dark:text-slate-300 dark:hover:bg-slate-800 dark:hover:text-white cursor-pointer"
                         >
                             <FolderOpen className="h-3.5 w-3.5" />
                             My Notes Library
@@ -250,11 +309,11 @@ export const StudyPlanPage = () => {
                     <div className="flex flex-col justify-between gap-6 lg:flex-row lg:items-start">
                         <div className="space-y-2">
                             <div className="flex flex-wrap items-center gap-2">
-                                <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-3xl">
+                                <h1 className="text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white sm:text-3xl font-display">
                                     {studyPlan?.planTitle || 'Personalized Preparation Roadmap'}
                                 </h1>
                                 {isCustomNotesPlan && (
-                                    <span className="rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 px-2.5 py-0.5 text-[11px] font-bold text-white shadow-sm">
+                                    <span className="rounded-full bg-gradient-to-r from-purple-500 to-indigo-500 px-2.5 py-0.5 text-[11px] font-bold text-white shadow-xs">
                                         Custom Notes Timetable
                                     </span>
                                 )}
@@ -367,6 +426,13 @@ export const StudyPlanPage = () => {
                         label={`📅 Daily Schedule (${studyPlan?.schedule?.length || 0} days)`}
                         color="indigo"
                     />
+                    <TabButton
+                        active={activeTab === 'mastery'}
+                        onClick={() => setActiveTab('mastery')}
+                        icon={ShieldCheck}
+                        label="🎯 Syllabus Mastery & Protocol"
+                        color="indigo"
+                    />
                     {isCustomNotesPlan && studyPlan?.extractedTopics?.length > 0 && (
                         <TabButton
                             active={activeTab === 'topics_deck'}
@@ -388,6 +454,18 @@ export const StudyPlanPage = () => {
                 {/* ── Schedule Tab ──────────────────────────────────────── */}
                 {activeTab === 'schedule' && (
                     <div className="space-y-6">
+
+                        {/* High-Efficacy Trust Banner */}
+                        {studyPlan && (
+                            <StudyPlanEfficacyBanner
+                                studyPlan={studyPlan}
+                                onPlanUpdated={(newPlan) => setStudyPlan(newPlan)}
+                                onOpenAddTask={() => handleOpenAddTaskModal(studyPlan?.currentDay || 1)}
+                                onOpenPrintModal={() => setIsPrintModalOpen(true)}
+                                onOpenFocusRoom={(task, dayNum) => handleOpenFocusRoom(task, dayNum)}
+                                showToast={showToast}
+                            />
+                        )}
 
                         {/* AI Strategy notes */}
                         {studyPlan?.adaptiveNotes?.length > 0 && (
@@ -425,20 +503,39 @@ export const StudyPlanPage = () => {
 
                         {/* View Switcher */}
                         {studyPlan && (
-                            <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white p-1.5 shadow-sm dark:border-slate-800 dark:bg-slate-900 w-fit">
-                                {['checklist', 'kanban', 'calendar', 'timeline'].map((v) => (
+                            <div className="flex flex-wrap items-center justify-between gap-3">
+                                <div className="flex items-center gap-2 rounded-xl border border-slate-200 bg-white p-1.5 shadow-xs dark:border-[#2a3350] dark:bg-[#151b2e] w-fit">
+                                    {['checklist', 'kanban', 'calendar', 'timeline'].map((v) => (
+                                        <button
+                                            key={v}
+                                            onClick={() => setScheduleView(v)}
+                                            className={`rounded-lg px-4 py-2 text-xs font-bold capitalize transition cursor-pointer ${
+                                                scheduleView === v 
+                                                    ? 'bg-indigo-50 text-indigo-700 shadow-xs dark:bg-indigo-950/60 dark:text-cyan-400'
+                                                    : 'text-slate-500 hover:bg-slate-50 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200'
+                                            }`}
+                                        >
+                                            {v}
+                                        </button>
+                                    ))}
+                                </div>
+
+                                <div className="flex items-center gap-2">
                                     <button
-                                        key={v}
-                                        onClick={() => setScheduleView(v)}
-                                        className={`rounded-lg px-4 py-2 text-xs font-bold capitalize transition ${
-                                            scheduleView === v 
-                                                ? 'bg-indigo-50 text-indigo-700 shadow-sm dark:bg-indigo-900/50 dark:text-indigo-300'
-                                                : 'text-slate-500 hover:bg-slate-50 hover:text-slate-700 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-slate-200'
-                                        }`}
+                                        onClick={() => handleOpenAddTaskModal(studyPlan?.currentDay || 1)}
+                                        className="flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-700 shadow-xs hover:bg-slate-50 dark:border-[#2a3350] dark:bg-[#151b2e] dark:text-slate-200 dark:hover:bg-slate-800 cursor-pointer"
                                     >
-                                        {v}
+                                        <Plus className="w-3.5 h-3.5 text-indigo-600 dark:text-cyan-400" />
+                                        <span>Add Task</span>
                                     </button>
-                                ))}
+                                    <button
+                                        onClick={() => setIsPrintModalOpen(true)}
+                                        className="flex items-center gap-1.5 rounded-xl border border-slate-200 bg-white px-3.5 py-2 text-xs font-bold text-slate-700 shadow-xs hover:bg-slate-50 dark:border-[#2a3350] dark:bg-[#151b2e] dark:text-slate-200 dark:hover:bg-slate-800 cursor-pointer"
+                                    >
+                                        <Printer className="w-3.5 h-3.5 text-slate-500" />
+                                        <span>Print Schedule</span>
+                                    </button>
+                                </div>
                             </div>
                         )}
 
@@ -453,21 +550,21 @@ export const StudyPlanPage = () => {
                                 return (
                                     <div
                                         key={day.dayNumber}
-                                        className={`rounded-2xl border shadow-sm transition-all ${
+                                        className={`rounded-2xl border shadow-xs transition-all ${
                                             day.isCompleted
-                                                ? 'border-slate-200 bg-slate-50 opacity-80 dark:border-slate-800 dark:bg-slate-900/60'
+                                                ? 'border-slate-200 bg-slate-50 opacity-85 dark:border-[#2a3350] dark:bg-[#151b2e]/60'
                                                 : day.isRestDay
                                                     ? 'border-emerald-200/80 bg-emerald-50/40 dark:border-emerald-900/40 dark:bg-emerald-950/20'
                                                     : isToday
-                                                        ? 'border-indigo-300 bg-white shadow-indigo-100 dark:border-indigo-800 dark:bg-slate-900 dark:shadow-none'
-                                                        : 'border-slate-200/80 bg-white dark:border-slate-800 dark:bg-slate-900'
+                                                        ? 'border-indigo-300 bg-white shadow-indigo-100 dark:border-indigo-800 dark:bg-[#151b2e] dark:shadow-none'
+                                                        : 'border-slate-200/80 bg-white dark:border-[#2a3350] dark:bg-[#151b2e]'
                                         }`}
                                     >
                                         {/* Day header */}
-                                        <div className="flex flex-col gap-3 border-b border-slate-100 p-5 dark:border-slate-800 sm:flex-row sm:items-center sm:justify-between">
+                                        <div className="flex flex-col gap-3 border-b border-slate-100 p-5 dark:border-[#2a3350] sm:flex-row sm:items-center sm:justify-between">
                                             <div className="flex items-center gap-3">
-                                                <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-sm font-extrabold text-white ${
-                                                    day.isRestDay ? 'bg-emerald-500' : isToday ? 'bg-indigo-600' : 'bg-slate-700'
+                                                <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-sm font-extrabold text-white font-mono tabular-nums ${
+                                                    day.isRestDay ? 'bg-emerald-500' : isToday ? 'bg-[#4f46e5]' : 'bg-slate-700'
                                                 }`}>
                                                     {day.dayNumber}
                                                 </div>
@@ -498,16 +595,37 @@ export const StudyPlanPage = () => {
                                                 </div>
                                             </div>
 
-                                            {/* Day progress */}
-                                            <div className="flex flex-col items-end gap-1 text-xs">
-                                                <span className="font-semibold text-slate-500">
-                                                    {completedInDay}/{day.tasks.length} tasks
-                                                </span>
-                                                <div className="h-1.5 w-32 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
-                                                    <div
-                                                        className="h-full rounded-full bg-emerald-500 transition-all"
-                                                        style={{ width: `${dayProgress}%` }}
-                                                    />
+                                            {/* Day actions & progress */}
+                                            <div className="flex flex-wrap items-center gap-3">
+                                                {!day.isCompleted && day.tasks.length > 0 && (
+                                                    <button
+                                                        type="button"
+                                                        onClick={() => handleCompleteAllDay(day.dayNumber)}
+                                                        className="flex items-center gap-1.5 rounded-xl border border-emerald-300 bg-emerald-50 px-3 py-1.5 text-xs font-bold text-emerald-700 hover:bg-emerald-100 dark:border-emerald-800 dark:bg-emerald-950/40 dark:text-emerald-300 transition"
+                                                    >
+                                                        <CheckSquare className="w-3.5 h-3.5" />
+                                                        <span>Complete Day (+XP)</span>
+                                                    </button>
+                                                )}
+                                                <button
+                                                    type="button"
+                                                    onClick={() => handleOpenAddTaskModal(day.dayNumber)}
+                                                    className="flex items-center gap-1 rounded-xl border border-slate-200 px-2.5 py-1.5 text-xs font-semibold text-slate-600 hover:bg-slate-100 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800 transition"
+                                                    title="Add custom task to this day"
+                                                >
+                                                    <Plus className="w-3 h-3" />
+                                                    <span>Add Task</span>
+                                                </button>
+                                                <div className="flex flex-col items-end gap-1 text-xs">
+                                                    <span className="font-semibold text-slate-500">
+                                                        {completedInDay}/{day.tasks.length} tasks
+                                                    </span>
+                                                    <div className="h-1.5 w-28 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+                                                        <div
+                                                            className="h-full rounded-full bg-emerald-500 transition-all"
+                                                            style={{ width: `${dayProgress}%` }}
+                                                        />
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -519,33 +637,33 @@ export const StudyPlanPage = () => {
                                                     key={task.id}
                                                     className={`flex flex-col gap-4 rounded-xl border p-4 transition lg:flex-row lg:items-center lg:justify-between ${
                                                         task.isCompleted
-                                                            ? 'border-slate-200 bg-slate-50/60 opacity-70 dark:border-slate-800 dark:bg-slate-800/30'
-                                                            : 'border-slate-200 bg-white shadow-sm hover:border-indigo-300 dark:border-slate-800 dark:bg-slate-900'
+                                                            ? 'border-slate-200 bg-slate-50/60 opacity-70 dark:border-[#2a3350] dark:bg-[#151b2e]/40'
+                                                            : 'border-slate-200 bg-white shadow-xs hover:border-indigo-300 dark:border-[#2a3350] dark:bg-[#151b2e]'
                                                     }`}
                                                 >
-                                                    <div className="flex items-start gap-3.5">
+                                                    <div className="flex items-start gap-3.5 flex-1">
                                                         {/* Checkbox */}
                                                         <button
                                                             onClick={() => handleToggleTask(task.id, task.isCompleted)}
-                                                            className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg transition ${
+                                                            className={`mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-lg transition cursor-pointer ${
                                                                 task.isCompleted
                                                                     ? 'bg-emerald-600 text-white'
-                                                                    : 'border-2 border-slate-300 hover:border-indigo-600 dark:border-slate-700'
+                                                                    : 'border-2 border-slate-300 hover:border-indigo-600 dark:border-[#2a3350]'
                                                             }`}
                                                         >
                                                             {task.isCompleted && <CheckCircle2 className="h-4 w-4" />}
                                                         </button>
 
                                                         {/* Task content */}
-                                                        <div className="space-y-1.5">
+                                                        <div className="space-y-1.5 flex-1">
                                                             <div className="flex flex-wrap items-center gap-2">
                                                                 {task.timeSlot && (
-                                                                    <span className="rounded-md border border-indigo-200/60 bg-indigo-50 px-2 py-0.5 font-mono text-[11px] font-bold text-indigo-700 dark:border-indigo-900/50 dark:bg-indigo-950/60 dark:text-indigo-300">
+                                                                    <span className="rounded-md border border-indigo-200/60 bg-indigo-50 px-2 py-0.5 font-mono text-[11px] font-bold text-indigo-700 dark:border-[#2a3350] dark:bg-[#1e293b] dark:text-cyan-400 tabular-nums">
                                                                         ⏰ {task.timeSlot}
                                                                     </span>
                                                                 )}
                                                                 <span className={`text-sm font-bold ${task.isCompleted ? 'text-slate-400 line-through' : 'text-slate-900 dark:text-white'}`}>
-                                                                    {task.topicName}
+                                                                    {cleanTopicTitle(task.topicName)}
                                                                 </span>
                                                                 <ActivityTypePill type={task.activityType} />
                                                                 {task.priority === 'high' && (
@@ -567,22 +685,45 @@ export const StudyPlanPage = () => {
                                                                 </div>
                                                             )}
 
-                                                            <div className="flex flex-wrap items-center gap-3 text-[11px] text-slate-400">
-                                                                <span>📚 {task.subjectName}</span>
+                                                            <div className="flex flex-wrap items-center gap-3 text-[11px] text-slate-400 font-mono tabular-nums">
+                                                                <span className="font-sans">📚 {task.subjectName}</span>
                                                                 <span>⏱ {task.durationMinutes} min</span>
                                                                 <span>🎯 {task.targetQuestionsCount || 10} questions</span>
                                                             </div>
                                                         </div>
                                                     </div>
 
-                                                    {/* Start practice button */}
-                                                    <Link
-                                                        to={`/practice?mode=topic&topicId=${task.topicId}`}
-                                                        className="flex shrink-0 items-center gap-1.5 self-end rounded-lg bg-indigo-50 px-4 py-2 text-xs font-bold text-indigo-700 transition hover:bg-indigo-100 dark:bg-indigo-950/60 dark:text-indigo-300 dark:hover:bg-indigo-950 lg:self-center"
-                                                    >
-                                                        <Play className="h-3.5 w-3.5 fill-indigo-600" />
-                                                        Start (+20 XP)
-                                                    </Link>
+                                                    {/* Task Action Group: Focus Mode + Start Drill + Delete */}
+                                                    <div className="flex items-center gap-2 shrink-0 self-end lg:self-center">
+                                                        <button
+                                                            type="button"
+                                                            onClick={() => handleOpenFocusRoom(task, day.dayNumber)}
+                                                            className="flex items-center gap-1.5 rounded-lg border border-indigo-200 bg-indigo-50/80 px-3 py-2 text-xs font-bold text-indigo-700 hover:bg-indigo-100 dark:border-[#2a3350] dark:bg-[#1e293b] dark:text-cyan-400 dark:hover:bg-slate-800 transition cursor-pointer"
+                                                            title="Launch Pomodoro Focus Session with ambient sounds"
+                                                        >
+                                                            <Brain className="h-3.5 w-3.5 text-indigo-600 dark:text-cyan-400" />
+                                                            <span>Focus Study</span>
+                                                        </button>
+
+                                                        <Link
+                                                            to={`/practice?mode=topic&topicId=${task.topicId}`}
+                                                            className="flex items-center gap-1.5 rounded-lg bg-[#4f46e5] px-3.5 py-2 text-xs font-bold text-white shadow-xs transition hover:bg-indigo-600"
+                                                        >
+                                                            <Play className="h-3 w-3 fill-white" />
+                                                            <span>Drill</span>
+                                                        </Link>
+
+                                                        {task.id.startsWith('custom_task_') && (
+                                                            <button
+                                                                type="button"
+                                                                onClick={() => handleDeleteTask(task.id)}
+                                                                className="rounded-lg p-2 text-slate-400 hover:bg-rose-50 hover:text-rose-600 dark:hover:bg-rose-950/40 dark:hover:text-rose-400 transition"
+                                                                title="Delete this custom task"
+                                                            >
+                                                                <Trash2 className="w-3.5 h-3.5" />
+                                                            </button>
+                                                        )}
+                                                    </div>
                                                 </div>
                                             ))}
                                         </div>
@@ -594,9 +735,24 @@ export const StudyPlanPage = () => {
 
                         {/* Additional Views */}
                         {studyPlan && scheduleView === 'kanban' && <KanbanView studyPlan={studyPlan} onTaskUpdate={handleTaskUpdate} />}
-                        {studyPlan && scheduleView === 'calendar' && <CalendarView studyPlan={studyPlan} onTaskUpdate={handleTaskUpdate} />}
+                        {studyPlan && scheduleView === 'calendar' && (
+                            <CalendarView
+                                studyPlan={studyPlan}
+                                onTaskUpdate={handleTaskUpdate}
+                                onOpenFocusRoom={handleOpenFocusRoom}
+                                onOpenAddTask={handleOpenAddTaskModal}
+                            />
+                        )}
                         {studyPlan && scheduleView === 'timeline' && <TimelineView studyPlan={studyPlan} />}
                     </div>
+                )}
+
+                {/* ── Mastery & Protocol Tab ────────────────────────────── */}
+                {activeTab === 'mastery' && studyPlan && (
+                    <SyllabusCoverageMatrix
+                        studyPlan={studyPlan}
+                        onOpenFocusRoom={(task) => handleOpenFocusRoom(task, studyPlan.currentDay || 1)}
+                    />
                 )}
 
                 {/* ── Topics Deck Tab ──────────────────────────────────── */}
@@ -635,6 +791,34 @@ export const StudyPlanPage = () => {
                 onClose={() => setIsSyllabusModalOpen(false)}
                 onGenerate={handleGenerateFromSyllabus}
                 isGenerating={isRegenerating}
+                defaultExamName={studyPlan?.examName || user?.customExamName || user?.targetExamName || 'SSC CGL'}
+            />
+            <FocusStudyRoomModal
+                isOpen={isFocusRoomOpen}
+                onClose={() => setIsFocusRoomOpen(false)}
+                task={focusRoomTask}
+                dayNumber={focusRoomDay}
+                onTaskCompleted={(taskId, updatedPlan) => {
+                    if (updatedPlan) {
+                        setStudyPlan(updatedPlan);
+                    }
+                    showToast('🎉 Focus study session logged & task completed! +XP awarded');
+                }}
+            />
+            <AddTaskModal
+                isOpen={isAddTaskOpen}
+                onClose={() => setIsAddTaskOpen(false)}
+                dayNumber={addTaskDayNumber}
+                scheduleLength={studyPlan?.schedule?.length || 30}
+                onTaskAdded={(updatedPlan) => {
+                    setStudyPlan(updatedPlan);
+                    showToast('✨ Custom study task added to timetable (+15 XP)');
+                }}
+            />
+            <PrintableTimetableModal
+                isOpen={isPrintModalOpen}
+                onClose={() => setIsPrintModalOpen(false)}
+                studyPlan={studyPlan}
             />
         </div>
     );

@@ -10,7 +10,7 @@ const getOptionText = (option) => typeof option === 'string'
 export const PracticeSessionPage = () => {
     const [searchParams] = useSearchParams();
     const navigate = useNavigate();
-    const { user } = useAppStore();
+    const { user, recordHabitActivity } = useAppStore();
     const [questions, setQuestions] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [selectedOptionId, setSelectedOptionId] = useState(null);
@@ -116,6 +116,9 @@ export const PracticeSessionPage = () => {
         }
         else {
             setSessionFinished(true);
+            if (recordHabitActivity) {
+                recordHabitActivity('test_completed');
+            }
         }
     };
     const handlePrevious = () => {

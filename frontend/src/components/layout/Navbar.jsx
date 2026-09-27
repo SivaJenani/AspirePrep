@@ -4,6 +4,7 @@ import {
     Award,
     BadgeCheck,
     BarChart2,
+    BookOpen,
     Brain,
     Calendar,
     ChevronDown,
@@ -23,18 +24,29 @@ import {
     Video,
     X,
     Zap,
-    Flame
+    Flame,
+    Trophy,
+    Eye,
+    EyeOff,
+    Crosshair,
+    Maximize2,
+    Minimize2,
+    Sparkles
 } from 'lucide-react';
 import { useAppStore } from '../../store/useAppStore';
 
+
 const primaryNavLinks = [
     { label: 'Dashboard', path: '/dashboard', icon: Target },
+    { label: 'Syllabus', path: '/syllabus', icon: BookOpen },
     { label: 'Exams', path: '/exams', icon: GraduationCap },
     { label: 'Practice', path: '/practice', icon: Zap },
     { label: 'Mock Tests', path: '/mock-tests', icon: Award }
 ];
 
 const prepToolsLinks = [
+    { label: 'Achievements & Badges', path: '/achievements', icon: Trophy, desc: 'Habit milestones & XP badges' },
+    { label: 'Syllabus Database & Periods', path: '/syllabus', icon: BookOpen, desc: 'Topic-wise database & study period workspace' },
     { label: 'AI Video Generator', path: '/video-generator', icon: Video, desc: 'Video generation workspace' },
     { label: '1v1 Speed Duel Arena', path: '/speed-duel', icon: Swords, desc: 'Fast quiz battles' },
     { label: 'Mistake Notebook', path: '/mistakes', icon: RotateCcw, desc: 'Review incorrect answers' },
@@ -43,11 +55,12 @@ const prepToolsLinks = [
     { label: 'Formula Deck & Mnemonics', path: '/formula-deck', icon: LayoutGrid, desc: 'Flashcards and recall' },
     { label: '5-Year PYQ Trends', path: '/pyq-trends', icon: BarChart2, desc: 'Question frequency trends' },
     { label: 'AI Doubt Tutor', path: '/ai-tutor', icon: Brain, desc: 'Step-by-step help' },
-    { label: 'Performance Analytics', path: '/analytics', icon: BarChart2, desc: 'Track progress clearly' },
+    { label: 'Learning Progress & Analytics', path: '/learning-progress', icon: BarChart2, desc: 'Syllabus completion & weak areas' },
     { label: 'Study Roadmap Planner', path: '/study-plan', icon: Calendar, desc: 'Build a study plan' }
 ];
 
 const mobileQuickLinks = [
+    { label: 'AI Tutor', path: '/ai-tutor', icon: Brain },
     { label: 'Profile', path: '/profile', icon: UserRound },
     { label: 'Analytics', path: '/analytics', icon: BarChart2 },
     { label: 'Study Plan', path: '/study-plan', icon: Calendar },
@@ -64,8 +77,9 @@ const getInitials = (name = 'User') =>
         .toUpperCase();
 
 export const Navbar = () => {
-    const { user, isDarkMode, toggleDarkMode, logout } = useAppStore();
+    const { user, isDarkMode, toggleDarkMode, isFocusMode, toggleFocusMode, logout } = useAppStore();
     const location = useLocation();
+
     const navigate = useNavigate();
 
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -101,7 +115,7 @@ export const Navbar = () => {
     );
 
     const profileRoleLabel = user?.role === 'admin' ? 'Faculty Admin' : 'Active Aspirant';
-    const profileAccent = user?.role === 'admin' ? 'from-violet-600 to-fuchsia-600' : 'from-blue-600 to-cyan-500';
+    const profileAccent = user?.role === 'admin' ? 'from-amber-600 to-orange-600' : 'from-orange-500 to-amber-500';
     const profileStats = [
         { label: 'XP', value: user?.xp || 0 },
         { label: 'Streak', value: `${user?.streakDays || 0}d` },
@@ -169,14 +183,14 @@ export const Navbar = () => {
             <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-12">
                 <div className="flex h-16 items-center justify-between gap-4">
                     {/* Left: Logo */}
-                    <div className="flex min-w-0 items-center shrink-0 w-[240px]">
+                    <div className="flex min-w-0 items-center shrink-0 xl:w-[210px]">
                         <Link to="/" className="flex shrink-0 items-center gap-3 group">
                             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 shadow-md transition-transform group-hover:-translate-y-0.5 group-hover:shadow-lg">
                                 <span className="text-xl font-black">A</span>
                             </div>
                             <div className="min-w-0">
                                 <div className="text-lg font-black tracking-tight text-slate-900 dark:text-white">
-                                    Aspire<span className="text-blue-600 dark:text-blue-400">Prep</span>
+                                    Aspire<span className="text-orange-500 dark:text-orange-400">Prep</span>
                                 </div>
                                 <div className="hidden text-[11px] font-medium text-slate-500 dark:text-slate-400 sm:block">
                                     Adaptive exam workspace
@@ -185,76 +199,142 @@ export const Navbar = () => {
                         </Link>
                     </div>
 
-                    {/* Center: Primary Nav Links */}
-                    <nav className="hidden flex-1 items-center justify-center gap-2 lg:flex">
-                        {primaryNavLinks.map((link) => {
-                            const Icon = link.icon;
-                            const active = location.pathname === link.path || location.pathname.startsWith(link.path);
-                            return (
-                                <Link
-                                    key={link.path}
-                                    to={link.path}
-                                    className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-200 ${
-                                        active
-                                            ? 'bg-slate-900 text-white shadow-md dark:bg-white dark:text-slate-950'
-                                            : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white'
-                                    }`}
-                                >
-                                    <Icon className={`h-4 w-4 ${active ? 'opacity-100' : 'opacity-70'}`} />
-                                    {link.label}
-                                </Link>
-                            );
-                        })}
+                    {/* Center: Clean Segmented Navigation Dock */}
+                    <nav aria-label="Main Navigation" className="hidden flex-1 items-center justify-center lg:flex">
+                        <div className="inline-flex items-center gap-0.5 xl:gap-1 rounded-2xl border border-slate-200/80 bg-slate-100/75 p-1 shadow-xs backdrop-blur-md dark:border-slate-800 dark:bg-slate-900/80">
+                            {primaryNavLinks.map((link) => {
+                                const Icon = link.icon;
+                                const active = location.pathname === link.path || (link.path !== '/' && location.pathname.startsWith(link.path));
+                                return (
+                                    <Link
+                                        key={link.path}
+                                        to={link.path}
+                                        className={`group inline-flex items-center gap-1.5 whitespace-nowrap rounded-xl px-2.5 py-1.5 text-xs font-bold tracking-tight transition-all duration-150 xl:px-3.5 xl:py-2 xl:text-sm ${
+                                            active
+                                                ? 'bg-white text-slate-950 shadow-xs dark:bg-slate-800 dark:text-white'
+                                                : 'text-slate-600 hover:bg-white/60 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/60 dark:hover:text-slate-100'
+                                        }`}
+                                    >
+                                        <Icon className={`h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-105 ${active ? 'text-orange-500 dark:text-orange-400' : 'text-slate-400 dark:text-slate-500'}`} />
+                                        <span>{link.label}</span>
+                                    </Link>
+                                );
+                            })}
 
-                        {/* Prep Tools Dropdown */}
-                        <div className="relative" ref={toolsDropdownRef}>
-                            <button
-                                type="button"
-                                onClick={() => setIsToolsMenuOpen((v) => !v)}
-                                className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-200 ${
-                                    activeToolExists
-                                        ? 'bg-slate-900 text-white shadow-md dark:bg-white dark:text-slate-950'
-                                        : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white'
-                                }`}
-                            >
-                                <LayoutGrid className={`h-4 w-4 ${activeToolExists ? 'opacity-100' : 'opacity-70'}`} />
-                                Prep Tools
-                                <ChevronDown className={`h-3.5 w-3.5 opacity-70 transition-transform duration-300 ${isToolsMenuOpen ? 'rotate-180' : ''}`} />
-                            </button>
+                            {!isFocusMode && (
+                                <>
+                                    {/* Clean Divider */}
+                                    <div className="mx-1 h-4 w-px bg-slate-200/90 dark:bg-slate-800" aria-hidden="true" />
 
-                            {isToolsMenuOpen && (
-                                <div className="absolute left-1/2 z-50 mt-4 w-[36rem] -translate-x-1/2 rounded-3xl border border-slate-200/80 bg-white/95 p-4 shadow-2xl backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-900/95">
-                                    <div className="grid grid-cols-2 gap-x-2 gap-y-1">
-                                        {prepToolsLinks.map(renderToolLink)}
+                                    {/* Prep Tools Dropdown */}
+                                    <div className="relative" ref={toolsDropdownRef}>
+                                        <button
+                                            type="button"
+                                            onClick={() => setIsToolsMenuOpen((v) => !v)}
+                                            className={`group inline-flex items-center gap-1.5 whitespace-nowrap rounded-xl px-2.5 py-1.5 text-xs font-bold tracking-tight transition-all duration-150 xl:px-3.5 xl:py-2 xl:text-sm cursor-pointer ${
+                                                activeToolExists
+                                                    ? 'bg-white text-slate-950 shadow-xs dark:bg-slate-800 dark:text-white'
+                                                    : 'text-slate-600 hover:bg-white/60 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/60 dark:hover:text-slate-100'
+                                            }`}
+                                        >
+                                            <LayoutGrid className="h-4 w-4 shrink-0 text-slate-400 group-hover:text-slate-600 dark:text-slate-500 dark:group-hover:text-slate-300" />
+                                            <span>Prep Tools</span>
+                                            <ChevronDown className={`h-3.5 w-3.5 text-slate-400 transition-transform duration-200 ${isToolsMenuOpen ? 'rotate-180 text-slate-700 dark:text-slate-200' : ''}`} />
+                                        </button>
+
+                                        {isToolsMenuOpen && (
+                                            <div className="absolute left-1/2 z-50 mt-3.5 w-[36rem] -translate-x-1/2 rounded-3xl border border-slate-200/80 bg-white/95 p-4 shadow-2xl backdrop-blur-xl dark:border-slate-700/80 dark:bg-slate-900/95">
+                                                <div className="grid grid-cols-2 gap-x-2 gap-y-1">
+                                                    {prepToolsLinks.map(renderToolLink)}
+                                                </div>
+                                            </div>
+                                        )}
                                     </div>
+
+                                    {/* AI Tutor */}
+                                    <Link
+                                        to="/ai-tutor"
+                                        id="nav-ai-tutor-link"
+                                        className={`group inline-flex items-center gap-1.5 whitespace-nowrap rounded-xl px-2.5 py-1.5 text-xs font-bold transition-all duration-150 xl:px-3 xl:py-2 xl:text-sm ${
+                                            location.pathname.startsWith('/ai-tutor')
+                                                ? 'bg-purple-600 text-white shadow-xs'
+                                                : 'text-purple-600 hover:bg-purple-50 dark:text-purple-400 dark:hover:bg-purple-950/60'
+                                        }`}
+                                    >
+                                        <Brain className="h-4 w-4 shrink-0 transition-transform duration-200 group-hover:scale-110" />
+                                        <span>AI Tutor</span>
+                                    </Link>
+
+                                    {user?.role === 'admin' && (
+                                        <Link
+                                            to="/admin"
+                                            className={`group inline-flex items-center gap-1.5 whitespace-nowrap rounded-xl px-2.5 py-1.5 text-xs font-bold transition-all duration-150 xl:px-3 xl:py-2 xl:text-sm ${
+                                                location.pathname.startsWith('/admin')
+                                                    ? 'bg-violet-600 text-white shadow-xs'
+                                                    : 'text-slate-600 hover:bg-white/60 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800/60 dark:hover:text-white'
+                                            }`}
+                                        >
+                                            <Shield className={`h-4 w-4 shrink-0 ${location.pathname.startsWith('/admin') ? 'opacity-100' : 'opacity-70'}`} />
+                                            <span>Admin</span>
+                                        </Link>
+                                    )}
+                                </>
+                            )}
+
+                            {isFocusMode && (
+                                <div className="hidden xl:flex items-center gap-1.5 ml-2 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-xs font-extrabold">
+                                    <Crosshair className="h-3.5 w-3.5 animate-pulse text-emerald-500" />
+                                    <span>Focus Mode Active</span>
                                 </div>
                             )}
                         </div>
-
-                        {user?.role === 'admin' && (
-                            <Link
-                                to="/admin"
-                                className={`inline-flex items-center gap-2 rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-200 ${
-                                    location.pathname.startsWith('/admin')
-                                        ? 'bg-violet-600 text-white shadow-md'
-                                        : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white'
-                                }`}
-                            >
-                                <Shield className={`h-4 w-4 ${location.pathname.startsWith('/admin') ? 'opacity-100' : 'opacity-70'}`} />
-                                Admin
-                            </Link>
-                        )}
                     </nav>
 
                     {/* Right side Actions */}
-                    <div className="hidden items-center justify-end gap-3 lg:flex shrink-0 w-[240px]">
+                    <div className="hidden items-center justify-end gap-2.5 lg:flex shrink-0">
+                        {/* Focus Mode Toggle Button */}
                         <button
                             type="button"
-                            onClick={toggleDarkMode}
-                            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200/80 bg-white/50 text-slate-500 shadow-sm backdrop-blur-sm transition-all hover:bg-slate-100 hover:text-slate-900 hover:shadow dark:border-slate-700/80 dark:bg-slate-900/50 dark:text-slate-400 dark:hover:bg-slate-800 dark:hover:text-white"
-                            aria-label="Toggle theme"
+                            onClick={toggleFocusMode}
+                            title={isFocusMode ? 'Exit Focus Mode (Show all navigation)' : 'Enter Focus Mode (Hide distracting nav)'}
+                            className={`inline-flex h-10 px-3.5 items-center gap-2 rounded-full border text-xs font-black transition-all active:scale-95 cursor-pointer ${
+                                isFocusMode
+                                    ? 'bg-emerald-600 text-white border-emerald-500 shadow-md ring-2 ring-emerald-500/30'
+                                    : 'border-slate-200/90 bg-slate-100/70 text-slate-700 hover:bg-slate-200/90 dark:border-slate-700/80 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:bg-slate-800'
+                            }`}
                         >
-                            {isDarkMode ? <Sun className="h-4 w-4 text-amber-400" /> : <Moon className="h-4 w-4 text-slate-600" />}
+                            {isFocusMode ? (
+                                <>
+                                    <EyeOff className="h-4 w-4 text-white" />
+                                    <span>Focus ON</span>
+                                </>
+                            ) : (
+                                <>
+                                    <Crosshair className="h-4 w-4 text-indigo-500" />
+                                    <span>Focus</span>
+                                </>
+                            )}
+                        </button>
+
+                        <button
+                            type="button"
+                            id="header-theme-toggle-desktop"
+                            onClick={toggleDarkMode}
+                            role="switch"
+
+                            aria-checked={isDarkMode}
+                            aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                            title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200/90 bg-slate-100/70 text-slate-700 shadow-sm backdrop-blur-sm transition-all hover:bg-slate-200/90 hover:text-slate-900 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:border-slate-700/80 dark:bg-slate-900/60 dark:text-amber-400 dark:hover:bg-slate-800 dark:hover:text-amber-300 dark:focus-visible:ring-offset-slate-950"
+                        >
+                            {isDarkMode ? (
+                                <Sun className="h-4.5 w-4.5 text-amber-400 transition-transform duration-300 hover:rotate-45" />
+                            ) : (
+                                <Moon className="h-4.5 w-4.5 text-slate-700 transition-transform duration-300 -rotate-12 hover:rotate-0" />
+                            )}
+                            <span className="sr-only">
+                                {isDarkMode ? 'Dark mode enabled. Click to switch to light mode.' : 'Light mode enabled. Click to switch to dark mode.'}
+                            </span>
                         </button>
 
                         {user ? (
@@ -326,6 +406,19 @@ export const Navbar = () => {
                                                 </div>
                                             </Link>
                                             <Link
+                                                to="/achievements"
+                                                onClick={() => setIsUserMenuOpen(false)}
+                                                className="flex items-center gap-3 rounded-2xl px-3 py-3 text-slate-700 transition-colors hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800/50"
+                                            >
+                                                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-50 text-amber-600 dark:bg-amber-500/10 dark:text-amber-400">
+                                                    <Trophy className="h-4 w-4" />
+                                                </div>
+                                                <div className="min-w-0">
+                                                    <p className="font-bold text-slate-900 dark:text-white">Achievements & Badges</p>
+                                                    <p className="truncate text-xs font-medium text-slate-500 dark:text-slate-400">Habit milestones & XP rewards</p>
+                                                </div>
+                                            </Link>
+                                            <Link
                                                 to="/dashboard"
                                                 onClick={() => setIsUserMenuOpen(false)}
                                                 className="flex items-center gap-3 rounded-2xl px-3 py-3 text-slate-700 transition-colors hover:bg-slate-50 dark:text-slate-300 dark:hover:bg-slate-800/50"
@@ -371,15 +464,39 @@ export const Navbar = () => {
                         )}
                     </div>
 
-                    {/* Mobile Menu Toggle */}
-                    <button
-                        type="button"
-                        onClick={() => setIsMobileMenuOpen((v) => !v)}
-                        className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:bg-slate-100 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800 lg:hidden"
-                        aria-label="Open navigation menu"
-                    >
-                        {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-                    </button>
+                    {/* Mobile Header Actions */}
+                    <div className="flex items-center gap-2 lg:hidden">
+                        <button
+                            type="button"
+                            id="header-theme-toggle-mobile"
+                            onClick={toggleDarkMode}
+                            role="switch"
+                            aria-checked={isDarkMode}
+                            aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                            title={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200/90 bg-slate-100/70 text-slate-700 shadow-sm transition-all hover:bg-slate-200/90 hover:text-slate-900 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2 dark:border-slate-700/80 dark:bg-slate-900/60 dark:text-amber-400 dark:hover:bg-slate-800 dark:hover:text-amber-300 dark:focus-visible:ring-offset-slate-950"
+                        >
+                            {isDarkMode ? (
+                                <Sun className="h-4.5 w-4.5 text-amber-400 transition-transform duration-300 hover:rotate-45" />
+                            ) : (
+                                <Moon className="h-4.5 w-4.5 text-slate-700 transition-transform duration-300 -rotate-12 hover:rotate-0" />
+                            )}
+                            <span className="sr-only">
+                                {isDarkMode ? 'Dark mode enabled. Click to switch to light mode.' : 'Light mode enabled. Click to switch to dark mode.'}
+                            </span>
+                        </button>
+
+                        <button
+                            type="button"
+                            id="mobile-menu-toggle-btn"
+                            onClick={() => setIsMobileMenuOpen((v) => !v)}
+                            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-slate-200 text-slate-600 transition hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800"
+                            aria-label={isMobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+                            aria-expanded={isMobileMenuOpen}
+                        >
+                            {isMobileMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+                        </button>
+                    </div>
                 </div>
             </div>
 
@@ -442,11 +559,15 @@ export const Navbar = () => {
                         <div className="mt-5 grid grid-cols-2 gap-2">
                             <button
                                 type="button"
+                                id="drawer-theme-toggle-btn"
                                 onClick={toggleDarkMode}
-                                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
+                                role="switch"
+                                aria-checked={isDarkMode}
+                                aria-label={isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'}
+                                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 dark:border-slate-800 dark:bg-slate-900 dark:text-slate-300 dark:hover:bg-slate-800"
                             >
-                                {isDarkMode ? <Sun className="h-4 w-4 text-amber-400" /> : <Moon className="h-4 w-4" />}
-                                Theme
+                                {isDarkMode ? <Sun className="h-4 w-4 text-amber-400" /> : <Moon className="h-4 w-4 text-indigo-600 dark:text-slate-300" />}
+                                <span>{isDarkMode ? 'Light Mode' : 'Dark Mode'}</span>
                             </button>
                             {user ? (
                                 <Link

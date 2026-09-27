@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import {
     BadgeCheck,
     Calendar,
@@ -10,9 +10,13 @@ import {
     Target,
     TrendingUp,
     Trophy,
-    UserCircle2
+    UserCircle2,
+    Award,
+    ChevronRight,
+    Sparkles
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
+import { evaluateUserBadges } from '../utils/achievementsEngine';
 import { api } from '../lib/api';
 
 const CUSTOM_EXAM_ID = 'exam_custom';
@@ -38,7 +42,35 @@ const getInitials = (name = 'User') =>
 
 export const ProfilePage = () => {
     const navigate = useNavigate();
-    const { user, setUser } = useAppStore();
+    const {
+        user,
+        setUser,
+        topicProgress,
+        mistakes,
+        flashcards,
+        duelWins,
+        duelLosses,
+        userUnlockedBadges
+    } = useAppStore();
+
+    const evaluatedBadges = useMemo(() => {
+        return evaluateUserBadges({
+            user,
+            topicProgress,
+            mistakes,
+            flashcards,
+            duelWins,
+            duelLosses,
+            userUnlockedState: userUnlockedBadges
+        });
+    }, [user, topicProgress, mistakes, flashcards, duelWins, duelLosses, userUnlockedBadges]);
+
+    const unlockedCount = useMemo(() => evaluatedBadges.filter(b => b.isUnlocked).length, [evaluatedBadges]);
+    const topBadges = useMemo(() => {
+        const featured = evaluatedBadges.filter(b => b.isFeatured);
+        if (featured.length > 0) return featured;
+        return evaluatedBadges.filter(b => b.isUnlocked).slice(0, 3);
+    }, [evaluatedBadges]);
 
     const [name, setName] = useState('');
     const [avatar, setAvatar] = useState('');
@@ -198,6 +230,57 @@ export const ProfilePage = () => {
                             <p className="mt-2 text-sm text-blue-700 dark:text-blue-200">
                                 Your study profile is live and ready to be updated whenever your target changes.
                             </p>
+                        </div>
+
+                        {/* Achievements & Badges Showcase Box */}
+                        <div className="mt-6 rounded-3xl border border-amber-200 dark:border-amber-900/40 bg-gradient-to-br from-amber-500/10 via-yellow-500/5 to-indigo-500/10 p-5 shadow-xs">
+                            <div className="flex items-center justify-between mb-3">
+                                <div className="flex items-center gap-2">
+                                    <Trophy className="h-5 w-5 text-amber-500" />
+                                    <h3 className="text-sm font-black text-slate-900 dark:text-white">
+                                        Showcase Badges ({unlockedCount} Earned)
+                                    </h3>
+                                </div>
+                                <Link
+                                    to="/achievements"
+                                    className="text-xs font-bold text-indigo-600 dark:text-indigo-400 hover:underline flex items-center gap-0.5"
+                                >
+                                    All Badges <ChevronRight className="h-3.5 w-3.5" />
+                                </Link>
+                            </div>
+
+                            {topBadges.length === 0 ? (
+                                <div className="text-center py-4 rounded-2xl bg-white/60 dark:bg-slate-900/60 border border-slate-200/60 dark:border-slate-800/60">
+                                    <p className="text-xs text-slate-500 dark:text-slate-400">
+                                        No badges earned yet. Complete your first study session or quiz!
+                                    </p>
+                                    <Link
+                                        to="/achievements"
+                                        className="inline-block mt-2 text-xs font-extrabold text-indigo-600 dark:text-indigo-400"
+                                    >
+                                        Explore Achievement Milestones &rarr;
+                                    </Link>
+                                </div>
+                            ) : (
+                                <div className="grid grid-cols-3 gap-2.5">
+                                    {topBadges.map((badge) => (
+                                        <div
+                                            key={badge.id}
+                                            className="rounded-2xl bg-white dark:bg-slate-900 p-3 text-center border border-slate-200 dark:border-slate-800 shadow-xs flex flex-col items-center justify-between"
+                                        >
+                                            <div className={`h-9 w-9 rounded-xl bg-gradient-to-br ${badge.tierDetails.color} flex items-center justify-center text-white mb-1.5 shadow-sm text-xs`}>
+                                                <Award className="h-5 w-5" />
+                                            </div>
+                                            <div className="text-[11px] font-black truncate w-full text-slate-900 dark:text-white">
+                                                {badge.title}
+                                            </div>
+                                            <div className="text-[10px] font-bold text-amber-600 dark:text-amber-400 mt-0.5">
+                                                +{badge.rewardXp} XP
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </section>
 

@@ -1,8 +1,9 @@
 import React, { useState, useRef, useEffect } from 'react';
 import {
     Sparkles, Upload, FileText, Clock, Check, X, AlertCircle,
-    BookOpen, FileType, File, FilePlus
+    BookOpen, FileType, File, FilePlus, RefreshCw
 } from 'lucide-react';
+import { api } from '../../lib/api';
 
 const SAMPLE_NOTES_PRESETS = [
     {
@@ -76,6 +77,8 @@ export const NotesTimetableGeneratorModal = ({ isOpen, onClose, onGenerate, isGe
     const [notesText, setNotesText] = useState(SAMPLE_NOTES_PRESETS[0].content);
     const [uploadedFile, setUploadedFile] = useState(null); // { name, type, size }
     const [uploadError, setUploadError] = useState(null);
+    const [isExtractingPdf, setIsExtractingPdf] = useState(false);
+    const [extractionMeta, setExtractionMeta] = useState(null); // { pages, total_characters }
     const fileInputRef = useRef(null);
 
     // Dynamically inject parsing libraries when the modal opens
@@ -159,45 +162,84 @@ export const NotesTimetableGeneratorModal = ({ isOpen, onClose, onGenerate, isGe
             reader.readAsText(file);
 
         } else if (ext === 'pdf') {
-            // PDF — read as ArrayBuffer, extract text via pdf.js CDN if available, else show placeholder
+            // PDF — Extract using Python multi-engine backend (PyMuPDF, pdfplumber, pypdf, pdfminer.six)
+            setIsExtractingPdf(true);
+            setUploadError(null);
             try {
-                const arrayBuffer = await file.arrayBuffer();
-                // Attempt to use pdf.js if loaded globally
-                if (window.pdfjsLib) {
-                    const pdf = await window.pdfjsLib.getDocument({ 
-                        data: arrayBuffer,
-                        cMapUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/cmaps/',
-                        cMapPacked: true,
-                        standardFontDataUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/standard_fonts/'
-                    }).promise;
-                    let fullText = '';
-                    for (let i = 1; i <= pdf.numPages; i++) {
-                        const page = await pdf.getPage(i);
-                        const content = await page.getTextContent();
-                        fullText += content.items.map(item => item.str).join(' ') + '\n';
+                // Convert file to base64
+                const reader = new FileReader();
+                const fileBase64Promise = new Promise((resolve, reject) => {
+                    reader.onload = () => resolve(reader.result);
+                    reader.onerror = reject;
+                    reader.readAsDataURL(file);
+                });
+                const base64Data = await fileBase64Promise;
+
+                // Call backend PDF extraction API
+                const response = await api.post('/pdf/extract', {
+                    fileBase64: base64Data,
+                    engine: 'pymupdf'
+                });
+
+                if (response.data && response.data.success) {
+                    const { text, page_count, total_characters } = response.data;
+                    setExtractionMeta({
+                        page_count,
+                        total_characters
+                    });
+
+                    if (text && text.trim().length > 0) {
+                        setNotesText(text.trim());
+                    } else {
+                        setNotesText(`[PDF uploaded: ${file.name}]\n\nNo text could be extracted. Please paste key topics below.`);
                     }
-                    
-                    const extracted = fullText.trim();
-                    if (extracted) {
-                        // Detect Mojibake / Corrupt PDF fonts (common in PDFs missing ToUnicode tables)
-                        const latinCharCount = (extracted.match(/[a-zA-Z0-9\s.,!?:;(){}[\]\-_+=@#$%^&*]/g) || []).length;
-                        if (latinCharCount / extracted.length < 0.4) {
-                            throw new Error('Mojibake_Detected');
-                        }
-                    }
-                    
-                    setNotesText(extracted || `[PDF uploaded: ${file.name}]\n\nPDF content extraction complete. Please review and edit the text if needed.`);
                 } else {
-                    // Fallback — inform AI about the PDF
-                    setNotesText(`[PDF File: ${file.name}]\n\nFile size: ${(file.size / 1024).toFixed(1)} KB\nPages: (auto-detected by AI)\n\nPlease describe the main topics, chapters, or formulas from your PDF below so the AI can build your timetable:\n\n`);
+                    throw new Error(response.data?.error || 'Extraction returned empty result');
                 }
             } catch (err) {
-                if (err.message === 'Mojibake_Detected') {
-                    setUploadError('This PDF uses corrupted or unsupported fonts (missing Unicode mappings). Please paste your topics manually below.');
-                } else {
+                console.warn('Backend Python extraction fallback to client-side pdf.js:', err);
+                // Fallback attempt: client-side pdf.js
+                try {
+                    const arrayBuffer = await file.arrayBuffer();
+                    if (window.pdfjsLib) {
+                        const pdf = await window.pdfjsLib.getDocument({ 
+                            data: arrayBuffer,
+                            cMapUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/cmaps/',
+                            cMapPacked: true,
+                            standardFontDataUrl: 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/standard_fonts/'
+                        }).promise;
+                        const pageExtracts = [];
+                        for (let i = 1; i <= pdf.numPages; i++) {
+                            const page = await pdf.getPage(i);
+                            const content = await page.getTextContent();
+                            const linesByY = {};
+                            for (const item of content.items) {
+                                if (!item.str || !item.str.trim()) continue;
+                                const y = Math.round(item.transform[5]);
+                                const existingY = Object.keys(linesByY).find(k => Math.abs(Number(k) - y) <= 3);
+                                const targetY = existingY !== undefined ? existingY : y;
+                                if (!linesByY[targetY]) linesByY[targetY] = [];
+                                linesByY[targetY].push(item.str);
+                            }
+                            const sortedY = Object.keys(linesByY).sort((a, b) => Number(b) - Number(a));
+                            const pageText = sortedY.map(y => linesByY[y].join(' ').trim()).filter(Boolean).join('\n');
+                            if (pageText) pageExtracts.push(`--- Page ${i} ---\n${pageText}`);
+                        }
+                        const extracted = pageExtracts.join('\n\n').trim();
+                        setNotesText(extracted || `[PDF uploaded: ${file.name}]\n\nPlease paste content manually if incomplete.`);
+                        setExtractionMeta({
+                            page_count: pdf.numPages,
+                            total_characters: extracted.length
+                        });
+                    } else {
+                        setUploadError('Could not process PDF. Please paste topics manually below.');
+                    }
+                } catch (fallbackErr) {
                     setUploadError('Could not extract text from PDF. Please paste the content manually below.');
+                    setUploadedFile(null);
                 }
-                setUploadedFile(null);
+            } finally {
+                setIsExtractingPdf(false);
             }
 
         } else if (ext === 'docx' || ext === 'doc') {
@@ -378,14 +420,26 @@ export const NotesTimetableGeneratorModal = ({ isOpen, onClose, onGenerate, isGe
                                         onDragOver={handleDragOver}
                                         className="flex cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed border-slate-300 bg-slate-50/60 px-6 py-8 transition hover:border-indigo-400 hover:bg-indigo-50/30 dark:border-slate-700 dark:bg-slate-900/50 dark:hover:border-indigo-600 dark:hover:bg-indigo-950/20"
                                     >
-                                        <FilePlus className="mb-3 h-8 w-8 text-slate-400" />
-                                        <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">
-                                            Click to upload or drag & drop
-                                        </p>
-                                        <p className="mt-1 text-xs text-slate-400">
-                                            Supported: <span className="font-bold text-rose-500">.pdf</span>, <span className="font-bold text-blue-500">.docx</span>, <span className="font-bold text-slate-500">.doc</span>, <span className="font-bold text-slate-500">.txt</span>, <span className="font-bold text-slate-500">.md</span>
-                                        </p>
-                                        <p className="mt-0.5 text-[11px] text-slate-400">Max size: 200 MB</p>
+                                        {isExtractingPdf ? (
+                                            <div className="flex flex-col items-center py-2">
+                                                <RefreshCw className="h-8 w-8 animate-spin text-indigo-500" />
+                                                <p className="mt-2 text-xs font-bold text-indigo-600 dark:text-indigo-400">
+                                                    Extracting document text and key topics...
+                                                </p>
+                                                <p className="text-[10px] text-slate-400">Analyzing layout and syllabus content</p>
+                                            </div>
+                                        ) : (
+                                            <>
+                                                <FilePlus className="mb-3 h-8 w-8 text-slate-400" />
+                                                <p className="text-sm font-semibold text-slate-600 dark:text-slate-300">
+                                                    Click to upload or drag & drop
+                                                </p>
+                                                <p className="mt-1 text-xs text-slate-400">
+                                                    Supported: <span className="font-bold text-rose-500">.pdf</span>, <span className="font-bold text-blue-500">.docx</span>, <span className="font-bold text-slate-500">.txt</span>, <span className="font-bold text-slate-500">.md</span>
+                                                </p>
+                                                <p className="mt-0.5 text-[11px] text-slate-400">Max size: 200 MB</p>
+                                            </>
+                                        )}
                                         <input
                                             ref={fileInputRef}
                                             type="file"
@@ -396,19 +450,32 @@ export const NotesTimetableGeneratorModal = ({ isOpen, onClose, onGenerate, isGe
                                     </div>
                                 ) : (
                                     /* Uploaded file preview */
-                                    <div className="flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 dark:border-emerald-800 dark:bg-emerald-950/30">
-                                        <FileIcon type={uploadedFile.type} />
-                                        <div className="flex-1 overflow-hidden">
-                                            <div className="truncate text-xs font-bold text-slate-800 dark:text-white">{uploadedFile.name}</div>
-                                            <div className="text-[11px] text-slate-500">
-                                                {uploadedFile.type.toUpperCase()} · {formatFileSize(uploadedFile.size)}
-                                                {uploadedFile.type === 'pdf' && ' · Text extracted from PDF'}
-                                                {(uploadedFile.type === 'docx' || uploadedFile.type === 'doc') && ' · Text extracted from Word document'}
+                                    <div className="space-y-2">
+                                        <div className="flex items-center gap-3 rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 dark:border-emerald-800 dark:bg-emerald-950/30">
+                                            <FileIcon type={uploadedFile.type} />
+                                            <div className="flex-1 overflow-hidden">
+                                                <div className="truncate text-xs font-bold text-slate-800 dark:text-white">{uploadedFile.name}</div>
+                                                <div className="text-[11px] text-slate-500">
+                                                    {uploadedFile.type.toUpperCase()} · {formatFileSize(uploadedFile.size)}
+                                                    {uploadedFile.type === 'pdf' && (
+                                                        <span> · Text extracted</span>
+                                                    )}
+                                                    {(uploadedFile.type === 'docx' || uploadedFile.type === 'doc') && ' · Text extracted from Word document'}
+                                                </div>
                                             </div>
+                                            <button onClick={handleClearFile} className="shrink-0 rounded-lg p-1 text-slate-400 hover:bg-slate-200 hover:text-slate-700 dark:hover:bg-slate-700">
+                                                <X className="h-4 w-4" />
+                                            </button>
                                         </div>
-                                        <button onClick={handleClearFile} className="shrink-0 rounded-lg p-1 text-slate-400 hover:bg-slate-200 hover:text-slate-700 dark:hover:bg-slate-700">
-                                            <X className="h-4 w-4" />
-                                        </button>
+
+                                        {/* Document extraction summary */}
+                                        {extractionMeta && (
+                                            <div className="flex flex-wrap items-center gap-2 rounded-xl border border-slate-200 bg-slate-50/70 px-3.5 py-2 text-[11px] text-slate-600 dark:border-slate-800 dark:bg-slate-900/60 dark:text-slate-300">
+                                                <span className="font-semibold text-slate-700 dark:text-slate-200">{extractionMeta.page_count || 1} Pages</span>
+                                                <span>·</span>
+                                                <span>{extractionMeta.total_characters?.toLocaleString()} characters extracted</span>
+                                            </div>
+                                        )}
                                     </div>
                                 )}
 

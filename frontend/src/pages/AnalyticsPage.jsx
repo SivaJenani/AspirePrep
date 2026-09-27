@@ -1,15 +1,47 @@
-import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { BarChart2, Zap, AlertTriangle, CheckCircle2 } from 'lucide-react';
-import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, AreaChart, Area } from 'recharts';
+import {
+    BarChart2,
+    Zap,
+    AlertTriangle,
+    CheckCircle2,
+    TrendingUp,
+    Target,
+    Clock,
+    BookOpen,
+    Brain,
+    Layers,
+    Award,
+    Flame,
+    Filter,
+    ArrowUpRight,
+    RefreshCw,
+    Download,
+    ShieldCheck,
+    ChevronRight
+} from 'lucide-react';
 import { api } from '../lib/api';
+import { useAppStore } from '../store/useAppStore';
+import { CompetencyRadar } from '../components/analytics/CompetencyRadar';
+import { SyllabusCompletionMatrix } from '../components/analytics/SyllabusCompletionMatrix';
+import { WeakAreaDiagnosticMatrix } from '../components/analytics/WeakAreaDiagnosticMatrix';
+import { SpeedAccuracyQuadrant } from '../components/analytics/SpeedAccuracyQuadrant';
+import { TrajectoryTrends } from '../components/analytics/TrajectoryTrends';
+import { StudyTimeRhythm } from '../components/analytics/StudyTimeRhythm';
+import { MlPredictiveEngine } from '../components/analytics/MlPredictiveEngine';
+
 export const AnalyticsPage = () => {
+    const { user } = useAppStore();
     const [analytics, setAnalytics] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [activeTab, setActiveTab] = useState('overview'); // 'overview' | 'syllabus' | 'weak_areas' | 'trajectory'
+    const [timeframe, setTimeframe] = useState('30d'); // '7d' | '30d' | 'all'
+    const [selectedExam, setSelectedExam] = useState(user?.targetExamName || 'SSC CGL');
+
     useEffect(() => {
         loadAnalytics();
-    }, []);
+    }, [user?.targetExamId]);
+
     const loadAnalytics = async () => {
         try {
             setLoading(true);
@@ -17,21 +49,352 @@ export const AnalyticsPage = () => {
             if (res.data?.analytics) {
                 setAnalytics(res.data.analytics);
             }
-        }
-        catch (err) {
-            console.error('Failed to load analytics:', err);
-        }
-        finally {
+        } catch (err) {
+            console.error('Failed to load learning progress analytics:', err);
+        } finally {
             setLoading(false);
         }
     };
+
     if (loading || !analytics) {
-        return _jsx("div", { className: "py-20 text-center text-xs text-slate-500", children: "Computing analytics and weak topic models..." });
+        return (
+            <div className="min-h-screen bg-slate-50 dark:bg-slate-950 flex flex-col items-center justify-center py-20">
+                <div className="flex items-center gap-3 text-indigo-600 dark:text-indigo-400">
+                    <RefreshCw className="h-6 w-6 animate-spin" />
+                    <span className="text-sm font-bold">Computing syllabus completion & weak-area models...</span>
+                </div>
+            </div>
+        );
     }
-    const subjectRadarData = analytics.subjectPerformance.map(s => ({
-        subject: s.subjectName.split(' ')[0],
-        accuracy: s.accuracy,
-        target: 85
-    }));
-    return (_jsxs("div", { className: "bg-slate-50 dark:bg-slate-950 min-h-screen pb-16", children: [_jsx("div", { className: "bg-white border-b border-slate-200/80 dark:bg-slate-900 dark:border-slate-800 py-10 px-4 sm:px-6 lg:px-8", children: _jsxs("div", { className: "max-w-7xl mx-auto space-y-3", children: [_jsxs("div", { className: "flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400", children: [_jsx(BarChart2, { className: "w-4 h-4" }), " Performance Engine"] }), _jsx("h1", { className: "text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight", children: "Detailed Learning & Weak-Area Analytics" }), _jsx("p", { className: "text-sm text-slate-600 dark:text-slate-400 max-w-2xl", children: "Visual breakdown of your mock test progression, subject competencies, negative mark risks, and auto-flagged weak topics." })] }) }), _jsxs("div", { className: "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-8", children: [_jsxs("div", { className: "grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6", children: [_jsxs("div", { className: "p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm dark:bg-slate-900 dark:border-slate-800", children: [_jsx("span", { className: "text-xs text-slate-500 font-semibold block", children: "Overall Accuracy" }), _jsxs("div", { className: "text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 mt-1", children: [analytics.overallAccuracy, "%"] }), _jsx("span", { className: "text-[11px] text-slate-400", children: "Target: 85%" })] }), _jsxs("div", { className: "p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm dark:bg-slate-900 dark:border-slate-800", children: [_jsx("span", { className: "text-xs text-slate-500 font-semibold block", children: "Total Solved" }), _jsxs("div", { className: "text-2xl font-extrabold text-slate-900 dark:text-white mt-1", children: [analytics.totalQuestionsSolved, " Qs"] }), _jsx("span", { className: "text-[11px] text-emerald-600 font-medium", children: "+35 this week" })] }), _jsxs("div", { className: "p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm dark:bg-slate-900 dark:border-slate-800", children: [_jsx("span", { className: "text-xs text-slate-500 font-semibold block", children: "Average Score" }), _jsxs("div", { className: "text-2xl font-extrabold text-amber-500 mt-1", children: [analytics.averageScore, " / 200"] }), _jsx("span", { className: "text-[11px] text-slate-400", children: "89.4th Percentile" })] }), _jsxs("div", { className: "p-5 rounded-2xl bg-white border border-slate-200/80 shadow-sm dark:bg-slate-900 dark:border-slate-800", children: [_jsx("span", { className: "text-xs text-slate-500 font-semibold block", children: "Total Study Time" }), _jsxs("div", { className: "text-2xl font-extrabold text-purple-600 dark:text-purple-400 mt-1", children: [Math.floor(analytics.totalStudyMinutes / 60), "h ", analytics.totalStudyMinutes % 60, "m"] }), _jsx("span", { className: "text-[11px] text-slate-400", children: "7-Day Streak" })] })] }), _jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-8", children: [_jsxs("div", { className: "p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm dark:bg-slate-900 dark:border-slate-800 space-y-4", children: [_jsxs("div", { className: "flex items-center justify-between", children: [_jsxs("div", { children: [_jsx("h2", { className: "text-base font-bold text-slate-900 dark:text-white", children: "Mock Test Score Progression" }), _jsx("p", { className: "text-xs text-slate-500", children: "Historical performance across full mock simulations" })] }), _jsx("span", { className: "text-xs font-bold text-emerald-600 dark:text-emerald-400", children: "+24.5 marks gain" })] }), _jsx("div", { className: "h-64 w-full pt-4", children: _jsx(ResponsiveContainer, { width: "100%", height: "100%", children: _jsxs(LineChart, { data: analytics.scoreTrend, children: [_jsx(CartesianGrid, { strokeDasharray: "3 3", opacity: 0.15 }), _jsx(XAxis, { dataKey: "date", tick: { fontSize: 11 } }), _jsx(YAxis, { tick: { fontSize: 11 }, domain: [80, 200] }), _jsx(Tooltip, { contentStyle: { backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '0.75rem', color: '#fff', fontSize: '12px' } }), _jsx(Line, { type: "monotone", dataKey: "score", stroke: "#4f46e5", strokeWidth: 3, dot: { r: 4 }, name: "Score (Marks)" })] }) }) })] }), _jsxs("div", { className: "p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm dark:bg-slate-900 dark:border-slate-800 space-y-4", children: [_jsxs("div", { children: [_jsx("h2", { className: "text-base font-bold text-slate-900 dark:text-white", children: "Subject Accuracy Breakdown" }), _jsx("p", { className: "text-xs text-slate-500", children: "Compare accuracy percentages against 85% target" })] }), _jsx("div", { className: "h-64 w-full pt-4", children: _jsx(ResponsiveContainer, { width: "100%", height: "100%", children: _jsxs(BarChart, { data: analytics.subjectPerformance, children: [_jsx(CartesianGrid, { strokeDasharray: "3 3", opacity: 0.15 }), _jsx(XAxis, { dataKey: "subjectName", tick: { fontSize: 10 }, interval: 0 }), _jsx(YAxis, { tick: { fontSize: 11 }, domain: [0, 100] }), _jsx(Tooltip, { contentStyle: { backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '0.75rem', color: '#fff', fontSize: '12px' } }), _jsx(Bar, { dataKey: "accuracy", fill: "#6366f1", radius: [6, 6, 0, 0], name: "Accuracy %" })] }) }) })] })] }), _jsxs("div", { className: "p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm dark:bg-slate-900 dark:border-slate-800 space-y-6", children: [_jsxs("div", { className: "flex flex-col sm:flex-row sm:items-center justify-between gap-4", children: [_jsxs("div", { className: "flex items-center gap-3", children: [_jsx("div", { className: "w-10 h-10 rounded-xl bg-amber-50 dark:bg-amber-950/80 text-amber-600 dark:text-amber-400 flex items-center justify-center font-bold", children: _jsx(AlertTriangle, { className: "w-5 h-5" }) }), _jsxs("div", { children: [_jsx("h2", { className: "text-base font-bold text-slate-900 dark:text-white", children: "Automated Weak-Area Diagnostic Matrix" }), _jsx("p", { className: "text-xs text-slate-500", children: "Topics automatically identified where accuracy is < 60% with recommended intervention" })] })] }), _jsxs(Link, { to: "/practice?mode=weak", className: "px-4 py-2 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold text-xs shadow transition flex items-center gap-1.5 shrink-0", children: [_jsx(Zap, { className: "w-4 h-4 text-slate-950" }), " Launch AI Weak Area Session"] })] }), _jsx("div", { className: "overflow-x-auto", children: _jsxs("table", { className: "w-full text-left text-xs", children: [_jsx("thead", { className: "border-b border-slate-200 dark:border-slate-800 text-slate-500 uppercase tracking-wider text-[10px]", children: _jsxs("tr", { children: [_jsx("th", { className: "py-3 px-4", children: "Weak Topic" }), _jsx("th", { className: "py-3 px-4", children: "Subject" }), _jsx("th", { className: "py-3 px-4", children: "Attempts" }), _jsx("th", { className: "py-3 px-4", children: "Accuracy" }), _jsx("th", { className: "py-3 px-4", children: "Avg Speed" }), _jsx("th", { className: "py-3 px-4", children: "Prescribed Intervention" }), _jsx("th", { className: "py-3 px-4 text-right", children: "Action" })] }) }), _jsx("tbody", { className: "divide-y divide-slate-100 dark:divide-slate-800", children: analytics.weakTopics.map((item, idx) => (_jsxs("tr", { className: "hover:bg-slate-50 dark:hover:bg-slate-800/40", children: [_jsx("td", { className: "py-3.5 px-4 font-bold text-slate-900 dark:text-white", children: item.topicName }), _jsx("td", { className: "py-3.5 px-4 text-slate-500", children: item.subjectName }), _jsxs("td", { className: "py-3.5 px-4", children: [item.attemptsCount, " Qs"] }), _jsx("td", { className: "py-3.5 px-4", children: _jsxs("span", { className: "px-2 py-0.5 rounded font-bold bg-rose-100 text-rose-800 dark:bg-rose-950 dark:text-rose-300", children: [item.accuracy, "%"] }) }), _jsxs("td", { className: "py-3.5 px-4 font-mono text-slate-500", children: [item.averageTimeSeconds, "s"] }), _jsx("td", { className: "py-3.5 px-4 text-slate-600 dark:text-slate-300 max-w-xs", children: item.recommendedAction }), _jsx("td", { className: "py-3.5 px-4 text-right", children: _jsx(Link, { to: `/practice?mode=topic&topicId=${item.topicId}`, className: "px-2.5 py-1 rounded-md bg-indigo-600 text-white text-[11px] font-bold hover:bg-indigo-700 transition", children: "Drill" }) })] }, idx))) })] }) })] }), _jsxs("div", { className: "grid grid-cols-1 lg:grid-cols-2 gap-8", children: [_jsxs("div", { className: "p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm dark:bg-slate-900 dark:border-slate-800 space-y-4", children: [_jsxs("div", { className: "flex items-center gap-2 text-emerald-600 dark:text-emerald-400", children: [_jsx(CheckCircle2, { className: "w-5 h-5" }), _jsx("h2", { className: "text-base font-bold text-slate-900 dark:text-white", children: "Mastered Strong Areas (\u2265 75%)" })] }), _jsx("div", { className: "space-y-3 pt-2", children: analytics.strongTopics.map((topic, tIdx) => (_jsxs("div", { className: "p-3.5 rounded-xl bg-emerald-50/60 border border-emerald-200/80 dark:bg-emerald-950/20 dark:border-emerald-900 flex items-center justify-between", children: [_jsxs("div", { children: [_jsx("p", { className: "text-xs font-bold text-slate-900 dark:text-white", children: topic.topicName }), _jsx("p", { className: "text-[10px] text-slate-500", children: topic.subjectName })] }), _jsxs("span", { className: "px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-600 text-white", children: [topic.accuracy, "% Accuracy"] })] }, tIdx))) })] }), _jsxs("div", { className: "p-6 rounded-2xl bg-white border border-slate-200/80 shadow-sm dark:bg-slate-900 dark:border-slate-800 space-y-4", children: [_jsxs("div", { children: [_jsx("h2", { className: "text-base font-bold text-slate-900 dark:text-white", children: "Weekly Study Time Rhythm" }), _jsx("p", { className: "text-xs text-slate-500", children: "Minutes spent in practice and full tests" })] }), _jsx("div", { className: "h-60 w-full pt-2", children: _jsx(ResponsiveContainer, { width: "100%", height: "100%", children: _jsxs(AreaChart, { data: analytics.studyTimeTrend, children: [_jsx(CartesianGrid, { strokeDasharray: "3 3", opacity: 0.15 }), _jsx(XAxis, { dataKey: "date", tick: { fontSize: 11 } }), _jsx(YAxis, { tick: { fontSize: 11 } }), _jsx(Tooltip, { contentStyle: { backgroundColor: '#0f172a', borderColor: '#334155', borderRadius: '0.75rem', color: '#fff', fontSize: '12px' } }), _jsx(Area, { type: "monotone", dataKey: "minutes", stroke: "#8b5cf6", fill: "#c4b5fd", fillOpacity: 0.4, name: "Minutes Studied" })] }) }) })] })] })] })] }));
+
+    const readinessScore = analytics.examReadinessScore || 82;
+    const syllabusPct = analytics.syllabusCompletion?.overallPercentage || 58;
+
+    return (
+        <div className="bg-slate-50 dark:bg-slate-950 min-h-screen pb-20 transition-colors duration-300">
+            {/* Top Navigation & Header */}
+            <div className="bg-white border-b border-slate-200/80 dark:bg-slate-900 dark:border-slate-800 py-8 px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto space-y-6">
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                        <div className="space-y-1">
+                            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-indigo-600 dark:text-indigo-400">
+                                <BarChart2 className="w-4 h-4" />
+                                <span>Learning Progress & Diagnostics</span>
+                            </div>
+                            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 dark:text-white tracking-tight">
+                                Syllabus Completion & Weak-Area Intelligence
+                            </h1>
+                            <p className="text-xs sm:text-sm text-slate-600 dark:text-slate-400 max-w-3xl">
+                                Real-time Recharts visualization of topic mastery, subject competencies, negative mark liabilities, and automated remedial prescriptions.
+                            </p>
+                        </div>
+
+                        {/* Top Action Pills */}
+                        <div className="flex flex-wrap items-center gap-2">
+                            <div className="flex items-center rounded-xl bg-slate-100 dark:bg-slate-800 p-1 text-xs font-semibold">
+                                <button
+                                    onClick={() => setTimeframe('7d')}
+                                    className={`rounded-lg px-2.5 py-1 transition ${
+                                        timeframe === '7d'
+                                            ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-white font-bold shadow-xs'
+                                            : 'text-slate-500 hover:text-slate-900 dark:text-slate-400'
+                                    }`}
+                                >
+                                    7 Days
+                                </button>
+                                <button
+                                    onClick={() => setTimeframe('30d')}
+                                    className={`rounded-lg px-2.5 py-1 transition ${
+                                        timeframe === '30d'
+                                            ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-white font-bold shadow-xs'
+                                            : 'text-slate-500 hover:text-slate-900 dark:text-slate-400'
+                                    }`}
+                                >
+                                    30 Days
+                                </button>
+                                <button
+                                    onClick={() => setTimeframe('all')}
+                                    className={`rounded-lg px-2.5 py-1 transition ${
+                                        timeframe === 'all'
+                                            ? 'bg-white dark:bg-slate-700 text-indigo-600 dark:text-white font-bold shadow-xs'
+                                            : 'text-slate-500 hover:text-slate-900 dark:text-slate-400'
+                                    }`}
+                                >
+                                    All Time
+                                </button>
+                            </div>
+
+                            <Link
+                                to="/practice?mode=weak"
+                                className="flex items-center gap-1.5 rounded-xl bg-rose-600 hover:bg-rose-500 px-3.5 py-2 text-xs font-bold text-white shadow-sm transition"
+                            >
+                                <Zap className="w-3.5 h-3.5" />
+                                <span>Remedial Drill</span>
+                            </Link>
+                        </div>
+                    </div>
+
+                    {/* Projected Exam Readiness & Key Metric Cards */}
+                    <div className="grid grid-cols-2 lg:grid-cols-5 gap-3 sm:gap-4">
+                        {/* Readiness Score Card */}
+                        <div className="col-span-2 sm:col-span-1 rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-800 p-4.5 text-white shadow-sm flex flex-col justify-between">
+                            <div className="flex items-center justify-between">
+                                <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-200">
+                                    Readiness Score
+                                </span>
+                                <ShieldCheck className="h-4 w-4 text-indigo-200" />
+                            </div>
+                            <div className="my-2">
+                                <div className="text-3xl font-black">{readinessScore}<span className="text-lg font-normal text-indigo-200">/100</span></div>
+                                <span className="text-[11px] font-semibold text-indigo-100">
+                                    {readinessScore >= 80 ? 'High Cutoff Clearance Chance' : 'Accelerate Weak Topics'}
+                                </span>
+                            </div>
+                            <div className="h-1.5 w-full bg-white/20 rounded-full overflow-hidden">
+                                <div className="h-full bg-cyan-300 rounded-full" style={{ width: `${readinessScore}%` }} />
+                            </div>
+                        </div>
+
+                        {/* Syllabus Completed */}
+                        <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-4.5 shadow-xs">
+                            <span className="text-xs text-slate-500 font-semibold block">Syllabus Covered</span>
+                            <div className="text-2xl font-extrabold text-indigo-600 dark:text-indigo-400 mt-1">
+                                {syllabusPct}%
+                            </div>
+                            <span className="text-[11px] text-slate-400">
+                                {analytics.syllabusCompletion?.masteredTopicsCount || 10} of {analytics.syllabusCompletion?.totalTopicsCount || 24} Topics
+                            </span>
+                        </div>
+
+                        {/* Overall Accuracy */}
+                        <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-4.5 shadow-xs">
+                            <span className="text-xs text-slate-500 font-semibold block">Overall Accuracy</span>
+                            <div className="text-2xl font-extrabold text-emerald-600 dark:text-emerald-400 mt-1">
+                                {analytics.overallAccuracy}%
+                            </div>
+                            <span className="text-[11px] text-slate-400">
+                                Target Benchmark: 85%
+                            </span>
+                        </div>
+
+                        {/* Flagged Weak Areas */}
+                        <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-4.5 shadow-xs">
+                            <span className="text-xs text-slate-500 font-semibold block">Weak Areas</span>
+                            <div className="text-2xl font-extrabold text-rose-600 dark:text-rose-400 mt-1">
+                                {analytics.weakTopics?.length || 0} Topics
+                            </div>
+                            <span className="text-[11px] text-rose-500 font-medium">
+                                Accuracy &lt; 65%
+                            </span>
+                        </div>
+
+                        {/* Total Solved & Time */}
+                        <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-800 p-4.5 shadow-xs">
+                            <span className="text-xs text-slate-500 font-semibold block">Total Solved</span>
+                            <div className="text-2xl font-extrabold text-slate-900 dark:text-white mt-1">
+                                {analytics.totalQuestionsSolved} Qs
+                            </div>
+                            <span className="text-[11px] text-slate-400">
+                                Avg {analytics.averageTimePerQuestion}s / question
+                            </span>
+                        </div>
+                    </div>
+
+                    {/* View Navigation Tabs */}
+                    <div className="flex items-center gap-2 border-b border-slate-200 dark:border-slate-800 pt-2">
+                        <button
+                            onClick={() => setActiveTab('overview')}
+                            className={`flex items-center gap-2 pb-3 px-1 text-xs font-bold border-b-2 transition ${
+                                activeTab === 'overview'
+                                    ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400'
+                                    : 'border-transparent text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                            }`}
+                        >
+                            <Layers className="h-4 w-4" />
+                            <span>Executive Overview</span>
+                        </button>
+
+                        <button
+                            onClick={() => setActiveTab('syllabus')}
+                            className={`flex items-center gap-2 pb-3 px-1 text-xs font-bold border-b-2 transition ${
+                                activeTab === 'syllabus'
+                                    ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400'
+                                    : 'border-transparent text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                            }`}
+                        >
+                            <BookOpen className="h-4 w-4" />
+                            <span>Syllabus Completion ({syllabusPct}%)</span>
+                        </button>
+
+                        <button
+                            onClick={() => setActiveTab('weak_areas')}
+                            className={`flex items-center gap-2 pb-3 px-1 text-xs font-bold border-b-2 transition ${
+                                activeTab === 'weak_areas'
+                                    ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400'
+                                    : 'border-transparent text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                            }`}
+                        >
+                            <AlertTriangle className="h-4 w-4 text-rose-500" />
+                            <span>Weak-Area Diagnostic Matrix ({analytics.weakTopics?.length || 0})</span>
+                        </button>
+
+                        <button
+                            onClick={() => setActiveTab('trajectory')}
+                            className={`flex items-center gap-2 pb-3 px-1 text-xs font-bold border-b-2 transition ${
+                                activeTab === 'trajectory'
+                                    ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400'
+                                    : 'border-transparent text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                            }`}
+                        >
+                            <TrendingUp className="h-4 w-4" />
+                            <span>Speed & Trajectory</span>
+                        </button>
+
+                        <button
+                            onClick={() => setActiveTab('ml_engine')}
+                            className={`flex items-center gap-2 pb-3 px-1 text-xs font-bold border-b-2 transition ${
+                                activeTab === 'ml_engine'
+                                    ? 'border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400'
+                                    : 'border-transparent text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white'
+                            }`}
+                        >
+                            <Brain className="h-4 w-4 text-cyan-500 animate-pulse" />
+                            <span className="bg-gradient-to-r from-cyan-500 to-indigo-500 bg-clip-text text-transparent font-extrabold">
+                                ML Model Studio & Rank Predictor
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+            {/* Main Content Area */}
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 space-y-8">
+                {/* 1. EXECUTIVE OVERVIEW TAB */}
+                {activeTab === 'overview' && (
+                    <div className="space-y-8 animate-fade-in">
+                        {/* Section A: Syllabus Completion & Competency Radar */}
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div className="lg:col-span-2">
+                                <SyllabusCompletionMatrix
+                                    subjectPerformance={analytics.subjectPerformance}
+                                    syllabusCompletion={analytics.syllabusCompletion}
+                                />
+                            </div>
+
+                            <div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                                <div className="mb-2">
+                                    <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                        <Award className="h-4 w-4 text-indigo-600 dark:text-indigo-400" />
+                                        Subject Competency Radar
+                                    </h4>
+                                    <p className="text-xs text-slate-500">
+                                        Your accuracy vs. 85% target vs. peer average
+                                    </p>
+                                </div>
+                                <CompetencyRadar subjectPerformance={analytics.subjectPerformance} />
+                            </div>
+                        </div>
+
+                        {/* Section B: Automated Weak Area Diagnostic */}
+                        <WeakAreaDiagnosticMatrix weakTopics={analytics.weakTopics} />
+
+                        {/* Section C: Speed vs Accuracy Quadrant & Trends */}
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <SpeedAccuracyQuadrant efficiencyMatrix={analytics.efficiencyMatrix} />
+                            <TrajectoryTrends scoreTrend={analytics.scoreTrend} accuracyTrend={analytics.accuracyTrend} />
+                        </div>
+
+                        {/* Section D: Weekly Study Rhythm & Mastered Topics */}
+                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                            <div className="lg:col-span-1">
+                                <StudyTimeRhythm studyTimeTrend={analytics.studyTimeTrend} streakDays={analytics.currentStreakDays} />
+                            </div>
+
+                            <div className="lg:col-span-2 rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                                <div className="mb-4 flex items-center justify-between">
+                                    <div>
+                                        <h4 className="text-sm font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                            <CheckCircle2 className="h-4 w-4 text-emerald-500" />
+                                            Mastered Strong Areas (&ge; 75% Accuracy)
+                                        </h4>
+                                        <p className="text-xs text-slate-500">
+                                            Topics where you consistently score above competitive cutoff benchmark
+                                        </p>
+                                    </div>
+                                    <span className="rounded-full bg-emerald-100 dark:bg-emerald-950/60 px-2.5 py-0.5 text-xs font-bold text-emerald-700 dark:text-emerald-300">
+                                        {analytics.strongTopics?.length || 0} Mastered
+                                    </span>
+                                </div>
+
+                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                                    {(analytics.strongTopics || []).map((topic, tIdx) => (
+                                        <div
+                                            key={topic.topicId || tIdx}
+                                            className="rounded-xl border border-emerald-200/70 bg-emerald-50/40 p-3 dark:border-emerald-900/40 dark:bg-emerald-950/20 flex items-center justify-between"
+                                        >
+                                            <div>
+                                                <p className="text-xs font-bold text-slate-900 dark:text-white">
+                                                    {topic.topicName}
+                                                </p>
+                                                <p className="text-[10px] text-slate-500">
+                                                    {topic.subjectName}
+                                                </p>
+                                            </div>
+                                            <span className="rounded-md bg-emerald-600 px-2 py-0.5 text-xs font-bold text-white">
+                                                {topic.accuracy}%
+                                            </span>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* 2. SYLLABUS TAB */}
+                {activeTab === 'syllabus' && (
+                    <div className="space-y-8 animate-fade-in">
+                        <SyllabusCompletionMatrix
+                            subjectPerformance={analytics.subjectPerformance}
+                            syllabusCompletion={analytics.syllabusCompletion}
+                        />
+                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                            <div className="rounded-2xl border border-slate-200/80 bg-white p-5 shadow-sm dark:border-slate-800 dark:bg-slate-900">
+                                <h4 className="text-sm font-bold text-slate-900 dark:text-white mb-2">
+                                    Competency Radar by Subject Module
+                                </h4>
+                                <CompetencyRadar subjectPerformance={analytics.subjectPerformance} />
+                            </div>
+                            <StudyTimeRhythm studyTimeTrend={analytics.studyTimeTrend} streakDays={analytics.currentStreakDays} />
+                        </div>
+                    </div>
+                )}
+
+                {/* 3. WEAK AREAS TAB */}
+                {activeTab === 'weak_areas' && (
+                    <div className="space-y-8 animate-fade-in">
+                        <WeakAreaDiagnosticMatrix weakTopics={analytics.weakTopics} />
+                        <SpeedAccuracyQuadrant efficiencyMatrix={analytics.efficiencyMatrix} />
+                    </div>
+                )}
+
+                {/* 4. TRAJECTORY & SPEED TAB */}
+                {activeTab === 'trajectory' && (
+                    <div className="space-y-8 animate-fade-in">
+                        <TrajectoryTrends scoreTrend={analytics.scoreTrend} accuracyTrend={analytics.accuracyTrend} />
+                        <SpeedAccuracyQuadrant efficiencyMatrix={analytics.efficiencyMatrix} />
+                    </div>
+                )}
+
+                {/* 5. ML MODEL STUDIO & RANK PREDICTOR TAB */}
+                {activeTab === 'ml_engine' && (
+                    <div className="animate-fade-in">
+                        <MlPredictiveEngine user={user} />
+                    </div>
+                )}
+            </div>
+        </div>
+    );
 };
+

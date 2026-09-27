@@ -7,6 +7,7 @@ import {
     Trophy, Edit3, Clock, GraduationCap, Crosshair, Timer
 } from 'lucide-react';
 import { useAppStore } from '../store/useAppStore';
+import { evaluateUserBadges } from '../utils/achievementsEngine';
 import { api } from '../lib/api';
 
 const MetricCard = ({ label, value, tone, hint }) => (
@@ -49,23 +50,49 @@ const CountdownRing = ({ percent, daysLeft, urgent }) => {
 };
 
 export const DashboardPage = () => {
-    const { user, topicProgress } = useAppStore();
+    const {
+        user,
+        topicProgress,
+        mistakes,
+        flashcards,
+        duelWins,
+        duelLosses,
+        userUnlockedBadges
+    } = useAppStore();
     const navigate = useNavigate();
+
+    const evaluatedBadges = React.useMemo(() => {
+        return evaluateUserBadges({
+            user,
+            topicProgress,
+            mistakes,
+            flashcards,
+            duelWins,
+            duelLosses,
+            userUnlockedState: userUnlockedBadges
+        });
+    }, [user, topicProgress, mistakes, flashcards, duelWins, duelLosses, userUnlockedBadges]);
+
+    const unlockedBadgesCount = evaluatedBadges.filter((b) => b.isUnlocked).length;
+    const claimableBadgesCount = evaluatedBadges.filter((b) => b.isUnlocked && !b.isClaimed).length;
     const [analytics, setAnalytics] = useState(null);
     const [studyPlan, setStudyPlan] = useState(null);
     const [revisions, setRevisions] = useState([]);
+    const [periodData, setPeriodData] = useState(null);
 
     useEffect(() => {
         const load = async () => {
             try {
-                const [anRes, planRes, revRes] = await Promise.all([
+                const [anRes, planRes, revRes, periodRes] = await Promise.all([
                     api.get('/analytics/overview'),
                     api.get('/study-plan'),
-                    api.get('/revisions')
+                    api.get('/revisions'),
+                    api.get('/syllabus/current-period').catch(() => ({ data: null }))
                 ]);
                 setAnalytics(anRes.data?.analytics || null);
                 setStudyPlan(planRes.data?.studyPlan || null);
                 setRevisions(revRes.data?.revisions || []);
+                if (periodRes?.data) setPeriodData(periodRes.data);
             } catch (err) {
                 console.error('Failed to load dashboard data:', err);
             }
@@ -235,6 +262,85 @@ export const DashboardPage = () => {
                 </section>
 
                 {/* ══════════════════════════════════════════════════
+                    CURRENT STUDY PERIOD TOPIC FOCUS CARD
+                ══════════════════════════════════════════════════ */}
+                {periodData?.currentPeriod && (
+                    <div id="dashboard-current-period-card" className="rounded-2xl border border-indigo-200 bg-gradient-to-r from-indigo-50/80 via-white to-blue-50/60 p-5 shadow-xs dark:border-indigo-900/60 dark:from-slate-900 dark:to-indigo-950/20">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                            <div className="space-y-1.5">
+                                <div className="flex items-center gap-2">
+                                    <span className="flex h-2.5 w-2.5 rounded-full bg-emerald-500 animate-ping" />
+                                    <span className="text-[11px] font-black uppercase tracking-wider text-indigo-700 dark:text-indigo-300">
+                                        Current Study Period: {periodData.currentPeriod.name} ({periodData.currentPeriod.timeRange})
+                                    </span>
+                                </div>
+                                <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white">
+                                    Topics to Utilize in This Period ({periodData.allocatedTopics?.length || 0} Ready)
+                                </h3>
+                                <div className="flex flex-wrap items-center gap-2 text-xs text-slate-600 dark:text-slate-400">
+                                    {(periodData.allocatedTopics || []).slice(0, 3).map((topic) => (
+                                        <span key={topic.id} className="rounded-lg bg-white/90 px-2.5 py-1 font-medium border border-indigo-100 dark:bg-slate-800 dark:border-slate-700">
+                                            <strong>{topic.code}</strong>: {topic.name} ({topic.weightage} Weight)
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+
+                            <div className="flex items-center gap-2 shrink-0">
+                                <Link
+                                    to="/syllabus"
+                                    className="flex items-center gap-1.5 rounded-xl bg-indigo-600 px-4 py-2.5 text-xs font-bold text-white shadow-xs hover:bg-indigo-700 cursor-pointer"
+                                >
+                                    <BookOpen className="h-4 w-4" />
+                                    Utilize in Current Period
+                                    <ChevronRight className="h-3.5 w-3.5" />
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
+                {/* ══════════════════════════════════════════════════
+                    ACHIEVEMENTS & BADGES HIGHLIGHT BANNER
+                ══════════════════════════════════════════════════ */}
+                <div className="rounded-2xl border border-amber-200 dark:border-amber-900/40 bg-gradient-to-r from-amber-50/80 via-white to-yellow-50/60 p-5 shadow-xs dark:from-slate-900 dark:to-amber-950/20">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div className="flex items-center gap-3">
+                            <div className="h-12 w-12 rounded-2xl bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center text-white shadow-md shrink-0">
+                                <Trophy className="h-6 w-6" />
+                            </div>
+                            <div>
+                                <div className="flex items-center gap-2">
+                                    <span className="text-[11px] font-black uppercase tracking-wider text-amber-700 dark:text-amber-300">
+                                        Achievements & Study Habits
+                                    </span>
+                                    {claimableBadgesCount > 0 && (
+                                        <span className="animate-pulse rounded-full bg-emerald-500 px-2 py-0.5 text-[10px] font-black text-white">
+                                            {claimableBadgesCount} Reward{claimableBadgesCount > 1 ? 's' : ''} Ready!
+                                        </span>
+                                    )}
+                                </div>
+                                <h3 className="text-base font-black text-slate-900 dark:text-white">
+                                    You have earned {unlockedBadgesCount} of {evaluatedBadges.length} Milestone Badges
+                                </h3>
+                                <p className="text-xs text-slate-500 dark:text-slate-400">
+                                    Unlock Early Bird, Quiz Master, and Speed Duelist badges as you progress in your study plan.
+                                </p>
+                            </div>
+                        </div>
+
+                        <Link
+                            to="/achievements"
+                            className="flex items-center justify-center gap-1.5 rounded-xl bg-amber-500 hover:bg-amber-600 text-white font-extrabold text-xs px-4 py-2.5 shadow-sm transition active:scale-95 cursor-pointer shrink-0"
+                        >
+                            <Award className="h-4 w-4" />
+                            View All Badges & Claims
+                            <ChevronRight className="h-3.5 w-3.5" />
+                        </Link>
+                    </div>
+                </div>
+
+                {/* ══════════════════════════════════════════════════
                     METRIC CARDS
                 ══════════════════════════════════════════════════ */}
                 <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -333,7 +439,7 @@ export const DashboardPage = () => {
                                     <h2 className="text-base font-bold">Weak Topics</h2>
                                     <InfoBadge color="bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300">Auto-detected</InfoBadge>
                                 </div>
-                                <Link to="/analytics" className="text-xs font-bold text-blue-600 hover:underline dark:text-blue-400">Full analysis →</Link>
+                                <Link to="/learning-progress" className="text-xs font-bold text-blue-600 hover:underline dark:text-blue-400">Full analysis →</Link>
                             </div>
                             <p className="mt-2 text-xs text-slate-400">
                                 Topics where your accuracy dropped below 60% over 2+ attempts. These are automatically prioritized in your study plan.
